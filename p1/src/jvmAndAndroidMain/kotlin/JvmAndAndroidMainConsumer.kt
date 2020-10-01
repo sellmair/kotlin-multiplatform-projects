@@ -1,0 +1,2 @@
+class JvmAndAndroidMainConsumer: JvmAndAndroidMainApi, JvmAndJsMainApi {
+}

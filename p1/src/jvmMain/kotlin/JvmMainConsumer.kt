@@ -1,0 +1,1 @@
+class JvmMainConsumer : CommonMainApi, JvmMainApi

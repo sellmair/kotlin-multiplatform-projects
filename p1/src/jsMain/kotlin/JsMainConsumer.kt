@@ -1,0 +1,2 @@
+class JsMainConsumer: CommonMainApi, JsMainApi {
+}

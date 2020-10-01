@@ -1,8 +1,7 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
+kotlin {
+    jvm()
 }

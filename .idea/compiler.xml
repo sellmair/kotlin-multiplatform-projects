@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="mpp-issue-bootstrap.p1.jvmAndAndroidMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.jvmAndJsMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.jvmAndAndroidMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.jvmAndJsMain" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

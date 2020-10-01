@@ -11,7 +11,7 @@ kotlin {
     jvm()
     android()
     sourceSets {
-        named("androidAndroidTest") {
+        named("commonMain") {
             dependencies {
                 implementation(project(":p2"))
             }

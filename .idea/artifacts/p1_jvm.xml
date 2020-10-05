@@ -2,7 +2,7 @@
   <artifact type="jar" name="p1-jvm">
     <output-path>$PROJECT_DIR$/p1/build/libs</output-path>
     <root id="archive" name="p1-jvm.jar">
-      <element id="module-output" name="mpp-issue-bootstrap.p1.jvmMain" />
+      <element id="module-output" name="mpp-issue-child.p1.jvmMain" />
     </root>
   </artifact>
 </component>

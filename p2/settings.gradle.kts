@@ -18,5 +18,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = "mpp-issue-bootstrap"
+rootProject.name = "mpp-issue-child"
+include(":p1")
+project(":p1").projectDir = file("../p1")
+
 

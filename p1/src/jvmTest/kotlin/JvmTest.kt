@@ -5,6 +5,6 @@ class JvmTest {
 
     @Test
     fun test() {
-        assertTrue { true }
+        assertTrue { false }
     }
 }

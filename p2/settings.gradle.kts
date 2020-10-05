@@ -7,6 +7,7 @@ pluginManagement {
     }
     plugins {
         kotlin("multiplatform") version "1.4.10"
+        kotlin("jvm") version "1.4.10"
         kotlin("android") version "1.4.10"
     }
     resolutionStrategy {

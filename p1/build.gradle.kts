@@ -1,20 +1,12 @@
 plugins {
     id("com.android.library")
-    kotlin("multiplatform")
+    kotlin("android")
 }
 
 android {
     compileSdkVersion(30)
 }
 
-kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
+dependencies {
+    implementation(project(":p2"))
 }

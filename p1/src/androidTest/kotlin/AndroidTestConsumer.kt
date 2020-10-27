@@ -1,0 +1,1 @@
+class AndroidTestConsumer : CommonTestApi

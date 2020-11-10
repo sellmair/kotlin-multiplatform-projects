@@ -11,10 +11,22 @@ kotlin {
     jvm()
     android()
     sourceSets {
-        named("androidAndroidTest") {
+        val commonMain = getByName("commonMain") {
             dependencies {
-                implementation(project(":p2"))
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
             }
+        }
+
+        val jvmAndAndroidMain = create("jvmAndAndroidMain") {
+            dependsOn(commonMain)
+        }
+
+        getByName("androidMain") {
+            dependsOn(jvmAndAndroidMain)
+        }
+
+        getByName("jvmMain") {
+            dependsOn(jvmAndAndroidMain)
         }
     }
 }

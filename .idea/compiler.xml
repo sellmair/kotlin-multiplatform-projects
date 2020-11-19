@@ -2,6 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="mpp-issue-bootstrap.p1.androidAndroidTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidAndroidTestDebug" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidDebug" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidDebugAndroidTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidDebugUnitTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidRelease" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidReleaseUnitTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidTestDebug" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.androidTestRelease" target="1.6" />
       <module name="mpp-issue-bootstrap.p1.jvmAndJsMain" target="1.6" />
       <module name="mpp-issue-bootstrap.p2.commonMain" target="1.6" />
       <module name="mpp-issue-bootstrap.p2.commonTest" target="1.6" />

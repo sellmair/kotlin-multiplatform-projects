@@ -1,10 +1,8 @@
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 fun useCoroutines() {
-    GlobalScope.launch(Dispatchers.IO) {
+    runBlocking(Dispatchers.IO) {
         //
     }
 }
-

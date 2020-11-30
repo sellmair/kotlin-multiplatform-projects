@@ -21,4 +21,4 @@ pluginManagement {
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
 include(":p2")
-
+include(":p3")

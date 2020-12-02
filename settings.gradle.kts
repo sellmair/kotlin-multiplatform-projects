@@ -4,10 +4,13 @@ pluginManagement {
         mavenCentral()
         google()
         mavenLocal()
+        jcenter()
+
     }
     plugins {
-        kotlin("multiplatform") version "1.4.20-RC"
-        kotlin("android") version "1.4.20-RC"
+        kotlin("multiplatform") version "1.4.20"
+        kotlin("plugin.serialization") version "1.4.20"
+        kotlin("android") version "1.4.20"
     }
     resolutionStrategy {
         eachPlugin {
@@ -20,5 +23,4 @@ pluginManagement {
 
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
-include(":p2")
 

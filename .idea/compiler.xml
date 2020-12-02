@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="mpp-issue-bootstrap.p1.commonMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.jvmMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.jvmTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.commonMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.jvmMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.jvmTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p3.commonMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p3.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p3.jvmMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p3.jvmTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p4.commonMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p4.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p4.jvmMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p4.jvmTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p5.commonMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p5.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p5.jvmAndAndroidMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p5.jvmMain" target="1.6" />
+      <module name="mpp-issue-bootstrap.p5.jvmTest" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="p5-jvm">
+    <output-path>$PROJECT_DIR$/p5/build/libs</output-path>
+    <root id="archive" name="p5-jvm.jar">
+      <element id="module-output" name="mpp-issue-bootstrap.p5.jvmMain" />
+    </root>
+  </artifact>
+</component>

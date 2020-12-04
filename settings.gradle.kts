@@ -1,4 +1,6 @@
 pluginManagement {
+    val sellmair: String? by settings
+    val kotlinVersion = if (sellmair != null) "1.4.255-SNAPSHOT" else "1.4.20"
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -6,8 +8,8 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.4.20"
-        kotlin("android") version "1.4.20"
+        kotlin("multiplatform") version kotlinVersion
+        kotlin("android") version kotlinVersion
     }
     resolutionStrategy {
         eachPlugin {
@@ -19,5 +21,5 @@ pluginManagement {
 }
 
 rootProject.name = "mpp-issue-bootstrap"
-include(":p1")
+//include(":p1")
 include(":p2")

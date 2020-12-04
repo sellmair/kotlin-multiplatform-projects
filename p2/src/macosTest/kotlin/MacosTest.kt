@@ -17,5 +17,10 @@ class MacosTest {
             curl_easy_cleanup(curl)
         }
     }
+
+    @Test
+    fun useNativeMain() {
+        nativeMain()
+    }
 }
 

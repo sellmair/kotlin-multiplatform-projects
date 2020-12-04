@@ -1,12 +1,14 @@
 import kotlinx.cinterop.toKString
-/*import libcurl.**/
+import libcurl.*
+import libcurl.*
+
 import kotlin.test.Test
 
 @OptIn(ExperimentalUnsignedTypes::class)
 class LinuxTest {
     @Test
     fun curl() {
-        /*val curl = curl_easy_init()
+        val curl = curl_easy_init()
         if (curl != null) {
             curl_easy_setopt(curl, CURLOPT_URL, "http://example.com")
             curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L)
@@ -16,8 +18,7 @@ class LinuxTest {
             }
             curl_easy_cleanup(curl)
         }
-
-         */
     }
 }
+
 

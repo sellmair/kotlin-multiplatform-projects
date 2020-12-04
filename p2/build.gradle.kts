@@ -24,6 +24,9 @@ kotlin {
         implementation(files("libs/curl-macos.klib"))
     }
 
+    linuxMain.dependencies {
+        implementation(files("libs/curl-linux.klib"))
+    }
 
     sourceSets.all {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")

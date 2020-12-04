@@ -16,7 +16,16 @@ kotlin {
     macosMain.dependsOn(nativeMain)
     linuxMain.dependsOn(nativeMain)
 
+    commonMain.dependencies {
+        implementation(kotlin("stdlib-common"))
+    }
+
     macosMain.dependencies {
         implementation(files("libs/curl-macos.klib"))
+    }
+
+
+    sourceSets.all {
+        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
 }

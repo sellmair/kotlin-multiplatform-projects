@@ -1,20 +1,16 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
-}
 
 kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    val macos = macosX64("macos")
+    val linux = linuxX64("linux")
+
+    // c interop
+    listOf(macos, linux).forEach { target ->
+        val curl = target.compilations.getByName("main").cinterops.create("curl")
+        curl.defFile = file("interop/libcurl.def")
     }
+    //
 }

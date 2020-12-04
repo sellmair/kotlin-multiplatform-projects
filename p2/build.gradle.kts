@@ -20,15 +20,20 @@ kotlin {
         implementation(kotlin("stdlib-common"))
     }
 
+    nativeMain.dependencies {
+        //implementation(fileTree("libs"))
+    }
+
     macosMain.dependencies {
-        implementation(files("libs/curl-macos.klib"))
+        implementation(files("libs/macos_x64/curl.klib"))
     }
 
     linuxMain.dependencies {
-        implementation(files("libs/curl-linux.klib"))
+        implementation(files("libs/linux_x64/curl.klib"))
     }
 
     sourceSets.all {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
 }
+

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.native.internal.ConfigurationCommonizerTask
+
 plugins {
     kotlin("multiplatform")
 }
@@ -6,6 +8,11 @@ plugins {
 kotlin {
     val macos = macosX64("macos")
     val linux = linuxX64("linux")
+
+    tasks.create<ConfigurationCommonizerTask>("commonizeCurl") {
+        addLibrary(macos, files("libs/macos_x64/curl.klib"))
+        addLibrary(linux, files("libs/linux_x64/curl.klib"))
+    }
 
     val commonMain = sourceSets.getByName("commonMain")
     val nativeMain = sourceSets.create("nativeMain")
@@ -21,7 +28,7 @@ kotlin {
     }
 
     nativeMain.dependencies {
-        //implementation(fileTree("libs"))
+        //implementation(curl)
     }
 
     macosMain.dependencies {

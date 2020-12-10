@@ -2,7 +2,7 @@ import kotlinx.cinterop.toKString
 import libcurl.*
 
 @OptIn(ExperimentalUnsignedTypes::class)
-fun macosMain() {
+fun linuxMain() {
     val curl = curl_easy_init()
     if (curl != null) {
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com")

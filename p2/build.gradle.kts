@@ -16,17 +16,11 @@ plugins {
 }
 
 
+//region Project Structure
 
 kotlin {
     val macos = macosX64("macos")
     val linux = linuxX64("linux")
-
-    /*
-    val commonizeCurl = tasks.create<DependencyCommonizerTask>("commonizeCurl") {
-        addLibrary(macos, files("libs/macos_x64/curl.klib"))
-        addLibrary(linux, files("libs/linux_x64/curl.klib"))
-    }
-     */
 
     val commonMain = sourceSets.getByName("commonMain")
     val nativeMain = sourceSets.create("nativeMain")
@@ -42,6 +36,7 @@ kotlin {
     }
 
     nativeMain.dependencies {
+        //implementation(project(":p1"))
     }
 
     macosMain.dependencies {
@@ -55,33 +50,16 @@ kotlin {
     }
 }
 
-//enableCommonization(setOf(MACOS_X64, LINUX_X64, IOS_ARM32))
+//endregion
 
+//region Enable commonization
 
-val curlKotlinInteropBundle by configurations.creating {
-    outgoing {
-        attributes {
-            attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.interopBundle))
-            attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-            attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
-        }
-    }
-    isCanBeResolved = false
-    isCanBeConsumed = true
-}
-
-artifacts {
-    add("curlKotlinInteropBundle", file("libs"))
-}
+val artifactType = Attribute.of("artifactType", String::class.java)
 
 dependencies {
     registerTransform(CommonizerTransformation::class) {
         from.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.interopBundle))
-        from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-
         to.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.commonizerOutput))
-        to.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-
         parameters {
             konanHome = File(project.konanHome).absoluteFile
             afterEvaluate {
@@ -95,12 +73,10 @@ dependencies {
 
     for ((_, konanTarget) in KonanTarget.predefinedTargets) {
         registerTransform(CommonizerSelectionTransformation::class.java) {
-            from.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.commonizerOutput))
+            from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.commonizerOutput))
             from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-            from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
 
             to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
-            to.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
             to.attribute(KotlinNativeTarget.konanTargetAttribute, konanTarget.name)
             parameters {
                 target = CommonizerTarget(konanTarget)
@@ -117,21 +93,15 @@ dependencies {
     }
 }
 
-kotlin {
-    sourceSets {
-        getByName("nativeMain") {
-            dependencies {
-                implementation(project(project.path, curlKotlinInteropBundle.name))
-            }
-        }
-    }
-}
-/*
 dependencies {
-    "nativeMainCompileOnly"(project(project.path, curlKotlinInteropBundle.name))
+    "nativeMainImplementation"(project(":p1"))
 }
-*/
 
+//endregion
+
+//region Debugging
+
+/*
 val nativeMainImplementation by configurations.getting
 val macosMainImplementation by configurations.getting
 
@@ -149,3 +119,5 @@ tasks.getByName("compileKotlinMacos") {
         println("libraries: ${compile.libraries.files}")
     }
 }
+ */
+//endregion

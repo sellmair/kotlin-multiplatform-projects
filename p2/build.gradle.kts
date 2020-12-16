@@ -32,11 +32,10 @@ kotlin {
 
     commonMain.dependencies {
         implementation(kotlin("stdlib-common"))
-        implementation(project(":p1"))
     }
 
     nativeMain.dependencies {
-        //implementation(project(":p1"))
+        implementation(project(":p1"))
     }
 
     macosMain.dependencies {
@@ -57,13 +56,25 @@ kotlin {
 val commonizerTarget = Attribute.of("commonizerTarget", String::class.java)
 afterEvaluate {
     val allNativeMainConfigurations = configurations.filter {
-        it.name.contains("nativeMain", true) || it.name.contains("metadata", true)
+        it.name.contains("nativeMain", true) /*|| it.name.contains("metadata", true)*/
+    }
+    val allOtherConfigurations = configurations.filter {
+        it !in allNativeMainConfigurations
     }
     allNativeMainConfigurations.forEach { configuration ->
         println("Adding to ${configuration.name}")
         configuration.attributes {
             attribute(commonizerTarget, CommonizerTarget(LINUX_X64, MACOS_X64).identityString)
         }
+    }
+
+    allOtherConfigurations.forEach {
+        //it.attributes.attribute(commonizerTarget, "*none*")
+    }
+}
+
+abstract class EmptyTransformation: TransformAction<TransformParameters.None> {
+    override fun transform(outputs: TransformOutputs) {
     }
 }
 
@@ -99,23 +110,6 @@ dependencies {
         }
     }
 
-    /*
-    for ((_, konanTarget) in KonanTarget.predefinedTargets) {
-        registerTransform(CommonizerSelectionTransformation::class.java) {
-            from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.commonizerOutput))
-            from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
-            from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-
-            to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
-            to.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
-            to.attribute(KotlinNativeTarget.konanTargetAttribute, konanTarget.name)
-            parameters {
-                target = CommonizerTarget(konanTarget)
-            }
-        }
-    }
-     */
-
     registerTransform(CommonizerSelectionTransformation::class.java) {
         from.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.commonizerOutput))
         from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
@@ -129,6 +123,23 @@ dependencies {
             target = CommonizerTarget(MACOS_X64, LINUX_X64)
         }
     }
+
+    /*
+for ((_, konanTarget) in KonanTarget.predefinedTargets) {
+    registerTransform(CommonizerSelectionTransformation::class.java) {
+        from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.commonizerOutput))
+        from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
+        from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
+
+        to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
+        to.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
+        to.attribute(KotlinNativeTarget.konanTargetAttribute, konanTarget.name)
+        parameters {
+            target = CommonizerTarget(konanTarget)
+        }
+    }
+}
+ */
 }
 
 /*dependencies {

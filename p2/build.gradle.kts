@@ -1,15 +1,14 @@
 import org.gradle.api.attributes.Usage.USAGE_ATTRIBUTE
 import org.jetbrains.kotlin.commonizer.api.CommonizerTarget
+import org.jetbrains.kotlin.commonizer.api.LeafCommonizerTarget
+import org.jetbrains.kotlin.commonizer.api.identityString
 import org.jetbrains.kotlin.compilerRunner.konanHome
-import org.jetbrains.kotlin.gradle.cinterop.CommonizerSelectionTransformation
-import org.jetbrains.kotlin.gradle.cinterop.CommonizerTransformation
-import org.jetbrains.kotlin.gradle.cinterop.CommonizerUsages
-import org.jetbrains.kotlin.gradle.cinterop.usage
+import org.jetbrains.kotlin.gradle.cinterop.*
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinUsages
-import org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile
 import org.jetbrains.kotlin.konan.target.KonanTarget
+import org.jetbrains.kotlin.konan.target.KonanTarget.*
 
 plugins {
     kotlin("multiplatform")
@@ -33,6 +32,7 @@ kotlin {
 
     commonMain.dependencies {
         implementation(kotlin("stdlib-common"))
+        implementation(project(":p1"))
     }
 
     nativeMain.dependencies {
@@ -54,9 +54,23 @@ kotlin {
 
 //region Enable commonization
 
-val artifactType = Attribute.of("artifactType", String::class.java)
+val commonizerTarget = Attribute.of("commonizerTarget", String::class.java)
+afterEvaluate {
+    val allNativeMainConfigurations = configurations.filter {
+        it.name.contains("nativeMain", true) || it.name.contains("metadata", true)
+    }
+    allNativeMainConfigurations.forEach { configuration ->
+        println("Adding to ${configuration.name}")
+        configuration.attributes {
+            attribute(commonizerTarget, CommonizerTarget(LINUX_X64, MACOS_X64).identityString)
+        }
+    }
+}
 
 dependencies {
+    attributesSchema {
+        attribute(commonizerTarget)
+    }
     registerTransform(CommonizerTransformation::class) {
         from.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.interopBundle))
         to.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.commonizerOutput))
@@ -72,34 +86,59 @@ dependencies {
     }
 
     for ((_, konanTarget) in KonanTarget.predefinedTargets) {
-        registerTransform(CommonizerSelectionTransformation::class.java) {
-            from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.commonizerOutput))
+        registerTransform(PlatformInteropKlibSelectionTransformation::class) {
+            from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.interopBundle))
             from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
 
             to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
+            to.attribute(KotlinNativeTarget.konanTargetAttribute, konanTarget.name)
+
+            parameters {
+                target = LeafCommonizerTarget(konanTarget)
+            }
+        }
+    }
+
+    /*
+    for ((_, konanTarget) in KonanTarget.predefinedTargets) {
+        registerTransform(CommonizerSelectionTransformation::class.java) {
+            from.attribute(USAGE_ATTRIBUTE, rootProject.usage(CommonizerUsages.commonizerOutput))
+            from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
+            from.attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
+
+            to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
+            to.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
             to.attribute(KotlinNativeTarget.konanTargetAttribute, konanTarget.name)
             parameters {
                 target = CommonizerTarget(konanTarget)
             }
         }
     }
+     */
 
     registerTransform(CommonizerSelectionTransformation::class.java) {
         from.attribute(USAGE_ATTRIBUTE, project.usage(CommonizerUsages.commonizerOutput))
-        to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
+        from.attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
+        from.attribute(commonizerTarget, "*")
+
+        to.attribute(USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_METADATA))
+        to.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
+        to.attribute(commonizerTarget, CommonizerTarget(LINUX_X64, MACOS_X64).identityString)
+
         parameters {
-            target = CommonizerTarget(KonanTarget.MACOS_X64, KonanTarget.LINUX_X64)
+            target = CommonizerTarget(MACOS_X64, LINUX_X64)
         }
     }
 }
 
-dependencies {
+/*dependencies {
     "nativeMainImplementation"(project(":p1"))
-}
+}*/
 
 //endregion
 
 //region Debugging
+
 
 /*
 val nativeMainImplementation by configurations.getting

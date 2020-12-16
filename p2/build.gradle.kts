@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.commonizer.api.CommonizerTarget
 import org.jetbrains.kotlin.commonizer.api.LeafCommonizerTarget
 import org.jetbrains.kotlin.commonizer.api.identityString
 import org.jetbrains.kotlin.compilerRunner.konanHome
-import org.jetbrains.kotlin.gradle.cinterop.*
+import org.jetbrains.kotlin.gradle.ib.*
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinUsages
@@ -53,6 +53,7 @@ kotlin {
 
 //region Enable commonization
 
+/*
 val commonizerTarget = Attribute.of("commonizerTarget", String::class.java)
 afterEvaluate {
     val allNativeMainConfigurations = configurations.filter {
@@ -73,6 +74,9 @@ afterEvaluate {
     }
 }
 
+ */
+
+/*
 abstract class EmptyTransformation: TransformAction<TransformParameters.None> {
     override fun transform(outputs: TransformOutputs) {
     }
@@ -139,8 +143,9 @@ for ((_, konanTarget) in KonanTarget.predefinedTargets) {
         }
     }
 }
- */
+
 }
+ */
 
 /*dependencies {
     "nativeMainImplementation"(project(":p1"))

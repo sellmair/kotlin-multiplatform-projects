@@ -1,6 +1,5 @@
 pluginManagement {
-    val sellmair: String? by settings
-    val kotlinVersion = if (sellmair != null) "1.4.255-SNAPSHOT" else "1.4.20"
+    val kotlinVersion = "1.4.255-SNAPSHOT"
     repositories {
         gradlePluginPortal()
         mavenCentral()

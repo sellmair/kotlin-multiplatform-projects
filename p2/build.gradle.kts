@@ -1,15 +1,3 @@
-import org.gradle.api.attributes.Usage.USAGE_ATTRIBUTE
-import org.jetbrains.kotlin.commonizer.api.CommonizerTarget
-import org.jetbrains.kotlin.commonizer.api.LeafCommonizerTarget
-import org.jetbrains.kotlin.commonizer.api.identityString
-import org.jetbrains.kotlin.compilerRunner.konanHome
-import org.jetbrains.kotlin.gradle.ib.*
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinUsages
-import org.jetbrains.kotlin.konan.target.KonanTarget
-import org.jetbrains.kotlin.konan.target.KonanTarget.*
-
 plugins {
     kotlin("multiplatform")
 }

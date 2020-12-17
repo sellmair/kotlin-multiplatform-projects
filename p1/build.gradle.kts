@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinUsages
 val interopBundle by configurations.creating {
 
     attributes {
-        attribute(Usage.USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
+        attribute(Usage.USAGE_ATTRIBUTE, project.objects.named(Usage::class.java, KotlinUsages.KOTLIN_API))
     }
 
 

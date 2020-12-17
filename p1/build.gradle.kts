@@ -8,6 +8,7 @@ val interopBundle by configurations.creating {
         attribute(Usage.USAGE_ATTRIBUTE, project.usage(KotlinUsages.KOTLIN_API))
     }
 
+
     outgoing {
         attributes {
             attribute(commonizerTargetAttribute, interopBundleCommonizerTarget)
@@ -23,8 +24,15 @@ tasks.create<Delete>("clean") {
     delete(buildDir)
 }
 dependencies {
-    artifactTypes.register(commonizedInteropBundleArtifactType)
+    artifactTypes.register(interopBundleArtifactType) {
+        attributes.attribute(commonizerTargetAttribute, interopBundleCommonizerTarget)
+    }
+    artifactTypes.register(commonizedInteropBundleArtifactType) {
+        attributes.attribute(commonizerTargetAttribute, wildcardCommonizerTarget)
+    }
 }
 artifacts {
-    add(interopBundle.name, file("libs"))
+    add(interopBundle.name, file("libs")) {
+        type = interopBundleArtifactType
+    }
 }

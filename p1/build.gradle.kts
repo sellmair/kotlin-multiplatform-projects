@@ -1,11 +1,6 @@
-import org.jetbrains.kotlin.gradle.ib.CommonizerUsages
-import org.jetbrains.kotlin.gradle.ib.usage
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.ib.*
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinUsages
 
-
-val commonizerTarget = Attribute.of("commonizerTarget", String::class.java)
 
 val interopBundle by configurations.creating {
 
@@ -15,10 +10,7 @@ val interopBundle by configurations.creating {
 
     outgoing {
         attributes {
-            attribute(Usage.USAGE_ATTRIBUTE, project.usage(CommonizerUsages.interopBundle))
-            attribute(KotlinPlatformType.attribute, KotlinPlatformType.native)
-            attribute(KotlinNativeTarget.konanTargetAttribute, "commonizer")
-            attribute(commonizerTarget, "*")
+            attribute(commonizerTargetAttribute, interopBundleCommonizerTarget)
         }
     }
 
@@ -27,16 +19,12 @@ val interopBundle by configurations.creating {
 }
 
 
-val createInteropBundleJar by tasks.register<Jar>("createInteropBundle") {
-    from(file("libs"))
-    this.destinationDirectory.fileValue(buildDir)
-    this.archiveFileName.set("interop-bundle.jar")
-}
-
 tasks.create<Delete>("clean") {
     delete(buildDir)
 }
-
+dependencies {
+    artifactTypes.register(commonizedInteropBundleArtifactType)
+}
 artifacts {
     add(interopBundle.name, file("libs"))
 }

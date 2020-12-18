@@ -1,3 +1,7 @@
+/**
+ * INTEROP BUNDLE PRODUCER (p1)
+ */
+
 plugins {
     kotlin("interop-bundle")
     `maven-publish`

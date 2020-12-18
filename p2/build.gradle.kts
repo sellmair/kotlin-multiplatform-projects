@@ -1,9 +1,10 @@
+/**
+ * INTEROP BUNDLE CONSUMER (p2)
+ */
+
 plugins {
     kotlin("multiplatform")
 }
-
-
-//region Project Structure
 
 kotlin {
     macosX64("macos")

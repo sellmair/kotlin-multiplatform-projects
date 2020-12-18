@@ -3,8 +3,11 @@ plugins {
     `maven-publish`
 }
 
-group = "org.jetbrains.kotlin"
-version = "1.0.0"
+interopBundle {
+    groupId.set("io.sellmair")
+    artifactId.set("libcurl")
+    version.set("7.64.1-kib0")
+}
 
 dependencies {
     macos_x64(files("libs/macos_x64/curl.klib"))

@@ -2,7 +2,6 @@ plugins {
     kotlin("multiplatform") apply false
 }
 
-val x = 1
 
 allprojects {
     repositories {
@@ -11,4 +10,9 @@ allprojects {
         mavenLocal()
         jcenter()
     }
+}
+
+project(":p2").tasks.configureEach {
+    // 🤷‍ It's a demo. Who really cares?
+    dependsOn(":p1:publishToMavenLocal")
 }

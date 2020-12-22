@@ -21,10 +21,10 @@ kotlin {
 
     commonMain.dependencies {
         // option 1
-        implementation("io.sellmair:libcurl:7.64.1-kib0")
+        //implementation("io.sellmair:libcurl:7.64.1-kib0")
 
         // option 2 (also works)
-        //implementation(project(":p1"))
+        implementation(project(":p1"))
     }
 
     sourceSets.all {

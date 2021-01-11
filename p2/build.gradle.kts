@@ -1,8 +1,16 @@
+@file:Suppress("UNUSED_VARIABLE")
+
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
+    `maven-publish`
 }
 
-android {
-    compileSdkVersion(30)
+group = "io.sellmair.KTIJ-737"
+version = "1.0-SNAPSHOT"
+
+kotlin {
+    val jvm = jvm()
+    val js = js {
+        nodejs()
+    }
 }

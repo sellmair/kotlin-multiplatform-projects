@@ -1,20 +1,17 @@
+@file:Suppress("UNUSED_VARIABLE")
+
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
-}
-
 kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    val jvm = jvm()
+    val js = js {
+        nodejs()
+    }
+
+    val commonMain = sourceSets.getByName("commonMain")
+    commonMain.dependencies {
+        implementation("io.sellmair.KTIJ-737:p2:1.0-SNAPSHOT")
     }
 }

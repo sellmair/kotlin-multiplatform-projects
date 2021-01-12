@@ -1,4 +1,6 @@
+
 pluginManagement {
+    val kotlin_version: String by settings
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -6,7 +8,8 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.5.255-SNAPSHOT"
+        kotlin("multiplatform") version kotlin_version
+        id("com.jfrog.bintray") version "1.8.5"
     }
     resolutionStrategy {
         eachPlugin {

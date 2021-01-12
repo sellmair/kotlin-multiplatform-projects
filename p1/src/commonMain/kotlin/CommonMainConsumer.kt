@@ -1,3 +1,3 @@
 import io.sellmair.CommonMainApi
 
-class CommonMainConsumer : CommonMainApi
+open class CommonMainConsumer : CommonMainApi

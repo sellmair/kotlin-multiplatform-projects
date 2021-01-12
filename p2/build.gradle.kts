@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.sellmair.KTIJ-737"
-version = "1.0-SNAPSHOT"
+version = "1.5.255-SNAPSHOT"
 
 kotlin {
     val jvm = jvm()

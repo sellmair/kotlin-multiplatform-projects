@@ -12,6 +12,6 @@ kotlin {
 
     val commonMain = sourceSets.getByName("commonMain")
     commonMain.dependencies {
-        implementation("io.sellmair.KTIJ-737:p2:1.0-SNAPSHOT")
+        implementation("io.sellmair.KTIJ-737:p2:1.5.255-SNAPSHOT")
     }
 }

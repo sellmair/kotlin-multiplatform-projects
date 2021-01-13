@@ -9,13 +9,20 @@ plugins {
 }
 
 group = "io.sellmair.KTIJ-737"
-version = "1.0.1"
+version = "1.0.4"
 
 kotlin {
     val jvm = jvm()
-    val js = js {
-        nodejs()
-    }
+    val js = js().nodejs()
+
+    val commonMain = sourceSets.getByName("commonMain")
+    val jvmAndJsMain = sourceSets.create("jvmAndJsMain")
+    val jvmMain by sourceSets.getting
+    val jsMain by sourceSets.getting
+
+    jvmAndJsMain.dependsOn(commonMain)
+    jvmMain.dependsOn(jvmAndJsMain)
+    jsMain.dependsOn(jvmAndJsMain)
 }
 
 bintray {
@@ -27,7 +34,7 @@ bintray {
         name = "ktij-737-p2"
         vcsUrl = "https://github.com/sellmair/mpp-issue-bootstrap"
         setLicenses("Apache-2.0")
-        setPublications("kotlinMultiplatform", "js", "jvm")
+        setPublications("kotlinMultiplatform", "js", "jvm", "jvmAndJs")
     }
 }
 

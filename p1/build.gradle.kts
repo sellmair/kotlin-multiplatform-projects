@@ -4,10 +4,6 @@ plugins {
     kotlin("multiplatform")
 }
 
-repositories {
-    maven("https://dl.bintray.com/sellmair/testing")
-}
-
 kotlin {
     val jvm = jvm()
     val js = js {

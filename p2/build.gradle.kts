@@ -1,8 +1,12 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
+kotlin {
+    jvm()
+    val commonMain by sourceSets.getting
+    commonMain.dependencies {
+        implementation("io.sellmair:p1:1-SNAPSHOT")
+        //implementation(project(":p1"))
+    }
 }

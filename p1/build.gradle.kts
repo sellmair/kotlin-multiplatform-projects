@@ -1,20 +1,11 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
+    `maven-publish`
 }
 
-android {
-    compileSdkVersion(30)
-}
+group = "io.sellmair"
+version = "1-SNAPSHOT"
 
 kotlin {
     jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
 }

@@ -6,8 +6,8 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.4.20-RC"
-        kotlin("android") version "1.4.20-RC"
+        kotlin("multiplatform") version "1.4.21"
+        kotlin("android") version "1.4.21"
     }
     resolutionStrategy {
         eachPlugin {

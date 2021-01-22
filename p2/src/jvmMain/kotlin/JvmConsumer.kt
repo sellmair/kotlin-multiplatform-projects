@@ -1,6 +1,6 @@
-import io.sellmair.p1.remember
+import io.sellmair.p1.*
 
 fun main() {
-    val list = listOf("1")
-    val x = remember { "" }
+    val x = workingFunction { "" }
+    val y = brokenFunction { "" }
 }

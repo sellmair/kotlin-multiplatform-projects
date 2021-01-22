@@ -1,3 +1,5 @@
 package io.sellmair.p1
 
-inline fun <T> remember(calculation: @SomeAnnotation(someProperty = true) () -> T): T = calculation()
+fun brokenFunction(calculation: @SomeAnnotation(someProperty = true) () -> Any): Any = calculation()
+
+fun workingFunction(calculation: @SomeAnnotation () -> Any): Any = calculation()

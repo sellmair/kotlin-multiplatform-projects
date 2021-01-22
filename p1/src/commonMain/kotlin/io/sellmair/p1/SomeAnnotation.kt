@@ -9,5 +9,5 @@ package io.sellmair.p1
     AnnotationTarget.TYPE
 )
 annotation class SomeAnnotation(
-   val someProperty: Boolean
+    val someProperty: Boolean = false
 )

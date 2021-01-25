@@ -17,3 +17,7 @@ dependencies {
     macos_x64(files("libs/macos_x64/curl.klib"))
     linux_x64(files("libs/linux_x64/curl.klib"))
 }
+
+tasks.named<Delete>("clean") {
+    delete(buildDir)
+}

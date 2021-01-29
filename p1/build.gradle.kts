@@ -18,6 +18,6 @@ dependencies {
     linux_x64(files("libs/linux_x64/curl.klib"))
 }
 
-tasks.named<Delete>("clean") {
+tasks.create<Delete>("clean") {
     delete(buildDir)
 }

@@ -8,9 +8,12 @@ plugins {
     `maven-publish`
 }
 
-interopBundle {
+cInterop {
     macosX64 {
 
+    }
+    linuxX64 {
+        
     }
 }
 

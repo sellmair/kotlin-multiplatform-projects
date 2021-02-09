@@ -1,5 +1,5 @@
 import kotlinx.cinterop.toKString
-import libcurl.*
+import curl.*
 
 @OptIn(ExperimentalUnsignedTypes::class)
 fun macosMain() {

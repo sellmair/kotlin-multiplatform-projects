@@ -1,0 +1,3 @@
+headers = curl/curl.h
+headerFilter = curl/*
+linkerOpts.osx = -L/opt/local/lib -L/usr/local/opt/curl/lib -lcurl

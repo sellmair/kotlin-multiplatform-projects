@@ -24,7 +24,7 @@ kotlin {
         //implementation("io.sellmair:libcurl:7.64.1-kib0")
 
         // option 2 (also works)
-        //implementation(project(":p1"))
+        implementation(project(":p1"))
     }
 
     sourceSets.all {
@@ -33,5 +33,12 @@ kotlin {
 
     macos.compilations.getByName("main").cinterops.create("curl")
     linux.compilations.getByName("main").cinterops.create("curl")
+
 }
 
+
+val someConfiguration = configurations.getByName("hello")
+dependencies {
+    someConfiguration.invoke(project.file(""))
+    someConfiguration("io.sellmair:library:1010")
+}

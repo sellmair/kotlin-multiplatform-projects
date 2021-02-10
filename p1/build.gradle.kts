@@ -1,20 +1,21 @@
-plugins {
-    id("com.android.library")
-    kotlin("multiplatform")
-}
+@file:Suppress("LeakingThis")
 
-android {
-    compileSdkVersion(30)
+import org.jetbrains.kotlin.gradle.plugin.mpp.includeInXCFramework
+import org.jetbrains.kotlin.gradle.plugin.mpp.registerBuildFrameworkForXCodeTask
+
+plugins {
+    kotlin("multiplatform")
 }
 
 kotlin {
     jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
+    ios {
+        binaries.framework {
+            includeInXCFramework("ios")
+            registerBuildFrameworkForXCodeTask()
         }
     }
 }
+
+
+

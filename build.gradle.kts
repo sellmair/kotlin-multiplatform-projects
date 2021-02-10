@@ -6,3 +6,7 @@ allprojects {
         jcenter()
     }
 }
+
+tasks.create<Delete>("clean") {
+    delete(buildDir)
+}

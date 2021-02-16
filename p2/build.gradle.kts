@@ -10,22 +10,14 @@ kotlin {
     val macos = macosX64("macos")
     val linux = linuxX64("linux")
 
-    val commonMain = sourceSets.getByName("commonMain")
-    val nativeMain = sourceSets.create("nativeMain")
-    val macosMain = sourceSets.getByName("macosMain")
-    val linuxMain = sourceSets.getByName("linuxMain")
+    val commonMain by sourceSets.getting
+    val nativeMain by sourceSets.creating
+    val macosMain by sourceSets.getting
+    val linuxMain by sourceSets.getting
 
     nativeMain.dependsOn(commonMain)
     macosMain.dependsOn(nativeMain)
     linuxMain.dependsOn(nativeMain)
-
-    commonMain.dependencies {
-        // option 1
-        //implementation("io.sellmair:libcurl:7.64.1-kib0")
-
-        // option 2 (also works)
-        implementation(project(":p1"))
-    }
 
     sourceSets.all {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
@@ -33,12 +25,4 @@ kotlin {
 
     macos.compilations.getByName("main").cinterops.create("curl")
     linux.compilations.getByName("main").cinterops.create("curl")
-
-}
-
-
-val someConfiguration = configurations.getByName("hello")
-dependencies {
-    someConfiguration.invoke(project.file(""))
-    someConfiguration("io.sellmair:library:1010")
 }

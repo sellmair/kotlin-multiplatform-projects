@@ -27,7 +27,7 @@ kotlin {
     commonMain.dependencies {
         api("org.jetbrains.kotlinx:atomicfu:0.15.1")
         implementation("io.ktor:ktor-client-core:1.5.1")
-        runtimeOnly("io.ktor:ktor-client-json:1.5.1")
+        api("io.ktor:ktor-client-json:1.5.1")
         compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt")
     }
 

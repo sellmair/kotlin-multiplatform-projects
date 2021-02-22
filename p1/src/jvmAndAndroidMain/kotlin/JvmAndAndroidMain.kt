@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.ktor.client.*
 import io.reactivex.rxjava3.core.Observable
+import kotlinx.atomicfu.AtomicInt
+import kotlinx.atomicfu.update
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -20,6 +22,12 @@ interface JvmAndAndroidMain : CommonMain {
     override fun useCoroutinesApis(): Deferred<String> {
         return runBlocking(Dispatchers.IO) {
             super.useCoroutinesApis()
+        }
+    }
+
+    override fun useAtomicFu(): AtomicInt {
+        return super.useAtomicFu().also { atomicInt ->
+            atomicInt.update { it + 1 }
         }
     }
 

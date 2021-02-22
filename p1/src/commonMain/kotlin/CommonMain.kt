@@ -1,4 +1,5 @@
 import io.ktor.client.*
+import kotlinx.atomicfu.*
 import kotlinx.coroutines.*
 
 interface CommonMain {
@@ -19,7 +20,7 @@ interface CommonMain {
         }
     }
 
-    fun useAtomicFu() {
-        atomic
+    fun useAtomicFu(): AtomicInt {
+        return atomic(0)
     }
 }

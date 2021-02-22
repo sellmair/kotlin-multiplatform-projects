@@ -28,6 +28,12 @@ class JvmMain: JvmAndAndroidMain {
         }
     }
 
+
+    /* TODO NOW: Should not be visible */
+    override fun androidSdkIsNotVisible(context: android.content.Context) {
+
+    }
+
     override fun useJdkApis(): ReentrantLock {
         return ReentrantLock()
     }

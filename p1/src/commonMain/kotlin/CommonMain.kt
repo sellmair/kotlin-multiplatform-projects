@@ -23,4 +23,10 @@ interface CommonMain {
     fun useAtomicFu(): AtomicInt {
         return atomic(0)
     }
+
+
+    /* TODO NOW: Should not be visible */
+    fun androidSdkIsNotVisible(context: android.content.Context) {
+
+    }
 }

@@ -31,6 +31,12 @@ interface JvmAndAndroidMain : CommonMain {
         }
     }
 
+
+    /* TODO NOW: Should not be visible */
+    override fun androidSdkIsNotVisible(context: android.content.Context) {
+
+    }
+
     fun useJdkApis(): ReentrantLock {
         return ReentrantLock()
     }

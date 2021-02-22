@@ -25,4 +25,9 @@ class IosMain: CommonMain {
             atomicInt.update { it + 1 }
         }
     }
+
+    /* TODO NOW: Should not be visible */
+    fun androidSdkIsNotVisible(context: android.content.Context) {
+
+    }
 }

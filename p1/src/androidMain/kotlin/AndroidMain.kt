@@ -20,6 +20,10 @@ class AndroidMain : JvmAndAndroidMain {
         }
     }
 
+    override fun useKtorApisCloseable(): Closeable {
+        return Closeable { }
+    }
+
     override fun useJdkApis(): ReentrantLock {
         return ReentrantLock()
     }

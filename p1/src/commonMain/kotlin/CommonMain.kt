@@ -1,4 +1,5 @@
 import io.ktor.client.*
+import io.ktor.utils.io.core.*
 import kotlinx.atomicfu.*
 import kotlinx.coroutines.*
 
@@ -12,6 +13,13 @@ interface CommonMain {
         }
     }
 
+    fun useKtorApisCloseable(): Closeable {
+        return object: Closeable {
+            override fun close() = Unit
+        }
+    }
+
+
     fun useCoroutinesApis(): Deferred<String> {
         return GlobalScope.async(Dispatchers.Main) {
             withContext(Dispatchers.Default) {
@@ -21,7 +29,9 @@ interface CommonMain {
     }
 
     fun useAtomicFu(): AtomicInt {
-        return atomic(0)
+        return atomic(0).also {
+            it.update { value -> value + 1 }
+        }
     }
 
 

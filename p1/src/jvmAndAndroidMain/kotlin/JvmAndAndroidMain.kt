@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.ktor.client.*
+import io.ktor.utils.io.core.*
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.atomicfu.AtomicInt
 import kotlinx.atomicfu.update
@@ -17,6 +18,10 @@ interface JvmAndAndroidMain : CommonMain {
         return super.useKtorApis().config {
             this.useDefaultTransformers = true
         }
+    }
+
+    override fun useKtorApisCloseable(): Closeable {
+        return Closeable {  }
     }
 
     override fun useCoroutinesApis(): Deferred<String> {

@@ -1,7 +1,7 @@
 @file:Suppress("unused")
 
-import android.content.Context
 import io.ktor.client.*
+import io.ktor.utils.io.core.*
 import kotlinx.atomicfu.AtomicInt
 import kotlinx.atomicfu.update
 import kotlinx.coroutines.Deferred
@@ -14,6 +14,10 @@ class JvmMain: JvmAndAndroidMain {
         return super.useKtorApis().config {
             this.useDefaultTransformers = true
         }
+    }
+
+    override fun useKtorApisCloseable(): Closeable {
+        return Closeable { }
     }
 
     override fun useCoroutinesApis(): Deferred<String> {
@@ -37,8 +41,5 @@ class JvmMain: JvmAndAndroidMain {
     override fun useJdkApis(): ReentrantLock {
         return ReentrantLock()
     }
-
-    fun useAndroidApis(context: Context): String {
-        return context.applicationContext.packageName
-    }
+    
 }

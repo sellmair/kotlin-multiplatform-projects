@@ -1,6 +1,7 @@
 @file:Suppress("unused")
 
 import io.ktor.client.*
+import io.ktor.utils.io.core.*
 import kotlinx.atomicfu.AtomicInt
 import kotlinx.atomicfu.update
 import kotlinx.coroutines.Deferred
@@ -8,11 +9,19 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
 class IosMain: CommonMain {
+
     override fun useKtorApis(): HttpClient {
         return super.useKtorApis().config {
             this.useDefaultTransformers = true
         }
     }
+
+    override fun useKtorApisCloseable(): Closeable {
+        return object: Closeable {
+            override fun close() = Unit
+        }
+    }
+
 
     override fun useCoroutinesApis(): Deferred<String> {
         return runBlocking(Dispatchers.Main) {
@@ -27,7 +36,7 @@ class IosMain: CommonMain {
     }
 
     /* TODO NOW: Should not be visible */
-    fun androidSdkIsNotVisible(context: android.content.Context) {
+    override fun androidSdkIsNotVisible(context: android.content.Context) {
 
     }
 }

@@ -6,13 +6,13 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.5.255-SNAPSHOT"
-        kotlin("android") version "1.5.255-SNAPSHOT"
+        kotlin("multiplatform") version "1.4.31"
+        kotlin("android") version "1.4.31"
     }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:4.0.2")
+                useModule("com.android.tools.build:gradle:4.1.2")
             }
         }
     }

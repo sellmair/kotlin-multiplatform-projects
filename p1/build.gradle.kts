@@ -8,13 +8,8 @@ android {
 }
 
 kotlin {
-    jvm()
     android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
+    jvm()
+    js()
+    linuxX64("linux")
 }

@@ -12,7 +12,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:4.1.2")
+                useModule("com.android.tools.build:gradle:3.6.4")
             }
         }
     }
@@ -20,5 +20,4 @@ pluginManagement {
 
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
-include(":p2")
 

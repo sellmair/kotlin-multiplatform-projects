@@ -6,8 +6,8 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.5.255-SNAPSHOT"
-        kotlin("android") version "1.5.255-SNAPSHOT"
+        kotlin("multiplatform") version "1.5.0-M1"
+        kotlin("android") version "1.5.0-M1"
     }
     resolutionStrategy {
         eachPlugin {
@@ -20,5 +20,4 @@ pluginManagement {
 
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
-include(":p2")
 

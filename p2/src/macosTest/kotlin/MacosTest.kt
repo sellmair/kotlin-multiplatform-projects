@@ -1,5 +1,5 @@
+import curl.*
 import kotlinx.cinterop.toKString
-import libcurl.*
 import kotlin.test.Test
 
 @OptIn(ExperimentalUnsignedTypes::class)
@@ -20,7 +20,7 @@ class MacosTest {
 
     @Test
     fun useNativeMain() {
-        nativeMain()
+        useCurl()
     }
 }
 

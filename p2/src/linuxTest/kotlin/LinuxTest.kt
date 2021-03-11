@@ -1,6 +1,5 @@
 import kotlinx.cinterop.toKString
-import libcurl.*
-import libcurl.*
+import curl.*
 
 import kotlin.test.Test
 

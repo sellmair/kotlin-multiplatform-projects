@@ -25,4 +25,6 @@ kotlin {
 
     macos.compilations.getByName("main").cinterops.create("curl")
     linux.compilations.getByName("main").cinterops.create("curl")
+    macos.compilations.getByName("main").cinterops.create("sqlite")
+    linux.compilations.getByName("main").cinterops.create("sqlite")
 }

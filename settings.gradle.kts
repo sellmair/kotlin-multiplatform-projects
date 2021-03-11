@@ -8,7 +8,6 @@ pluginManagement {
     }
     plugins {
         kotlin("multiplatform") version kotlinVersion
-        kotlin("interop-bundle") version kotlinVersion
         kotlin("android") version kotlinVersion
     }
     resolutionStrategy {

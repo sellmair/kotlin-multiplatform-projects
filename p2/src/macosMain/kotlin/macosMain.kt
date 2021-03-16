@@ -1,5 +1,7 @@
 import kotlinx.cinterop.toKString
 import curl.*
+import platform.posix.fopen
+import platform.posix.fts_open
 
 @OptIn(ExperimentalUnsignedTypes::class)
 fun macosMain() {

@@ -19,6 +19,9 @@ kotlin {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
 
-    x64.compilations.getByName("main").cinterops.create("dummy")
-    arm64.compilations.getByName("main").cinterops.create("dummy")
+    listOf(x64, arm64).forEach { target ->
+        target.compilations.getByName("main").cinterops.create("withPosix") {
+            header(file("libs/withPosix.h"))
+        }
+    }
 }

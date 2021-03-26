@@ -1,10 +1,10 @@
-import kotlinx.cinterop.useContents
 import platform.posix.stat
-import withPosix.getFileStat
+import platform.posix.fopen
 
 fun main() {
-    repeat(10) {
-        getFileStat().useContents { score(this) }
-    }
+    fopen("juhu.txt", "rw")
+    withPosix.helloFromNative()
+    //getFileStat().useContents { score(this) } // TODO: Why was that not further commonized :(
 }
+
 expect fun score(stat: stat): Int

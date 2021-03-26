@@ -3,23 +3,28 @@ plugins {
 }
 
 kotlin {
-    val x64 = linuxX64("x64")
-    val arm64 = linuxArm64("arm64")
+    val linuxX64 = linuxX64()
+    val linuxArm64 = linuxArm64()
+    val macos = macosX64("macos")
 
     val commonMain by sourceSets.getting
     val nativeMain by sourceSets.creating
-    val x64Main by sourceSets.getting
-    val arm64Main by sourceSets.getting
+    val linuxMain by sourceSets.creating
+    val linuxX64Main by sourceSets.getting
+    val linuxArm64Main by sourceSets.getting
+    val macosMain by sourceSets.getting
 
     nativeMain.dependsOn(commonMain)
-    x64Main.dependsOn(nativeMain)
-    arm64Main.dependsOn(nativeMain)
+    linuxMain.dependsOn(nativeMain)
+    linuxX64Main.dependsOn(linuxMain)
+    linuxArm64Main.dependsOn(linuxMain)
+    macosMain.dependsOn(nativeMain)
 
     sourceSets.all {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
 
-    listOf(x64, arm64).forEach { target ->
+    listOf(linuxArm64, linuxX64, macos).forEach { target ->
         target.compilations.getByName("main").cinterops.create("withPosix") {
             header(file("libs/withPosix.h"))
         }

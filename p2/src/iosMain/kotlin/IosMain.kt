@@ -1,7 +1,10 @@
+import kotlinx.cinterop.pointed
 import kotlinx.cinterop.useContents
 
-fun linuxMain() {
-    createMyStructFromNativeMain()
+fun iosMain() {
     withPosix.helloFromNative()
     withPosix.getFileStat().useContents { this }
+    withPosix.createMyStruct().useContents {
+
+    }
 }

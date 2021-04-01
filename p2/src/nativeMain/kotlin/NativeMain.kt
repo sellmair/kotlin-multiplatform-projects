@@ -1,10 +1,17 @@
-import platform.posix.stat
+import kotlinx.cinterop.pointed
 import platform.posix.fopen
+import withPosix.MyStruct
+import withPosix.createMyStructPointer
 
 fun main() {
     fopen("juhu.txt", "rw")
     withPosix.helloFromNative()
-    //getFileStat().useContents { score(this) } // TODO: Why was that not further commonized :(
+    withPosix.getFileStat()
+    createMyStructFromNativeMain().availableOnAllPlatforms
+    createMyStructFromNativeMain()
 }
 
-expect fun score(stat: stat): Int
+fun createMyStructFromNativeMain(): MyStruct {
+    return createMyStructPointer()!!.pointed
+}
+

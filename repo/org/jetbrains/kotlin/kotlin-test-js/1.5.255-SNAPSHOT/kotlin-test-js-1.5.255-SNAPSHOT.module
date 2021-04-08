@@ -1,0 +1,73 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.kotlin",
+    "module": "kotlin-test-js",
+    "version": "1.5.255-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7",
+      "buildId": "fvljxe7y5nebnjdms72bg6nplq"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApi",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.5.255-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-test-js-1.5.255-SNAPSHOT.jar",
+          "url": "kotlin-test-js-1.5.255-SNAPSHOT.jar",
+          "size": 92262,
+          "sha512": "f544680bf1783fbd58adc017bc5788e7dafdc510b4fb36886558d0ae2c0bd08e5c0a13fafea59524dda929afe118a2aa64af67fca013692cb15c82752d623464",
+          "sha256": "b12912644cb3a5dd96b3f81f5601eab7c3fe4a646a9272e3ca90aaa23b59d29e",
+          "sha1": "885f9c2d0e40ac5a0264bde39a0c4976fc2815c9",
+          "md5": "f99f4e435d58e513bb01efdcdaee76e7"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntime",
+      "attributes": {
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.5.255-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-test-js-1.5.255-SNAPSHOT.jar",
+          "url": "kotlin-test-js-1.5.255-SNAPSHOT.jar",
+          "size": 92262,
+          "sha512": "f544680bf1783fbd58adc017bc5788e7dafdc510b4fb36886558d0ae2c0bd08e5c0a13fafea59524dda929afe118a2aa64af67fca013692cb15c82752d623464",
+          "sha256": "b12912644cb3a5dd96b3f81f5601eab7c3fe4a646a9272e3ca90aaa23b59d29e",
+          "sha1": "885f9c2d0e40ac5a0264bde39a0c4976fc2815c9",
+          "md5": "f99f4e435d58e513bb01efdcdaee76e7"
+        }
+      ]
+    }
+  ]
+}

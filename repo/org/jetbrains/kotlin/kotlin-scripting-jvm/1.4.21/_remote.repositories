@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Apr 08 18:40:50 CEST 2021
+kotlin-scripting-jvm-1.4.21.jar>central-proxy=
+kotlin-scripting-jvm-1.4.21-sources.jar>central-proxy=
+kotlin-scripting-jvm-1.4.21.pom>central-proxy=

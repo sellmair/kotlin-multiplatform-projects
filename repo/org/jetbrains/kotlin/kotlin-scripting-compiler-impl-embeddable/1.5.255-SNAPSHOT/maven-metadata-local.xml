@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.jetbrains.kotlin</groupId>
+  <artifactId>kotlin-scripting-compiler-impl-embeddable</artifactId>
+  <version>1.5.255-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20210408163943</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.5.255-SNAPSHOT</value>
+        <updated>20210408163943</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>1.5.255-SNAPSHOT</value>
+        <updated>20210408163943</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.5.255-SNAPSHOT</value>
+        <updated>20210408163943</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>javadoc</classifier>
+        <extension>jar</extension>
+        <value>1.5.255-SNAPSHOT</value>
+        <updated>20210408163943</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

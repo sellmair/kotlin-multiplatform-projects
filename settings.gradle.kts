@@ -4,7 +4,7 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         google()
-        mavenLocal()
+        maven(file("repo"))
     }
     plugins {
         kotlin("multiplatform") version kotlinVersion

@@ -7,12 +7,8 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-        mavenLocal()
-        jcenter()
+        maven(rootProject.file("repo"))
     }
 }
 
-/*project(":p2").tasks.configureEach {
-    // 🤷‍ It's a demo. Who really cares?
-    dependsOn(":p1:publishToMavenLocal")
-}*/
+

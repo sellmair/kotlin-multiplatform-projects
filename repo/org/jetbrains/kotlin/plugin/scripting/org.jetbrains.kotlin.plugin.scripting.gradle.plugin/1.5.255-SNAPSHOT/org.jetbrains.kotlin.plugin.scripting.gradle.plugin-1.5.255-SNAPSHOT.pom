@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jetbrains.kotlin.plugin.scripting</groupId>
+  <artifactId>org.jetbrains.kotlin.plugin.scripting.gradle.plugin</artifactId>
+  <version>1.5.255-SNAPSHOT</version>
+  <name>Gradle plugin for kotlin scripting</name>
+  <description>Gradle plugin for kotlin scripting</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-gradle-plugin</artifactId>
+      <version>1.5.255-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+</project>

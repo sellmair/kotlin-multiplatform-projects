@@ -15,7 +15,7 @@ plugins {
 }
 
 kotlin {
-    js()
+    js().nodejs()
     jvm()
 
     linuxX64()

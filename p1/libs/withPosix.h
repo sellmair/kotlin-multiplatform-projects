@@ -13,7 +13,11 @@ struct MyStruct* getMyStructPointer();
 struct MyStruct {
     struct stat posixProperty;
 
-    long longProperty;
+    #if _WIN32
+        long long longProperty;
+    #else
+        long longProperty;
+    #endif
 
     double doubleProperty;
 

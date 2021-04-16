@@ -12,16 +12,6 @@ class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
 
 plugins {
     kotlin("multiplatform")
-    `maven-publish`
-}
-
-publishing {
-    repositories {
-        this.maven {
-            this.name = "build"
-            this.url = buildDir.resolve("repo").toURI()
-        }
-    }
 }
 
 kotlin {
@@ -76,14 +66,19 @@ kotlin {
         }
     }
 
+    linuxX64Main.dependencies {
+        implementation(project(":p1"))
+    }
 
     sourceSets.all {
         languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
 
-    targets.withType<KotlinNativeTarget>().forEach { target ->
+   /* targets.withType<KotlinNativeTarget>().forEach { target ->
         target.compilations.getByName("main").cinterops.create("withPosix") {
             header(file("libs/withPosix.h"))
         }
     }
+
+    */
 }

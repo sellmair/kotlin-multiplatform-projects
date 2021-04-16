@@ -1,20 +1,16 @@
+import org.jetbrains.kotlin.com.intellij.openapi.util.SystemInfo
+
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
-}
+
 
 kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    when {
+        SystemInfo.isLinux -> linuxX64("native")
+        SystemInfo.isMac -> macosX64("native")
+        SystemInfo.isWindows -> mingwX64("native")
+        else -> throw IllegalStateException("Unsupported host")
     }
 }

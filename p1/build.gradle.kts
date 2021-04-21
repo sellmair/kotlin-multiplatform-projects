@@ -16,7 +16,7 @@ plugins {
 
 kotlin {
 
-    val nativePlatform = when {
+    when {
         isMac -> macosX64("nativePlatform")
         isLinux -> linuxX64("nativePlatform")
         isWindows -> mingwX64("nativePlatform")

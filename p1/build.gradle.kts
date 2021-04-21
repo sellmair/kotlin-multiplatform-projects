@@ -46,7 +46,14 @@ kotlin {
     tasks.register("listNativePlatformMainDependencies") {
         doLast {
             val dependencyFiles = nativePlatform.compilations["main"].compileDependencyFiles.files +
-                    project.configurations.getByName(nativePlatformMain.implementationMetadataConfigurationName).files
+
+                    project.configurations.getByName(
+                        nativePlatformMain.implementationMetadataConfigurationName
+                    ).files +
+
+                    project.configurations.findByName(
+                        "intransitive" + nativePlatformMain.implementationMetadataConfigurationName.capitalize()
+                    )?.files.orEmpty()
 
             logger.quiet("NativePlatformMainDependency | Count: ${dependencyFiles.size}")
             dependencyFiles.forEach { dependencyFile ->

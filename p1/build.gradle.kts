@@ -12,16 +12,6 @@ class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
 
 plugins {
     kotlin("multiplatform")
-    `maven-publish`
-}
-
-publishing {
-    repositories {
-        this.maven {
-            this.name = "build"
-            this.url = buildDir.resolve("repo").toURI()
-        }
-    }
 }
 
 kotlin {

@@ -1,5 +1,5 @@
-import kotlin.reflect.KProperty1
+@file:Suppress("unused")
 
-class CommonMain {
-    val x: KProperty1<List<*>, Int> = List<*>::size
+fun commonMain(args: List<String>) {
+
 }

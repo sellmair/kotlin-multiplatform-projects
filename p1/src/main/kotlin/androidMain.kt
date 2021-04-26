@@ -1,7 +1,9 @@
+@file:Suppress("unused")
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-fun alsoUseCoroutines() = GlobalScope.launch(Dispatchers.IO) {
+fun androidMain() = GlobalScope.launch(Dispatchers.IO) {
 
 }

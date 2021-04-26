@@ -1,7 +1,7 @@
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
-fun useCoroutines() {
+fun jvmAndAndroidMain() {
     runBlocking(Dispatchers.IO) {
         //
     }

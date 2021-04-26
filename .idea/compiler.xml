@@ -13,13 +13,15 @@
       <module name="mpp-issue-bootstrap.p1.androidTest" target="1.6" />
       <module name="mpp-issue-bootstrap.p1.androidTestDebug" target="1.6" />
       <module name="mpp-issue-bootstrap.p1.androidTestRelease" target="1.6" />
+      <module name="mpp-issue-bootstrap.p1.concurrentMain" target="1.8" />
       <module name="mpp-issue-bootstrap.p1.jvmAndJsMain" target="1.6" />
-      <module name="mpp-issue-bootstrap.p2.commonMain" target="1.6" />
-      <module name="mpp-issue-bootstrap.p2.commonTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.commonMain" target="1.8" />
+      <module name="mpp-issue-bootstrap.p2.commonTest" target="1.8" />
+      <module name="mpp-issue-bootstrap.p2.concurrentMain" target="1.8" />
       <module name="mpp-issue-bootstrap.p2.jvmAndAndroidMain" target="1.6" />
       <module name="mpp-issue-bootstrap.p2.jvmAndJsMain" target="1.6" />
-      <module name="mpp-issue-bootstrap.p2.jvmMain" target="1.6" />
-      <module name="mpp-issue-bootstrap.p2.jvmTest" target="1.6" />
+      <module name="mpp-issue-bootstrap.p2.jvmMain" target="1.8" />
+      <module name="mpp-issue-bootstrap.p2.jvmTest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -6,3 +6,7 @@ allprojects {
         jcenter()
     }
 }
+
+plugins {
+    kotlin("multiplatform") apply false
+}

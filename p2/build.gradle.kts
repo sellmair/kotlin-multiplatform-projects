@@ -1,37 +1,42 @@
+import org.jetbrains.kotlin.gradle.plugin.sources.DefaultKotlinSourceSet
+
 plugins {
     kotlin("multiplatform")
 }
 
 kotlin {
     jvm()
-    js { browser() }
-
     ios()
+    linuxX64()
+    linuxArm64()
 
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":p1"))
-                implementation(kotlin("stdlib-common"))
-            }
-        }
+    val commonMain by sourceSets.getting
+    val linuxMain by sourceSets.creating
+    val linuxX64Main by sourceSets.getting
+    val linuxArm64Main by sourceSets.getting
 
-        val jvmAndJsMain by creating {
-            dependsOn(commonMain)
-        }
+    linuxMain.dependsOn(commonMain)
+    linuxX64Main.dependsOn(linuxMain)
+    linuxArm64Main.dependsOn(linuxMain)
 
-        val jvmMain by getting {
-            dependsOn(jvmAndJsMain)
-            dependencies {
-                implementation(kotlin("stdlib-jdk8"))
-            }
-        }
+    commonMain.dependencies {
+        implementation(project(":p1"))
+    }
+}
 
-        val jsMain by getting {
-            dependsOn(jvmAndJsMain)
-            dependencies {
-                implementation(kotlin("stdlib-js"))
-            }
-        }
+
+tasks.register("debugMe") {
+    doLast {
+        println(
+            (kotlin.sourceSets.getByName("iosArm64Test") as DefaultKotlinSourceSet)
+                .getDependenciesTransformation("iosArm64TestImplementationDependenciesMetadata").joinToString(";")
+        )
+
+        println("....")
+
+        println(
+            (kotlin.sourceSets.getByName("iosArm64Test") as DefaultKotlinSourceSet)
+                .getDependenciesTransformation("iosArm64TestCompileOnlyDependenciesMetadata").joinToString(";")
+        )
     }
 }

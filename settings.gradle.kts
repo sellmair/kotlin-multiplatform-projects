@@ -6,8 +6,9 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.5.0" // <- bad
-        //kotlin("multiplatform") version "1.5.0-RC" // <- good
+        //kotlin("multiplatform") version "1.5.0" // <- bad
+        //kotlin("multiplatform") version "1.5.255-SNAPSHOT" // <- good
+        kotlin("multiplatform") version "1.5.0-RC" // <- good
     }
 }
 

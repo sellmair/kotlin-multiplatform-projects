@@ -1,8 +1,7 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class P2IosArm64Test {
-
+class P2LinuxX64Test {
     @Test
     fun testCommonMain() {
         val x = P1CommonMain()
@@ -17,7 +16,7 @@ class P2IosArm64Test {
 
     @Test
     fun testIosMain() {
-        val x = P1IosMain()
-        assertEquals(x.invoke(), P1IosMain())
+        val x = P1LinuxMain()
+        assertEquals(x.invoke(), P1LinuxMain())
     }
 }

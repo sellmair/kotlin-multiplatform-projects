@@ -4,60 +4,21 @@ plugins {
 
 kotlin {
     jvm()
-    js {
-        browser()
-    }
-
     ios()
+    linuxX64()
+    linuxArm64()
 
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(kotlin("stdlib-common"))
-            }
-        }
+    val commonMain by sourceSets.getting
+    val nativeMain by sourceSets.creating
+    val iosMain by sourceSets.getting
+    val linuxMain by sourceSets.creating
+    val linuxX64Main by sourceSets.getting
+    val linuxArm64Main by sourceSets.getting
 
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
-            }
-        }
+    nativeMain.dependsOn(commonMain)
+    linuxMain.dependsOn(nativeMain)
+    iosMain.dependsOn(nativeMain)
 
-        val jvmAndJsMain by creating {
-            dependsOn(commonMain)
-        }
-
-        val jvmAndJsTest by creating {
-            dependsOn(commonTest)
-        }
-
-        val jvmMain by getting {
-            dependsOn(jvmAndJsMain)
-            dependencies {
-                implementation(kotlin("stdlib-jdk8"))
-            }
-        }
-
-        val jvmTest by getting {
-            dependsOn(jvmAndJsTest)
-            dependencies {
-                implementation(kotlin("test-junit"))
-            }
-        }
-
-        val jsMain by getting {
-            dependsOn(jvmAndJsMain)
-            dependencies {
-                implementation(kotlin("stdlib-js"))
-            }
-        }
-
-        val jsTest by getting {
-            dependsOn(jvmAndJsTest)
-            dependencies {
-                implementation(kotlin("test-js"))
-            }
-        }
-    }
+    linuxX64Main.dependsOn(linuxMain)
+    linuxArm64Main.dependsOn(linuxMain)
 }

@@ -1,3 +1,3 @@
 object P1IosMain {
-    fun invoke() = Unit
+    operator fun invoke() = P1IosMain
 }

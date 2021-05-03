@@ -1,7 +1,7 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class P2IosArm64Test {
+class P2IosTest {
 
     @Test
     fun testCommonMain() {

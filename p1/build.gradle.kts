@@ -1,20 +1,34 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
-}
 
 kotlin {
     jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
+    ios()
+    watchos()
+    tvos()
+    macos {
+        binaries.executable {
+            entryPoint = "main"
+        }
+    }
+
+    val commonTest by sourceSets.getting
+    val jvmTest by sourceSets.getting
+
+    commonTest.dependencies {
+        implementation(kotlin("test-common"))
+        implementation(kotlin("test-annotations-common"))
+    }
+
+    jvmTest.dependencies {
+        implementation(kotlin("test-junit"))
+    }
+
+    tasks.withType<AbstractTestTask>().configureEach {
+        testLogging {
+            showStandardStreams = true
         }
     }
 }

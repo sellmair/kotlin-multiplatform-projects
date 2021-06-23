@@ -28,8 +28,6 @@ publishing {
 kotlin {
     ios {
         compilations.getByName("main").cinterops.create("StarIO")
-        binaries.framework {
-            this.embedBitcode(org.jetbrains.kotlin.gradle.plugin.mpp.BitcodeEmbeddingMode.DISABLE)
-        }
+        binaries.framework()
     }
 }

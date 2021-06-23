@@ -28,9 +28,6 @@ publishing {
 kotlin {
     ios {
         compilations.getByName("main").cinterops.create("StarIO")
-        compilations.getByName("main").kotlinOptions {
-            this.freeCompilerArgs = freeCompilerArgs + listOf("-Xverbose-phases=Linker", "-Xtemporary-files-dir=/Users/sebastiansellmair/IdeaProjects/mpp-issue-bootstrap/p1/build/tmp")
-        }
         binaries.framework {
             this.embedBitcode(org.jetbrains.kotlin.gradle.plugin.mpp.BitcodeEmbeddingMode.DISABLE)
         }

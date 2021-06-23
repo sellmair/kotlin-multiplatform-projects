@@ -1,13 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
-
-operator fun KotlinSourceSet.invoke(builder: SourceSetHierarchyBuilder.() -> Unit): KotlinSourceSet {
-    SourceSetHierarchyBuilder(this).builder()
-    return this
-}
-
-class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
-    operator fun KotlinSourceSet.unaryMinus() = this.dependsOn(node)
-}
 
 plugins {
     kotlin("multiplatform")

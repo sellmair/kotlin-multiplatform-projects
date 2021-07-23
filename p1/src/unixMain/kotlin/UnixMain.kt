@@ -3,7 +3,8 @@
 import nativeHelper.nativeHelper
 import unixHelper.unixHelper
 
-object NativeMain {
+
+object UnixMain {
     val native = nativeHelper()
     val unix = unixHelper()
 }

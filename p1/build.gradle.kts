@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.plugin.sources.DefaultKotlinSourceSet
+import org.jetbrains.kotlin.konan.target.Family.*
 
 operator fun KotlinSourceSet.invoke(builder: SourceSetHierarchyBuilder.() -> Unit): KotlinSourceSet {
     SourceSetHierarchyBuilder(this).builder()
@@ -12,20 +14,9 @@ class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
 
 plugins {
     kotlin("multiplatform")
-    `maven-publish`
-}
-
-publishing {
-    repositories {
-        this.maven {
-            this.name = "build"
-            this.url = buildDir.resolve("repo").toURI()
-        }
-    }
 }
 
 kotlin {
-    js().nodejs()
     jvm()
 
     linuxX64()
@@ -38,52 +29,127 @@ kotlin {
     mingwX86("windowsX86")
 
     val commonMain by sourceSets.getting
-    val concurrentMain by sourceSets.creating
+    val commonTest by sourceSets.getting
     val jvmMain by sourceSets.getting
-    val jsMain by sourceSets.getting
     val nativeMain by sourceSets.creating
-    val appleAndLinuxMain by sourceSets.creating
+    val nativeTest by sourceSets.creating
+    val unixMain by sourceSets.creating
+    val unixTest by sourceSets.creating
     val linuxMain by sourceSets.creating
+    val linuxTest by sourceSets.creating
     val linuxX64Main by sourceSets.getting
+    val linuxX64Test by sourceSets.getting
     val linuxArm64Main by sourceSets.getting
+    val linuxArm64Test by sourceSets.getting
     val appleMain by sourceSets.creating
+    val appleTest by sourceSets.creating
     val macosMain by sourceSets.getting
+    val macosTest by sourceSets.getting
     val iosMain by sourceSets.getting
+    val iosTest by sourceSets.getting
     val windowsMain by sourceSets.creating
+    val windowsTest by sourceSets.creating
     val windowsX64Main by sourceSets.getting
+    val windowsX64Test by sourceSets.getting
     val windowsX86Main by sourceSets.getting
+    val windowsX86Test by sourceSets.getting
 
     commonMain {
-        -jsMain
-        -concurrentMain {
-            -jvmMain
-            -nativeMain {
-                -appleAndLinuxMain {
-                    -appleMain {
-                        -iosMain
-                        -macosMain
-                    }
-                    -linuxMain {
-                        -linuxArm64Main
-                        -linuxX64Main
-                    }
+        -jvmMain
+        -nativeMain {
+            -unixMain {
+                -appleMain {
+                    -iosMain
+                    -macosMain
                 }
-                -windowsMain {
-                    -windowsX64Main
-                    -windowsX86Main
+                -linuxMain {
+                    -linuxArm64Main
+                    -linuxX64Main
                 }
+            }
+            -windowsMain {
+                -windowsX64Main
+                -windowsX86Main
             }
         }
     }
 
+    commonTest {
+        -nativeTest {
+            -unixTest {
+                -appleTest {
+                    -iosTest
+                    -macosTest
+                }
+                -linuxTest {
+                    -linuxArm64Test
+                    -linuxX64Test
+                }
+            }
+            -windowsTest {
+                -windowsX64Test
+                -windowsX86Test
+            }
+        }
+    }
 
-    sourceSets.all {
-        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
+    if (properties["testSourceSetsDependingOnMain"] == "true") {
+        logger.quiet("testSourceSetsDependingOnMain is set")
+        nativeTest.dependsOn(nativeMain)
+        unixTest.dependsOn(unixMain)
+        appleTest.dependsOn(appleMain)
+        linuxTest.dependsOn(linuxMain)
+        windowsTest.dependsOn(windowsMain)
     }
 
     targets.withType<KotlinNativeTarget>().forEach { target ->
-        target.compilations.getByName("main").cinterops.create("withPosix") {
-            header(file("libs/withPosix.h"))
+        target.compilations.getByName("main").cinterops.create("nativeHelper") {
+            headers(file("libs/nativeHelper.h"))
+        }
+
+        target.compilations.getByName("test").cinterops.create("nativeTestHelper") {
+            headers(file("libs/nativeTestHelper.h"))
+        }
+
+        if (target.konanTarget.family.isAppleFamily || target.konanTarget.family == LINUX) {
+            target.compilations.getByName("main").cinterops.create("unixHelper") {
+                headers(file("libs/unixHelper.h"))
+            }
+        }
+
+        if (target.konanTarget.family.isAppleFamily) {
+            target.compilations.getByName("main").cinterops.create("appleHelper") {
+                headers(file("libs/appleHelper.h"))
+            }
+        }
+
+        if (target.konanTarget.family == IOS) {
+            target.compilations.getByName("test").cinterops.create("iosTestHelper") {
+                headers(file("libs/iosTestHelper.h"))
+            }
+        }
+
+        if (target.konanTarget.family == MINGW) {
+            target.compilations.getByName("main").cinterops.create("windowsHelper") {
+                headers(file("libs/windowsHelper.h"))
+            }
+        }
+    }
+}
+
+tasks.register("reportCommonizerSourceSetDependencies") {
+    kotlin.sourceSets.withType(DefaultKotlinSourceSet::class).all {
+        inputs.files(configurations.getByName(intransitiveMetadataConfigurationName))
+    }
+
+    doLast {
+        kotlin.sourceSets.filterIsInstance<DefaultKotlinSourceSet>().forEach { sourceSet ->
+            val configuration = configurations.getByName(sourceSet.intransitiveMetadataConfigurationName)
+            val dependencies = configuration.files
+
+            logger.quiet(
+                "Report[${sourceSet.name}]${dependencies.joinToString("|#+#|")}"
+            )
         }
     }
 }

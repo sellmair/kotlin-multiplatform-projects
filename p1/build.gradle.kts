@@ -1,20 +1,23 @@
 plugins {
-    id("com.android.library")
+    //id("com.android.library")
     kotlin("multiplatform")
 }
 
+/*
 android {
     compileSdkVersion(30)
 }
 
+ */
+
 kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    //android()
+    macosX64()
+    ios()
+
+    val commonTest by sourceSets.getting
+    
+    commonTest.dependencies {
+        implementation("io.mockk:mockk:1.11.0")
     }
 }

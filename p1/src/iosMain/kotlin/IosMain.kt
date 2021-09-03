@@ -1,23 +1,27 @@
 @file:Suppress("unused")
 
-import kotlinx.cinterop.pointed
-import platform.posix.stat
-import withPosix.getMyStructPointer
-import withPosix.getStructFromPosix
-import withPosix.getStructPointerFromPosix
+import kotlinx.cinterop.CValuesRef
+import kotlinx.cinterop.convert
+import platform.posix.FILE
+import platform.posix.fread
+import platform.posix.size_t
 
-object IosMain {
-    val structFromPosix = getStructFromPosix()
-    val structPointerFromPosix = getStructPointerFromPosix()
+actual fun fread(
+    __ptr: CValuesRef<*>?,
+    __size: common_size_t,
+    __nitems: common_size_t,
+    __stream: CValuesRef<FILE>?
+): common_size_t = fread(__ptr, __size.convert(), __nitems.convert(), __stream).convert()
 
-    object MyStruct {
-        val struct = getMyStructPointer()?.pointed ?: error("Missing my struct")
-        val posixProperty: stat = struct.posixProperty
-        val longProperty: Long = struct.longProperty
-        val doubleProperty: Double = struct.doubleProperty
-        val int32tProperty: Int = struct.int32tProperty
-        val int64TProperty: Long = struct.int64tProperty
-        val appleOnly: Boolean = struct.appleOnlyProperty
-        val iosOnly: Boolean = struct.iosOnlyProperty
-    }
+actual fun plus(first: common_size_t, second: common_size_t) {
+
+}
+
+actual fun getDefaultMask(): common_size_t {
+    // call some platform API which ULong and then what? Coerce it to Int?
+    TODO()
+}
+
+actual fun setMask(mask: common_size_t) {
+    TODO()
 }

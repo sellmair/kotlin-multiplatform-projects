@@ -13,7 +13,6 @@ object AppleAndLinuxMain {
     object MyStruct {
         val struct = getMyStructPointer()?.pointed ?: error("Missing my struct")
         val posixProperty: stat = struct.posixProperty
-        val longProperty: Long = struct.longProperty
         val doubleProperty: Double = struct.doubleProperty
         val int32tProperty: Int = struct.int32tProperty
         val int64TProperty: Long = struct.int64tProperty

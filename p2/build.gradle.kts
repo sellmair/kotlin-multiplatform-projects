@@ -25,7 +25,6 @@ kotlin {
     ios()
 
     mingwX64("windowsX64")
-    mingwX86("windowsX86")
 
     val commonMain by sourceSets.getting
     val concurrentMain by sourceSets.creating
@@ -41,7 +40,6 @@ kotlin {
     val iosMain by sourceSets.getting
     val windowsMain by sourceSets.creating
     val windowsX64Main by sourceSets.getting
-    val windowsX86Main by sourceSets.getting
 
     commonMain {
         -jsMain
@@ -60,14 +58,13 @@ kotlin {
                 }
                 -windowsMain {
                     -windowsX64Main
-                    -windowsX86Main
                 }
             }
         }
     }
 
-    linuxX64Main.dependencies {
-        implementation(project(":p1"))
+    commonMain.dependencies {
+        implementation("mpp-issue-bootstrap:p1:1.0.0-SNAPSHOT")
     }
 
     sourceSets.all {

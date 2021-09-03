@@ -10,6 +10,8 @@ class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
     operator fun KotlinSourceSet.unaryMinus() = this.dependsOn(node)
 }
 
+version = "1.0.0-SNAPSHOT"
+
 plugins {
     kotlin("multiplatform")
     `maven-publish`
@@ -33,6 +35,8 @@ kotlin {
 
     macosX64("macos")
     ios()
+    watchos()
+    tvos()
 
     mingwX64("windowsX64")
     mingwX86("windowsX86")
@@ -49,6 +53,8 @@ kotlin {
     val appleMain by sourceSets.creating
     val macosMain by sourceSets.getting
     val iosMain by sourceSets.getting
+    val watchosMain by sourceSets.getting
+    val tvosMain by sourceSets.getting
     val windowsMain by sourceSets.creating
     val windowsX64Main by sourceSets.getting
     val windowsX86Main by sourceSets.getting
@@ -62,6 +68,8 @@ kotlin {
                     -appleMain {
                         -iosMain
                         -macosMain
+                        -watchosMain
+                        -tvosMain
                     }
                     -linuxMain {
                         -linuxArm64Main

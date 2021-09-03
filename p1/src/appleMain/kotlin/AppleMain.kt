@@ -1,22 +1,31 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "NO_ACTUAL_FOR_EXPECT")
 
-import kotlinx.cinterop.pointed
-import platform.posix.stat
-import withPosix.getMyStructPointer
-import withPosix.getStructFromPosix
-import withPosix.getStructPointerFromPosix
+import kotlinx.cinterop.CValuesRef
+import kotlinx.cinterop.UnsafeNumber
+import platform.posix.FILE
+import platform.posix.size_t
 
-object AppleMain {
-    val structFromPosix = getStructFromPosix()
-    val structPointerFromPosix = getStructPointerFromPosix()
+internal typealias common_size_t = size_t
 
-    object MyStruct {
-        val struct = getMyStructPointer()?.pointed ?: error("Missing my struct")
-        val posixProperty: stat = struct.posixProperty
-        val longProperty: Long = struct.longProperty
-        val doubleProperty: Double = struct.doubleProperty
-        val int32tProperty: Int = struct.int32tProperty
-        val int64TProperty: Long = struct.int64tProperty
-        val appleOnlyProperty: Boolean = struct.appleOnlyProperty
-    }
-}
+@OptIn(UnsafeNumber::class)
+expect fun fread(
+    __ptr: CValuesRef<*>?,
+    __size: size_t,
+    __nitems: size_t,
+    __stream: CValuesRef<FILE>?
+): size_t
+
+expect fun plus(first: size_t, second: size_t)
+
+//@OptIn(UnsafeNumber::class)
+//fun setMask(value: size_t, mask: size_t): size_t {
+//    return value.and(mask)
+//}
+
+expect fun getDefaultMask(): size_t
+
+expect fun setMask(mask: common_size_t)
+
+//fun initialization() {
+//    setMask(getDefaultMask())
+//}

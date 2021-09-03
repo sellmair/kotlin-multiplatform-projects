@@ -1,22 +1,33 @@
 @file:Suppress("unused")
 
-import kotlinx.cinterop.pointed
-import platform.posix.stat
-import withPosix.getMyStructPointer
-import withPosix.getStructFromPosix
-import withPosix.getStructPointerFromPosix
+import kotlinx.cinterop.UnsafeNumber
+import kotlinx.cinterop.convert
+import platform.posix.size_t
 
-object AppleMain {
-    val structFromPosix = getStructFromPosix()
-    val structPointerFromPosix = getStructPointerFromPosix()
+typealias X = Any
 
-    object MyStruct {
-        val struct = getMyStructPointer()?.pointed ?: error("Missing my struct")
-        val posixProperty: stat = struct.posixProperty
-        val longProperty: Long = struct.longProperty
-        val doubleProperty: Double = struct.doubleProperty
-        val int32tProperty: Int = struct.int32tProperty
-        val int64TProperty: Long = struct.int64tProperty
-        val appleOnlyProperty: Boolean = struct.appleOnlyProperty
-    }
+fun xPlatform1(): X = TODO()
+fun xPlatfrom2(): X? = TODO()
+fun xCommon(): X? = TODO()
+fun fromCommonCode() {
+    invariantUseOfX(mutableListOf(xPlatform1(), xPlatfrom2()))
+    val comingFrom1 = mutableListOf(xPlatform1())
+    val comingFrom2 = mutableListOf(xPlatfrom2())
+    val common = mutableListOf(xCommon())
+    invariantUseOfX(comingFrom1)
+    invariantUseOfX(comingFrom2)
+    invariantUseOfX(common)
+}
+
+fun invariantUseOfX(list: MutableList<X?>) {
+
+}
+
+fun x(value: size_t) {
+    // WORK
+}
+
+@OptIn(UnsafeNumber::class)
+fun y() {
+    setMask(getDefaultMask().convert())
 }

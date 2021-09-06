@@ -6,17 +6,6 @@ import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
 
-object MacosMain {
-    val structFromPosix = getStructFromPosix()
-    val structPointerFromPosix = getStructPointerFromPosix()
+actual fun getDefaultMask(): common_size_t = 20u
 
-    object MyStruct {
-        val struct = getMyStructPointer()?.pointed ?: error("Missing my struct")
-        val posixProperty: stat = struct.posixProperty
-        val longProperty: Long = struct.longProperty
-        val doubleProperty: Double = struct.doubleProperty
-        val int32tProperty: Int = struct.int32tProperty
-        val int64TProperty: Long = struct.int64tProperty
-        val appleOnlyProperty: Boolean = struct.appleOnlyProperty
-    }
-}
+actual fun setMask(mask: common_size_t) = Unit

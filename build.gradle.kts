@@ -20,6 +20,9 @@ kotlin {
 
     nativeTarget.compilations["main"].cinterops.create("sampleInterop") {
         header(file("src/nativeInterop/cinterop/sampleInterop.h"))
-        header(file("src/nativeInterop/cinterop/sampleInteropNoise.h"))
     }
+
+    val nativeTest by sourceSets.getting
+    val nativeIntermediateTest by sourceSets.creating
+    nativeIntermediateTest.dependsOn(nativeTest)
 }

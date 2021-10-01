@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 operator fun KotlinSourceSet.invoke(builder: SourceSetHierarchyBuilder.() -> Unit): KotlinSourceSet {
     SourceSetHierarchyBuilder(this).builder()
@@ -8,6 +7,12 @@ operator fun KotlinSourceSet.invoke(builder: SourceSetHierarchyBuilder.() -> Uni
 
 class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
     operator fun KotlinSourceSet.unaryMinus() = this.dependsOn(node)
+}
+
+repositories {
+    maven {
+        url = project(":p1").buildDir.resolve("repo").toURI()
+    }
 }
 
 plugins {
@@ -66,19 +71,12 @@ kotlin {
         }
     }
 
-    linuxX64Main.dependencies {
+    sourceSets.commonMain.get().dependencies {
         implementation(project(":p1"))
+        //implementation("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
     }
 
     sourceSets.all {
-        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
+        languageSettings.optIn("kotlin.RequiresOptIn")
     }
-
-   /* targets.withType<KotlinNativeTarget>().forEach { target ->
-        target.compilations.getByName("main").cinterops.create("withPosix") {
-            header(file("libs/withPosix.h"))
-        }
-    }
-
-    */
 }

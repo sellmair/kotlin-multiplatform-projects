@@ -15,6 +15,8 @@ plugins {
     `maven-publish`
 }
 
+version = "1.0.0-SNAPSHOT"
+
 publishing {
     repositories {
         this.maven {
@@ -76,14 +78,16 @@ kotlin {
         }
     }
 
-
     sourceSets.all {
-        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
+        languageSettings.optIn("kotlin.RequiresOptIn")
     }
 
     targets.withType<KotlinNativeTarget>().forEach { target ->
         target.compilations.getByName("main").cinterops.create("withPosix") {
             header(file("libs/withPosix.h"))
+        }
+        target.compilations.getByName("main").cinterops.create("simple") {
+            header(file("libs/simple.h"))
         }
     }
 }

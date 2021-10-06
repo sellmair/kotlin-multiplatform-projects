@@ -1,0 +1,1 @@
+expect val platformName: String

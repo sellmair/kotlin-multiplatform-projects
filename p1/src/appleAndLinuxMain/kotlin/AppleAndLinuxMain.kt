@@ -2,6 +2,7 @@
 
 import kotlinx.cinterop.pointed
 import platform.posix.stat
+import simple.simpleInterop
 import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
@@ -18,4 +19,6 @@ object AppleAndLinuxMain {
         val int32tProperty: Int = struct.int32tProperty
         val int64TProperty: Long = struct.int64tProperty
     }
+
+    val simple = simpleInterop()
 }

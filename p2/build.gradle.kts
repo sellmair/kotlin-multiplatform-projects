@@ -11,7 +11,7 @@ class SourceSetHierarchyBuilder(private val node: KotlinSourceSet) {
 
 repositories {
     maven {
-        url = project(":p1").buildDir.resolve("repo").toURI()
+        url = rootProject.buildDir.resolve("repo").toURI()
     }
 }
 
@@ -33,20 +33,32 @@ kotlin {
     mingwX86("windowsX86")
 
     val commonMain by sourceSets.getting
+    val commonTest by sourceSets.getting
     val concurrentMain by sourceSets.creating
     val jvmMain by sourceSets.getting
     val jsMain by sourceSets.getting
     val nativeMain by sourceSets.creating
+    val nativeTest by sourceSets.creating
     val appleAndLinuxMain by sourceSets.creating
+    val appleAndLinuxTest by sourceSets.creating
     val linuxMain by sourceSets.creating
+    val linuxTest by sourceSets.creating
     val linuxX64Main by sourceSets.getting
+    val linuxX64Test by sourceSets.getting
     val linuxArm64Main by sourceSets.getting
+    val linuxArm64Test by sourceSets.getting
     val appleMain by sourceSets.creating
+    val appleTest by sourceSets.creating
     val macosMain by sourceSets.getting
+    val macosTest by sourceSets.getting
     val iosMain by sourceSets.getting
+    val iosTest by sourceSets.getting
     val windowsMain by sourceSets.creating
+    val windowsTest by sourceSets.creating
     val windowsX64Main by sourceSets.getting
+    val windowsX64Test by sourceSets.getting
     val windowsX86Main by sourceSets.getting
+    val windowsX86Test by sourceSets.getting
 
     commonMain {
         -jsMain
@@ -71,12 +83,26 @@ kotlin {
         }
     }
 
-    sourceSets.commonMain.get().dependencies {
-        implementation(project(":p1"))
-        //implementation("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
+    commonTest {
+        -nativeTest {
+            -appleAndLinuxTest {
+                -appleTest {
+                    -iosTest
+                    -macosTest
+                }
+                -linuxTest {
+                    -linuxArm64Test
+                    -linuxX64Test
+                }
+            }
+            -windowsTest {
+                -windowsX64Test
+                -windowsX86Test
+            }
+        }
     }
 
-    sourceSets.all {
-        languageSettings.optIn("kotlin.RequiresOptIn")
+    sourceSets.commonMain.get().dependencies {
+        api("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
     }
 }

@@ -2,6 +2,7 @@
 
 import kotlinx.cinterop.pointed
 import platform.posix.stat
+import simple.simpleInterop
 import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
@@ -20,4 +21,6 @@ object IosMain {
         val appleOnly: Boolean = struct.appleOnlyProperty
         val iosOnly: Boolean = struct.iosOnlyProperty
     }
+
+    val simple = simpleInterop()
 }

@@ -21,7 +21,7 @@ publishing {
     repositories {
         this.maven {
             this.name = "build"
-            this.url = buildDir.resolve("repo").toURI()
+            this.url = rootProject.buildDir.resolve("repo").toURI()
         }
     }
 }
@@ -78,12 +78,9 @@ kotlin {
         }
     }
 
-    sourceSets.all {
-        languageSettings.optIn("kotlin.RequiresOptIn")
-    }
-
     targets.withType<KotlinNativeTarget>().forEach { target ->
         target.compilations.getByName("main").cinterops.create("withPosix") {
+            this.packageName = "withPosix"
             header(file("libs/withPosix.h"))
         }
         target.compilations.getByName("main").cinterops.create("simple") {

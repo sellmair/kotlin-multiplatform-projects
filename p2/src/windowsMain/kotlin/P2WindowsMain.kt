@@ -2,11 +2,12 @@
 
 import kotlinx.cinterop.pointed
 import platform.posix.stat
+import simple.simpleInterop
 import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
 
-object IosMain {
+object P2WindowsMain {
     val structFromPosix = getStructFromPosix()
     val structPointerFromPosix = getStructPointerFromPosix()
 
@@ -17,7 +18,9 @@ object IosMain {
         val doubleProperty: Double = struct.doubleProperty
         val int32tProperty: Int = struct.int32tProperty
         val int64TProperty: Long = struct.int64tProperty
-        val appleOnly: Boolean = struct.appleOnlyProperty
-        val iosOnly: Boolean = struct.iosOnlyProperty
+        val windowsOnly: Boolean = struct.windowsOnlyProperty
     }
+
+    val simple = simpleInterop()
+    val p1 = WindowsMain.structFromPosix
 }

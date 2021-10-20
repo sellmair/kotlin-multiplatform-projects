@@ -2,6 +2,7 @@
 
 import kotlinx.cinterop.pointed
 import platform.posix.stat
+import simple.simpleInterop
 import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
@@ -16,4 +17,6 @@ object NativeMain {
         val longProperty: Long = struct.longProperty
         val doubleProperty: Double = struct.doubleProperty
     }
+
+    val simple = simpleInterop()
 }

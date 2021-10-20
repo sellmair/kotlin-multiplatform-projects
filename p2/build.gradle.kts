@@ -20,7 +20,6 @@ plugins {
 }
 
 kotlin {
-    js().nodejs()
     jvm()
 
     linuxX64()
@@ -34,9 +33,7 @@ kotlin {
 
     val commonMain by sourceSets.getting
     val commonTest by sourceSets.getting
-    val concurrentMain by sourceSets.creating
     val jvmMain by sourceSets.getting
-    val jsMain by sourceSets.getting
     val nativeMain by sourceSets.creating
     val nativeTest by sourceSets.creating
     val appleAndLinuxMain by sourceSets.creating
@@ -61,24 +58,21 @@ kotlin {
     val windowsX86Test by sourceSets.getting
 
     commonMain {
-        -jsMain
-        -concurrentMain {
-            -jvmMain
-            -nativeMain {
-                -appleAndLinuxMain {
-                    -appleMain {
-                        -iosMain
-                        -macosMain
-                    }
-                    -linuxMain {
-                        -linuxArm64Main
-                        -linuxX64Main
-                    }
+        -jvmMain
+        -nativeMain {
+            -appleAndLinuxMain {
+                -appleMain {
+                    -iosMain
+                    -macosMain
                 }
-                -windowsMain {
-                    -windowsX64Main
-                    -windowsX86Main
+                -linuxMain {
+                    -linuxArm64Main
+                    -linuxX64Main
                 }
+            }
+            -windowsMain {
+                -windowsX64Main
+                -windowsX86Main
             }
         }
     }
@@ -103,6 +97,21 @@ kotlin {
     }
 
     sourceSets.commonMain.get().dependencies {
-        api("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
+        when (project.properties["dependency-mode"]?.toString()) {
+            null -> {
+                logger.warn("dependency-mode unspecified. Using 'project'")
+                api(project(":p1"))
+            }
+
+            "project" -> {
+                logger.quiet("dependency-mode: project")
+                api(project(":p1"))
+            }
+
+            "repository" -> {
+                logger.quiet("dependency-mode: repository")
+                api("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
+            }
+        }
     }
 }

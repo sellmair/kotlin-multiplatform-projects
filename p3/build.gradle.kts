@@ -20,7 +20,6 @@ plugins {
 }
 
 kotlin {
-    js().nodejs()
     jvm()
     linuxX64()
     ios()
@@ -30,7 +29,6 @@ kotlin {
     val commonMain by sourceSets.getting
     val commonTest by sourceSets.getting
     val jvmMain by sourceSets.getting
-    val jsMain by sourceSets.getting
     val nativeMain by sourceSets.creating
     val nativeTest by sourceSets.creating
     val appleAndLinuxMain by sourceSets.creating
@@ -49,7 +47,6 @@ kotlin {
     val windowsX86Test by sourceSets.getting
 
     commonMain {
-        -jsMain
         -jvmMain
         -nativeMain {
 

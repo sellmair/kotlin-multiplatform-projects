@@ -1,14 +1,12 @@
 pluginManagement {
-    val kotlinVersion = "1.6.255-SNAPSHOT"
+    val kotlin_version: String? by settings
     repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        google()
         mavenLocal()
+        gradlePluginPortal()
     }
+
     plugins {
-        kotlin("multiplatform") version kotlinVersion
-        kotlin("android") version kotlinVersion
+        kotlin("multiplatform") version (kotlin_version ?: "1.6.255-SNAPSHOT")
     }
 }
 

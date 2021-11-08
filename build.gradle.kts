@@ -12,11 +12,13 @@ allprojects {
     }
 
     afterEvaluate {
-        val compileAllTests by tasks.creating
-        val kotlin = extensions.findByType<KotlinMultiplatformExtension>() ?: return@afterEvaluate
-        kotlin.targets.all {
-            val compileTask = compilations.findByName("test")?.compileKotlinTask ?: return@all
-            compileAllTests.dependsOn(compileTask)
+        extensions.findByType<KotlinMultiplatformExtension>()?.let { kotlin ->
+            val compileAll by tasks.creating
+            kotlin.targets.all {
+                compileAll.dependsOn(
+                    provider { compilations.map { it.compileKotlinTaskName } }
+                )
+            }
         }
     }
 }

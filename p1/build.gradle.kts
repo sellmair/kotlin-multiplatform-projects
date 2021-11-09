@@ -10,11 +10,4 @@ android {
 kotlin {
     jvm()
     android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
 }

@@ -8,11 +8,12 @@ pluginManagement {
     plugins {
         kotlin("multiplatform") version "1.6.255-SNAPSHOT"
         kotlin("android") version "1.6.255-SNAPSHOT"
+        id("kotlin-android-target") version "1.6.255-SNAPSHOT"
     }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:4.0.2")
+                useModule("com.android.tools.build:gradle:7.0.0")
             }
         }
     }
@@ -20,5 +21,4 @@ pluginManagement {
 
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
-include(":p2")
 

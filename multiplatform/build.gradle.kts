@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.android.android2
+import org.jetbrains.kotlin.gradle.android.multiplatform.android2
 
 buildscript {
     dependencies {

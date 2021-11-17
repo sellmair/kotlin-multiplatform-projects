@@ -7,8 +7,10 @@ pluginManagement {
     }
     plugins {
         kotlin("multiplatform") version "1.6.255-SNAPSHOT"
+        kotlin("multiplatform.pm20") version "1.6.255-SNAPSHOT"
         kotlin("android") version "1.6.255-SNAPSHOT"
         id("kotlin-android-target") version "1.6.255-SNAPSHOT"
+        id("kotlin-android-kpm") version "1.6.255-SNAPSHOT"
     }
     resolutionStrategy {
         eachPlugin {
@@ -20,5 +22,6 @@ pluginManagement {
 }
 
 rootProject.name = "mpp-issue-bootstrap"
-include(":p1")
+include(":multiplatform")
+include(":kpm")
 

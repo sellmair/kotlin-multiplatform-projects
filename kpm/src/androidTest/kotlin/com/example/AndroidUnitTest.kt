@@ -6,10 +6,10 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 class AndroidUnitTest {
+    val context = ApplicationProvider.getApplicationContext<Context>()
 
     @Test
     fun testContextPackageName() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
         assertEquals("com.examples", context.packageName)
     }
 }

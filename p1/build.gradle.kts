@@ -1,6 +1,17 @@
 plugins {
+    `maven-publish`
     id("com.android.library")
     kotlin("multiplatform")
+}
+
+version = "1.0.0-SNAPSHOT"
+
+publishing {
+    repositories {
+        maven(rootProject.buildDir.resolve("repo")) {
+            name = "buildDir"
+        }
+    }
 }
 
 android {
@@ -9,12 +20,7 @@ android {
 
 kotlin {
     jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    android {
+        publishAllLibraryVariants()
     }
 }

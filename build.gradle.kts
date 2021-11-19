@@ -3,6 +3,9 @@ allprojects {
         mavenCentral()
         google()
         mavenLocal()
-        jcenter()
     }
+}
+
+tasks.register<Delete>("clean") {
+    delete(buildDir)
 }

@@ -12,7 +12,9 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:4.0.2")
+                val androidVersion = if(System.getProperty("idea.active") == "true")
+                    "4.2.0" else "7.1.0-beta03"
+                useModule("com.android.tools.build:gradle:$androidVersion")
             }
         }
     }

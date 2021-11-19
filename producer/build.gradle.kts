@@ -1,10 +1,13 @@
+val kotlin_version: String by extra
 plugins {
     `maven-publish`
     id("com.android.library")
     kotlin("multiplatform")
 }
 
+group = "com.example"
 version = "1.0.0-SNAPSHOT"
+
 
 publishing {
     repositories {
@@ -20,7 +23,5 @@ android {
 
 kotlin {
     jvm()
-    android {
-        publishAllLibraryVariants()
-    }
+    android { publishAllLibraryVariants() }
 }

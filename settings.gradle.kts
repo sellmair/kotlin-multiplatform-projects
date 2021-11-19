@@ -1,26 +1,28 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        google()
         mavenLocal()
+        gradlePluginPortal()
+        google()
     }
+
+    val kotlin_version: String? by settings
+    val android_tools_version: String? by settings
+
     plugins {
-        kotlin("multiplatform") version "1.6.255-SNAPSHOT"
-        kotlin("android") version "1.6.255-SNAPSHOT"
+        kotlin("multiplatform").version(kotlin_version)
+        kotlin("android").version(kotlin_version)
     }
+
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                val androidVersion = if(System.getProperty("idea.active") == "true")
-                    "4.2.0" else "7.1.0-beta03"
-                useModule("com.android.tools.build:gradle:$androidVersion")
+                useModule("com.android.tools.build:gradle:$android_tools_version")
             }
         }
     }
 }
 
-rootProject.name = "mpp-issue-bootstrap"
-include(":p1")
-include(":p2")
+include(":producer")
+include(":plainAndroidConsumer")
+include(":multiplatformAndroidConsumer")
 

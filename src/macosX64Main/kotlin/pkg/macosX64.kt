@@ -1,8 +1,7 @@
 package pkg
 
-import kotlinx.cinterop.CValuesRef
-import platform.posix.FILE
-import platform.posix.size_t
+import kotlinx.cinterop.*
+import platform.posix.*
 
 actual fun fread(
     __ptr: CValuesRef<*>?,

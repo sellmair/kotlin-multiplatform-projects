@@ -13,22 +13,27 @@ repositories {
 kotlin {
     linuxX64 {
         binaries {
-            executable("linuxExecutable")
+            executable("linuxX64Executable")
         }
     }
-    macosX64 {
+    linuxMips32 {
         binaries {
-            executable("macosBinary") {
-            }
+            executable("linux32Executable")
         }
     }
-    iosArm32 {
-        binaries {
-            framework {
-                baseName = "library"
-            }
-        }
-    }
+//    macosX64 {
+//        binaries {
+//            executable("macosBinary") {
+//            }
+//        }
+//    }
+//    iosArm32 {
+//        binaries {
+//            framework {
+//                baseName = "library"
+//            }
+//        }
+//    }
     sourceSets {
         val commonMain by getting {
             dependencies {

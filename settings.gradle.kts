@@ -5,5 +5,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "integer-compilation-sandbox"
+rootProject.name = "mpp-issue-bootstrap"
 

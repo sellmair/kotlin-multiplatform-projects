@@ -14,8 +14,10 @@ subprojects {
             mavenLocal()
         }
 
+        /*
         dependencies {
             classpath("org.jetbrains.kotlin:kotlin-gradle-external-target-api:1.6.255-SNAPSHOT@jar")
         }
+         */
     }
 }

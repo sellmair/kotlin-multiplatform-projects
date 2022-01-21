@@ -1,3 +1,3 @@
 package com.example
 
-actual val variantName: String
+actual val variantName: String = "Release"

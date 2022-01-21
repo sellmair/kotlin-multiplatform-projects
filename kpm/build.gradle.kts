@@ -1,12 +1,25 @@
-import org.jetbrains.kotlin.gradle.android.kpm.android
-import org.jetbrains.kotlin.gradle.android.kpm.androidCommon
-import org.jetbrains.kotlin.gradle.android.kpm.instrumentedTest
+import org.jetbrains.kotlin.gradle.android.android
+import org.jetbrains.kotlin.gradle.android.androidCommon
+import org.jetbrains.kotlin.gradle.android.instrumentedTest
 import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.jvm
 
 plugins {
     kotlin("multiplatform.pm20")
-    id("com.android.application")
-    id("kotlin-android-kpm")
+    //id("com.android.application")
+    id("com.android.library")
+    id("kotlin-kpm-android")
+    `maven-publish`
+}
+
+group = "kpm-android-external"
+version = "1.0"
+
+publishing {
+    repositories {
+        maven(buildDir.resolve("repo")) {
+            name = "buildRepo"
+        }
+    }
 }
 
 android {
@@ -14,6 +27,7 @@ android {
     defaultConfig {
         minSdk = 30
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     testOptions {
@@ -21,14 +35,20 @@ android {
     }
 }
 
+// TODO NOW
+tasks.matching { it.name.matches(Regex("""compile.*Android.*Metadata""")) }.configureEach {
+    enabled = false
+}
+
 kotlin {
-    jvm {}
     android()
+    jvm { }
 
     main {
         androidCommon.dependencies {
             implementation(kotlin("stdlib-jdk8"))
-            implementation("androidx.appcompat:appcompat:1.3.1")
+            implementation("androidx.appcompat:appcompat:1.4.0")
+            //implementation("androidx.appcompat:appcompat:1.4.0")
         }
     }
 
@@ -49,13 +69,5 @@ kotlin {
             implementation("androidx.test:core-ktx:1.4.0")
             implementation("androidx.test:rules:1.4.0")
         }
-    }
-
-}
-
-tasks.register("debug") {
-    doLast {
-        val task = tasks.getByName("compileTestKotlinAndroidDebugUnitTest")
-        logger.quiet("Task class: ${task.javaClass.canonicalName}")
     }
 }

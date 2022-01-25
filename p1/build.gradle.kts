@@ -10,11 +10,7 @@ android {
 kotlin {
     jvm()
     android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
+    sourceSets.getByName("commonMain").dependencies {
+        implementation(project(":p2"))
     }
 }

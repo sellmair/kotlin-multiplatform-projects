@@ -7,7 +7,7 @@ import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
 
-object P3WindowsAndLinuxMain {
+object P2LinuxArm64Main {
     val structFromPosix = getStructFromPosix()
     val structPointerFromPosix = getStructPointerFromPosix()
 
@@ -18,8 +18,9 @@ object P3WindowsAndLinuxMain {
         val doubleProperty: Double = struct.doubleProperty
         val int32tProperty: Int = struct.int32tProperty
         val int64TProperty: Long = struct.int64tProperty
+        val linuxOnlyProperty: Boolean = struct.linuxOnlyProperty
     }
 
     val simple = simpleInterop()
-    val p1 = NativeMain.structFromPosix
+    val p1 = LinuxArm64Main.structFromPosix
 }

@@ -3,13 +3,13 @@ import simple.simpleInterop
 import withPosix.getMyStructPointer
 import kotlin.test.Test
 
-class P2LinuxX64Test {
+class P2MacosTest {
 
     @Test
     fun runTest() {
         simpleInterop()
         getMyStructPointer()?.pointed?.posixProperty
-        getMyStructPointer()?.pointed?.linuxOnlyProperty
+        getMyStructPointer()?.pointed?.appleOnlyProperty
 
         NativeMain.structFromPosix
         NativeMain.structPointerFromPosix
@@ -22,7 +22,10 @@ class P2LinuxX64Test {
         AppleAndLinuxMain.MyStruct.posixProperty
         P2AppleAndLinuxMain.MyStruct.posixProperty
 
-        LinuxMain.MyStruct.linuxOnlyProperty
-        P2LinuxMain.MyStruct.linuxOnlyProperty
+        AppleMain.MyStruct.appleOnlyProperty
+        P2AppleMain.MyStruct.appleOnlyProperty
+
+        MacosMain.MyStruct.appleOnlyProperty
+        MacosMain.MyStruct.appleOnlyProperty
     }
 }

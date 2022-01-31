@@ -3,7 +3,7 @@ import simple.simpleInterop
 import withPosix.getMyStructPointer
 import kotlin.test.Test
 
-class P2LinuxX64Test {
+class P2LinuxTest {
 
     @Test
     fun runTest() {

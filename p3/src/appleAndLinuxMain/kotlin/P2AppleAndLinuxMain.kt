@@ -7,7 +7,7 @@ import withPosix.getMyStructPointer
 import withPosix.getStructFromPosix
 import withPosix.getStructPointerFromPosix
 
-object P3AppleAndLinuxMain {
+object P2AppleAndLinuxMain {
     val structFromPosix = getStructFromPosix()
     val structPointerFromPosix = getStructPointerFromPosix()
 

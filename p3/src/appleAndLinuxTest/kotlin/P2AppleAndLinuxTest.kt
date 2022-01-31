@@ -3,7 +3,7 @@ import simple.simpleInterop
 import withPosix.getMyStructPointer
 import kotlin.test.Test
 
-class P3AppleAndLinuxTest {
+class P2AppleAndLinuxTest {
 
     @Test
     fun runTest() {
@@ -19,6 +19,6 @@ class P3AppleAndLinuxTest {
         P2NativeMain.simple
 
         AppleAndLinuxMain.MyStruct.posixProperty
-        P3AppleAndLinuxMain.MyStruct.posixProperty
+        P2AppleAndLinuxMain.MyStruct.posixProperty
     }
 }

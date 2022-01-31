@@ -1,3 +1,3 @@
 @file:Suppress("unused")
 
-class P3CommonMain
+class P2CommonMain

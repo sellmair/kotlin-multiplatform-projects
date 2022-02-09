@@ -1,8 +1,6 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("jvm")
 }
 
-android {
-    compileSdkVersion(30)
-}
+/* This 'podImport' task mock should still be invoked */
+tasks.register("podImport")

@@ -1,24 +1,17 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         gradlePluginPortal()
         mavenCentral()
         google()
-        mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.4.10"
-        kotlin("android") version "1.4.10"
-    }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:3.6.4")
-            }
-        }
+        kotlin("multiplatform") version "1.6.255-SNAPSHOT"
+        kotlin("jvm") version "1.6.255-SNAPSHOT"
     }
 }
 
 rootProject.name = "mpp-issue-bootstrap"
 include(":p1")
 include(":p2")
-
+include(":p3")

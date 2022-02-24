@@ -44,7 +44,15 @@ kotlin {
     android()
     jvm { }
 
+    mainAndTest {
+        common.dependencies {
+            implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
+        }
+    }
+
     main {
+        fragments.create("someNewFragment")
+
         androidCommon.dependencies {
             implementation(kotlin("stdlib-jdk8"))
             implementation("androidx.appcompat:appcompat:1.4.0")

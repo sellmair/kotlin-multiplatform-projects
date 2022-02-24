@@ -1,15 +1,10 @@
-import org.jetbrains.kotlin.gradle.android.multiplatform.android2
-
-buildscript {
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-external-target-api:1.6.255-SNAPSHOT@jar")
-    }
-}
+//import org.jetbrains.kotlin.gradle.android.multiplatform.android2
 
 plugins {
     id("com.android.application")
-    id("kotlin-android-target")
+    //id("kotlin-android-target")
     kotlin("multiplatform")
+    `maven-publish`
 }
 
 android {
@@ -26,24 +21,13 @@ android {
 
 kotlin {
     jvm()
-    android2()
+    android()
 
     val commonMain by sourceSets.getting
-    val androidMain by sourceSets.getting
-    val androidUnitTest by sourceSets.getting
+
 
     commonMain.dependencies {
         implementation(kotlin("stdlib"))
     }
 
-    androidMain.dependencies {
-        implementation(kotlin("stdlib-jdk8"))
-        implementation("androidx.appcompat:appcompat:1.3.1")
-    }
-
-    androidUnitTest.dependencies {
-        implementation(kotlin("test-junit"))
-        implementation("androidx.test:core:1.4.0")
-        implementation("androidx.test:core-ktx:1.4.0")
-    }
 }

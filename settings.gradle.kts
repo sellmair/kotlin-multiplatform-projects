@@ -24,5 +24,5 @@ pluginManagement {
 rootProject.name = "mpp-issue-bootstrap"
 //include(":multiplatform")
 include(":kpm")
-include(":android-consumer")
+//include(":android-consumer")
 

@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.android.android
 import org.jetbrains.kotlin.gradle.android.androidCommon
 import org.jetbrains.kotlin.gradle.android.instrumentedTest
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.KotlinIosX64Variant
 import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.jvm
 
 plugins {
@@ -42,23 +43,34 @@ tasks.matching { it.name.matches(Regex("""compile.*Android.*Metadata""")) }.conf
 
 kotlin {
     android()
-    jvm { }
+    jvm {}
 
     mainAndTest {
-        common.dependencies {
+        fragments.create<KotlinIosX64Variant>("iosX64")
+        val jvmAndAndroidCommon by fragments.creating
+
+        jvm.refines(jvmAndAndroidCommon)
+        androidCommon.refines(jvmAndAndroidCommon)
+
+        dependencies {
+            implementation(project(":kpm-library"))
+            implementation(kotlin("stdlib-common"))
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
             implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
         }
-    }
-
-    main {
-        fragments.create("someNewFragment")
 
         androidCommon.dependencies {
             implementation(kotlin("stdlib-jdk8"))
             implementation("androidx.appcompat:appcompat:1.4.0")
-            //implementation("androidx.appcompat:appcompat:1.4.0")
+        }
+
+        afterEvaluate {
+            fragments.getByName("androidDebug").dependencies {
+                // implementation("androidx.appcompat:appcompat:1.4.0")
+            }
         }
     }
+
 
     test {
         androidCommon.dependencies {

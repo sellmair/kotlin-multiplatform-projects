@@ -22,12 +22,13 @@ android {
 kotlin {
     jvm()
     android()
+    ios()
 
     val commonMain by sourceSets.getting
 
-
     commonMain.dependencies {
         implementation(kotlin("stdlib"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+        implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
     }
-
 }

@@ -1,34 +1,30 @@
-//import org.jetbrains.kotlin.gradle.android.multiplatform.android2
+@file:Suppress("UnstableApiUsage")
 
 plugins {
     id("com.android.application")
-    //id("kotlin-android-target")
     kotlin("multiplatform")
-    `maven-publish`
 }
 
 android {
     compileSdk = 31
     defaultConfig {
         minSdk = 30
-        signingConfig = signingConfigs.getByName("debug")
-    }
-
-    testOptions {
-        //unitTests.isIncludeAndroidResources = true
     }
 }
 
 kotlin {
     jvm()
     android()
-    ios()
+
+    linuxX64()
+    linuxArm64()
 
     val commonMain by sourceSets.getting
+    val nativeMain by sourceSets.creating
+    val linuxX64Main by sourceSets.getting
+    val linuxArm64Main by sourceSets.getting
 
-    commonMain.dependencies {
-        implementation(kotlin("stdlib"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-        implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
-    }
+    nativeMain.dependsOn(commonMain)
+    linuxX64Main.dependsOn(nativeMain)
+    linuxArm64Main.dependsOn(nativeMain)
 }

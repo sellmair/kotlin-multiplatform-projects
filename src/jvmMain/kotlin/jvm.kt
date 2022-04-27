@@ -1,0 +1,1 @@
+actual typealias C = JavaC

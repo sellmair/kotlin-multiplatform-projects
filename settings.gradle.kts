@@ -1,9 +1,9 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         gradlePluginPortal()
         mavenCentral()
         google()
-        mavenLocal()
     }
     plugins {
         kotlin("multiplatform") version "1.7.255-SNAPSHOT"
@@ -20,4 +20,5 @@ pluginManagement {
 
 include(":p1")
 include(":p2")
+include(":p3")
 

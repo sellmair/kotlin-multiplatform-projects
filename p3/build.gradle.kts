@@ -1,12 +1,17 @@
 plugins {
     id("com.android.library")
-    kotlin("multiplatform")
+    kotlin("android")
 }
 
 android {
     compileSdkVersion(30)
 }
 
+dependencies {
+    implementation(project(":p1"))
+}
+
+/*
 kotlin {
     iosX64()
     jvm()
@@ -25,3 +30,4 @@ kotlin {
 dependencies {
     testImplementation("com.squareup.okio:okio:3.1.0")
 }
+ */

@@ -6,9 +6,14 @@ pluginManagement {
         google()
     }
     plugins {
+        /*
         kotlin("multiplatform") version "1.8.255-SNAPSHOT"
         kotlin("jvm") version "1.8.255-SNAPSHOT"
         kotlin("android") version "1.8.255-SNAPSHOT"
+         */
+        kotlin("multiplatform") version "1.7.0"
+        kotlin("jvm") version "1.7.0"
+        kotlin("android") version "1.7.0"
     }
     resolutionStrategy {
         eachPlugin {

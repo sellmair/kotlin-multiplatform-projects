@@ -6,8 +6,9 @@ pluginManagement {
         google()
     }
     plugins {
-        kotlin("multiplatform") version "1.7.255-SNAPSHOT"
-        kotlin("android") version "1.7.255-SNAPSHOT"
+        kotlin("multiplatform") version "1.8.255-SNAPSHOT"
+        kotlin("jvm") version "1.8.255-SNAPSHOT"
+        kotlin("android") version "1.8.255-SNAPSHOT"
     }
     resolutionStrategy {
         eachPlugin {
@@ -16,9 +17,20 @@ pluginManagement {
             }
         }
     }
+
+    dependencyResolutionManagement {
+        repositories {
+            mavenLocal()
+            mavenCentral()
+            google()
+        }
+    }
 }
 
-include(":p1")
-include(":p2")
-include(":p3")
-
+include(":androidApp")
+include(":jvmLibrary")
+include(":multiplatformAndroidApp")
+include(":multiplatformAndroidJvmIosLibrary")
+include(":multiplatformAndroidJvmIosLibrary2")
+include(":multiplatformAndroidLibrary")
+include(":multiplatformJvmLibrary")

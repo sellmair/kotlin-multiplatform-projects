@@ -1,5 +1,0 @@
-class CommonTest {
-    fun testApp() {
-
-    }
-}

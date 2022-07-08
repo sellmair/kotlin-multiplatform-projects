@@ -6,11 +6,6 @@ pluginManagement {
         google()
     }
     plugins {
-        /*
-        kotlin("multiplatform") version "1.8.255-SNAPSHOT"
-        kotlin("jvm") version "1.8.255-SNAPSHOT"
-        kotlin("android") version "1.8.255-SNAPSHOT"
-         */
         kotlin("multiplatform") version "1.7.0"
         kotlin("jvm") version "1.7.0"
         kotlin("android") version "1.7.0"
@@ -18,7 +13,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.1.0")
+                useModule("com.android.tools.build:gradle:7.2.1")
             }
         }
     }

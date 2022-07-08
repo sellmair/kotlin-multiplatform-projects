@@ -1,4 +1,4 @@
-object MultiplatformAndroidJvmIosLibrary2_jvmMain {
+object JvmLibrary_test {
     fun sayHello() {
         MultiplatformAndroidJvmIosLibrary_commonMain.sayHello()
         MultiplatformAndroidJvmIosLibrary_androidAndJvmMain.sayHello()
@@ -6,7 +6,5 @@ object MultiplatformAndroidJvmIosLibrary2_jvmMain {
 
         MultiplatformJvmLibrary_commonMain.sayHello()
         MultiplatformJvmLibrary_jvmMain.sayHello()
-
-        JvmLibrary_main.sayHello()
     }
 }

@@ -1,6 +1,6 @@
 import okio.Path.Companion.toPath
 
-object MultiplatformAndroidApp_commonMain {
+object MultiplatformAndroidApp_commonTest {
     fun sayHello() {
         "some/path/".toPath()
 

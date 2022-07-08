@@ -1,10 +1,10 @@
-import okio.Path.Companion.toPath
-
-object MultiplatformAndroidLibrary_androidMain {
+object MultiplatformAndroidJvmIosLibrary2_test {
     fun sayHello() {
-        "path/to/file".toPath()
         MultiplatformAndroidJvmIosLibrary_commonMain.sayHello()
         MultiplatformAndroidJvmIosLibrary_androidAndJvmMain.sayHello()
         MultiplatformAndroidJvmIosLibrary_androidMain.sayHello()
+
+        MultiplatformAndroidLibrary_commonMain.sayHello()
+        MultiplatformAndroidLibrary_androidMain.sayHello()
     }
 }

@@ -22,7 +22,16 @@ kotlin {
     jvmMain.dependsOn(androidAndJvmMain)
     androidMain.dependsOn(androidAndJvmMain)
 
+    commonMain.dependencies {
+        implementation(project(":multiplatformAndroidJvmIosLibrary"))
+    }
+
     androidMain.dependencies {
         implementation(project(":multiplatformAndroidLibrary"))
+    }
+
+    jvmMain.dependencies {
+        implementation(project(":multiplatformJvmLibrary"))
+        implementation(project(":jvmLibrary"))
     }
 }

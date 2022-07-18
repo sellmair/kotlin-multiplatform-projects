@@ -1,13 +1,12 @@
 @file:Suppress("unused", "unused_variable")
 
-import okio.Path
-import okio.Path.Companion.toOkioPath
-import java.io.File
+import com.russhwolf.settings.PropertiesSettings
+import com.russhwolf.settings.Settings
+import java.util.*
 
-fun commonMain() {
-    val somePath: Path = File("sunny").toOkioPath()
-    val someFile: File = somePath.toFile()
-    val someOtherFile = somePath.myExpectation()
+fun jvmMain() {
+    val settings: Settings = PropertiesSettings(Properties())
+    val mySetting = settings.getInt("me", defaultValue = 281)
 }
 
-expect fun Path.myExpectation(): File
+expect fun myExpectation(settings: Settings): Settings

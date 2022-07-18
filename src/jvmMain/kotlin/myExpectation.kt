@@ -1,6 +1,7 @@
-import okio.Path
+import com.russhwolf.settings.PropertiesSettings
+import com.russhwolf.settings.Settings
 import java.io.File
 
-actual fun Path.myExpectation(): File {
-    return toFile()
+actual fun myExpectation(settings: Settings): Settings {
+    return settings
 }

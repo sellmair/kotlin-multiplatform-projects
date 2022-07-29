@@ -1,6 +1,6 @@
-import com.russhwolf.settings.PropertiesSettings
+@file:Suppress("unused")
+
 import com.russhwolf.settings.Settings
-import java.io.File
 
 actual fun myExpectation(settings: Settings): Settings {
     return settings

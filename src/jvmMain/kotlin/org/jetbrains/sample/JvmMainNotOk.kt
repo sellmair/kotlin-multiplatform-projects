@@ -1,8 +1,9 @@
 package org.jetbrains.sample
  // when uncommented: Should fail ./gradlew animalsnifferMain
+/*
 import java.util.stream.Stream
 
-/*
+
 object JvmMainNotOk {
     fun use(stream: Stream<String>) = stream.map { "" }.filter { true }
 
@@ -12,4 +13,4 @@ object JvmMainNotOk {
             .filter { true }
     }
 }
- */
+*/

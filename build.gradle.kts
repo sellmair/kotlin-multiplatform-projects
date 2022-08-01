@@ -81,7 +81,7 @@ kotlin {
         /* Create compilation for jvm16Main to prove that jvmMain does not rely on jvm18Main */
         compilations.create("16Main") {
             /* jvm16Main is automatically matched as 'defaultSourceSet' for the compilation */
-            tasks.getByName("assemble")
+            tasks.getByName("check")
                 .dependsOn(this.compileKotlinTaskProvider)
         }
     }

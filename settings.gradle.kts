@@ -12,6 +12,6 @@ pluginManagement {
 
 rootProject.name = "sample"
 
-//include(":library") <- for publishing only
+include(":library") //<- for publishing only
 include(":app")
 

@@ -1,4 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
+!**library*.jar
+
 .gradle
 **/build/
 !src/**/build/
@@ -89,3 +91,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 !gradle/wrapper/gradle-wrapper.jar
 .idea
+
+!library-*.jar

@@ -39,10 +39,10 @@
           "name": "library-1.0.0.jar",
           "url": "library-1.0.0.jar",
           "size": 1024,
-          "sha512": "fb1306e3a12ea37d7e671265b97bdf43cd7ae9f886ab7ae4b68d3d5cb2b77736cc817696f65dde08edf2e8f34396c4486ce52834cdd46dd4c851aef966a80404",
-          "sha256": "16648a6fb7430abf3f992f5a8e3ad482445ae62b604542d676f1372c0ad19d99",
-          "sha1": "b75f26e2a13884afb3341d73fc0629504644f73b",
-          "md5": "98c4b798840ae3bdfdad157c0d81785b"
+          "sha512": "12b6cd5ae31e32649a1058ed5d17323ee730f5b9918946bc9e1f28eabfddf27f8c8d2b8e0fee7c383c1820111eca3f51e90e15a8fa7c801a454de67c032e6d4f",
+          "sha256": "ddcff01dbe7c5a2c6b1d6d957e4264223db4aa09bfad8b1137b490f08fd4c7ae",
+          "sha1": "308f23916297e2a46b488c553b422b7907d466d2",
+          "md5": "431baccf099dd77b39e47e41e5feea33"
         }
       ]
     },
@@ -71,10 +71,10 @@
           "name": "library-1.0.0.jar",
           "url": "library-1.0.0.jar",
           "size": 1024,
-          "sha512": "fb1306e3a12ea37d7e671265b97bdf43cd7ae9f886ab7ae4b68d3d5cb2b77736cc817696f65dde08edf2e8f34396c4486ce52834cdd46dd4c851aef966a80404",
-          "sha256": "16648a6fb7430abf3f992f5a8e3ad482445ae62b604542d676f1372c0ad19d99",
-          "sha1": "b75f26e2a13884afb3341d73fc0629504644f73b",
-          "md5": "98c4b798840ae3bdfdad157c0d81785b"
+          "sha512": "12b6cd5ae31e32649a1058ed5d17323ee730f5b9918946bc9e1f28eabfddf27f8c8d2b8e0fee7c383c1820111eca3f51e90e15a8fa7c801a454de67c032e6d4f",
+          "sha256": "ddcff01dbe7c5a2c6b1d6d957e4264223db4aa09bfad8b1137b490f08fd4c7ae",
+          "sha1": "308f23916297e2a46b488c553b422b7907d466d2",
+          "md5": "431baccf099dd77b39e47e41e5feea33"
         }
       ]
     }

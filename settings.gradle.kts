@@ -6,18 +6,12 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.7.255-SNAPSHOT"
-        kotlin("android") version "1.7.255-SNAPSHOT"
-    }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.1.0")
-            }
-        }
+        kotlin("jvm") version "1.7.20-Beta"
     }
 }
 
-include(":p1")
-include(":p2")
+rootProject.name = "sample"
+
+//include(":library") <- for publishing only
+include(":app")
 

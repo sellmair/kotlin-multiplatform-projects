@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.kotlin",
+    "module": "library",
+    "version": "2.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.20-Beta"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-2.0.0.jar",
+          "url": "library-2.0.0.jar",
+          "size": 1044,
+          "sha512": "e1e6cc74e54d86dab57c5dfd32a64d1d8507832349cb33e38b890847c73a3424a4a7dba0965f647fc6b7e3e33a50db57f321ddb4db144d5d0bf1dc144d125b89",
+          "sha256": "4c8933ffd0e25e887591ee7e3520989f29c0cf4355905a4ea60b1f174de0b1c3",
+          "sha1": "60c821d7fbac722fb70d9bd4019605ce1d024abe",
+          "md5": "4f3289e7f0996c6eaa29fdd157808963"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.20-Beta"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "library-2.0.0.jar",
+          "url": "library-2.0.0.jar",
+          "size": 1044,
+          "sha512": "e1e6cc74e54d86dab57c5dfd32a64d1d8507832349cb33e38b890847c73a3424a4a7dba0965f647fc6b7e3e33a50db57f321ddb4db144d5d0bf1dc144d125b89",
+          "sha256": "4c8933ffd0e25e887591ee7e3520989f29c0cf4355905a4ea60b1f174de0b1c3",
+          "sha1": "60c821d7fbac722fb70d9bd4019605ce1d024abe",
+          "md5": "4f3289e7f0996c6eaa29fdd157808963"
+        }
+      ]
+    }
+  ]
+}

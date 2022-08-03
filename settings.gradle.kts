@@ -13,7 +13,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.0.0")
+                useModule("com.android.tools.build:gradle:7.2.1")
             }
         }
     }

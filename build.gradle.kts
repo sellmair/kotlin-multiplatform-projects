@@ -1,3 +1,7 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
+
+import org.jetbrains.kotlin.gradle.plugin.ExperimentalKotlinGradlePluginApi
+
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
@@ -11,23 +15,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-
-    flavorDimensions += listOf("price", "market")
-
-    productFlavors {
-        create("free") {
-            dimension = "price"
-        }
-        create("paid") {
-            dimension = "price"
-        }
-        create("eu") {
-            dimension = "market"
-        }
-        create("us") {
-            dimension = "market"
-        }
-    }
+    android.flavorDimensions.add("market")
+    android.flavorDimensions.add("price")
+    android.productFlavors.create("german").dimension = "market"
+    android.productFlavors.create("usa").dimension = "market"
+    android.productFlavors.create("paid").dimension = "price"
+    android.productFlavors.create("free").dimension = "price"
 }
 
 repositories {
@@ -42,10 +35,7 @@ kotlin {
 
     val commonMain by sourceSets.getting
     val commonTest by sourceSets.getting
-
     val androidMain by sourceSets.getting
-
-    /*
     val androidUnitTest by sourceSets.getting
     val androidInstrumentedTest by sourceSets.getting
 
@@ -64,5 +54,9 @@ kotlin {
         implementation("androidx.test:rules:1.4.0")
     }
 
-     */
+    sourceSets.invokeWhenCreated("androidUnitTestGermanFreeDebug") {
+        dependencies {
+            implementation("com.squareup.okio:okio:3.2.0")
+        }
+    }
 }

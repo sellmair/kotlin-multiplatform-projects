@@ -3,6 +3,5 @@ allprojects {
         mavenCentral()
         google()
         mavenLocal()
-        jcenter()
     }
 }

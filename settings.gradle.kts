@@ -6,13 +6,13 @@ pluginManagement {
         mavenLocal()
     }
     plugins {
-        kotlin("multiplatform") version "1.7.255-SNAPSHOT"
-        kotlin("android") version "1.7.255-SNAPSHOT"
+        kotlin("multiplatform") version "1.8.255-SNAPSHOT"
+        kotlin("android") version "1.8.255-SNAPSHOT"
     }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:7.1.0")
+                useModule("com.android.tools.build:gradle:7.2.2")
             }
         }
     }

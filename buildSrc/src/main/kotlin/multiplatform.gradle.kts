@@ -1,4 +1,3 @@
-
 import org.jetbrains.kotlin.gradle.plugin.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
@@ -9,28 +8,27 @@ plugins {
     kotlin("multiplatform")
 }
 
-val KotlinTarget.isNix: Boolean
-    get() = if (this !is KotlinNativeTarget) false
-    else konanTarget.family.isAppleFamily || konanTarget.family == Family.LINUX
 
 /*
  Pre-declare hierarchy and targets. Usually one convention plugin would declare the hiearchy, wheras
  another depending convention plugin would declare targets!
  */
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    @OptIn(ExperimentalKotlinGradlePluginApi::class)
     hierarchy.natural { target ->
-        if (target is KotlinNativeTarget) {
+        fun KotlinTarget.isNix(): Boolean = isApple || isLinux
+
+        if (target.isNative) {
             group("native") {
-                if (target.isNix) {
+                if (target.isNix()) {
                     group("nix")
                 }
             }
         }
 
-        if (target.isNix || target is KotlinJvmTarget) {
+        if (target.isNix() || target.isJvm) {
             group("jvmAndNix") {
-                if (target.isNix) {
+                if (target.isNix()) {
                     group("nix")
                 }
             }
@@ -43,4 +41,5 @@ kotlin {
     macosArm64()
     iosX64()
     iosArm64()
+    jvm()
 }

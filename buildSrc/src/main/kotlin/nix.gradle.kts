@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 import org.jetbrains.kotlin.konan.target.Family
 
 plugins {
-    kotlin("multiplatform")
+    id("multiplatform")
 }
 
 
@@ -15,12 +15,22 @@ plugins {
  */
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    hierarchy.default()
-
     hierarchy.custom {
-        group("common") {
-            if (isNative || isJvm) {
-                group("jvmAndNative")
+        val isNix: Boolean = isApple || isLinux
+
+        if (isNative) {
+            group("native") {
+                if (isNix) {
+                    group("nix")
+                }
+            }
+        }
+
+        if (isNix || isJvm) {
+            group("jvmAndNix") {
+                if (isNix) {
+                    group("nix")
+                }
             }
         }
     }

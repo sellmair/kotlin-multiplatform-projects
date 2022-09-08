@@ -7,7 +7,5 @@ plugins {
 }
 
 kotlin {
-    sourceSets {
-
-    }
+    sourceSets
 }

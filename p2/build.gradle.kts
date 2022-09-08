@@ -1,8 +1,6 @@
 @file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
 import org.jetbrains.kotlin.gradle.plugin.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.plugin.mpp.hierarchy.withHierarchy
-import org.jetbrains.kotlin.gradle.plugin.mpp.hierarchy.withNaturalHierarchy
 
 plugins {
     id("multiplatform")

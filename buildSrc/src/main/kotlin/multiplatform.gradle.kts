@@ -13,19 +13,13 @@ plugins {
  Pre-declare hierarchy and targets. Usually one convention plugin would declare the hiearchy, wheras
  another depending convention plugin would declare targets!
  */
-@OptIn(ExperimentalKotlinGradlePluginApi::class)
+
 kotlin {
+    @OptIn(ExperimentalKotlinGradlePluginApi::class)
     hierarchy.default()
 
-    hierarchy.custom {
-        group("common") {
-            if (isNative || isJvm) {
-                group("jvmAndNative")
-            }
-        }
-    }
-
     /* Declare my targets */
+    ios()
     linuxX64()
     macosX64()
     macosArm64()

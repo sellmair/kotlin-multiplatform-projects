@@ -1,25 +1,24 @@
-plugins {
-    kotlin("multiplatform")
+val customConfiguration = configurations.create("custom") {
+    isCanBeConsumed = true
+    isCanBeResolved = false
+
+    attributes {
+        attribute(Attribute.of(String::class.java), "klib")
+    }
 }
 
-kotlin {
-    linuxX64()
-    macosX64()
-    ios()
-    jvm()
+tasks.create("compileCustom") {
+    val text =  "X"
+    val outputFile = buildDir.resolve("myOutput.txt")
+    inputs.property("text", text)
+    outputs.file(outputFile)
 
-    val commonMain by sourceSets.getting
-    val iosMain by sourceSets.getting
-    val linuxX64Main by sourceSets.getting
-    val macosX64Main by sourceSets.getting
+    doFirst {
+        buildDir.mkdirs()
+        outputFile.writeText(text)
+    }
 
-    val nativeMain by sourceSets.creating
-    nativeMain.dependsOn(commonMain)
-    iosMain.dependsOn(nativeMain)
-    linuxX64Main.dependsOn(nativeMain)
-    macosX64Main.dependsOn(nativeMain)
-
-    commonMain.dependencies {
-        implementation("io.ktor:ktor-client-core:+")
+    project.artifacts.add(customConfiguration.name, outputFile) {
+        this.builtBy(this@create)
     }
 }

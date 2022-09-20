@@ -1,26 +1,19 @@
-plugins {
-    kotlin("multiplatform")
+val implementation = configurations.create("implementation") {
+    isCanBeConsumed = false
+    isCanBeResolved = true
+    attributes {
+        attribute(Attribute.of(String::class.java), "klib")
+    }
 }
 
-kotlin {
-    linuxX64()
-    macosX64()
-    ios()
-    jvm()
+dependencies {
+    implementation(project(":p1"))
+}
 
-    val commonMain by sourceSets.getting
-    val iosMain by sourceSets.getting
-    val linuxX64Main by sourceSets.getting
-    val macosX64Main by sourceSets.getting
-    val jvmMain by sourceSets.getting
-
-    val nativeMain by sourceSets.creating
-    nativeMain.dependsOn(commonMain)
-    iosMain.dependsOn(nativeMain)
-    linuxX64Main.dependsOn(nativeMain)
-    macosX64Main.dependsOn(nativeMain)
-
-    commonMain.dependencies {
-        implementation("io.ktor:ktor-client-core:+")
+tasks.create("consume") {
+    inputs.files(implementation)
+    outputs.files("ghost.txt")
+    doFirst {
+        println("Resolved: " + implementation.files.single().readText())
     }
 }

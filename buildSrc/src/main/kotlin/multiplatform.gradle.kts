@@ -16,7 +16,7 @@ plugins {
 
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targets.hierarchy.default()
+    targetHierarchy.default()
 
     /* Declare my targets */
     ios()

@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
@@ -14,9 +14,9 @@ plugins {
  another depending convention plugin would declare targets!
  */
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    @OptIn(ExperimentalKotlinGradlePluginApi::class)
-    hierarchy.default()
+    targets.hierarchy.default()
 
     /* Declare my targets */
     ios()

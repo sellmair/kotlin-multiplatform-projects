@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
@@ -15,7 +15,7 @@ plugins {
  */
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    hierarchy.custom {
+    targets.hierarchy.custom {
         val isNix: Boolean = isApple || isLinux
 
         if (isNative) {

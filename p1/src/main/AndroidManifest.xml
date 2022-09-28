@@ -1,1 +1,10 @@
-<manifest package="p1"/>
+<manifest package="org.sample.p1" xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name="org.sample.p1.MainActivity"  android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

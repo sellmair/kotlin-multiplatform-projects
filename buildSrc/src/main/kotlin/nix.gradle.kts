@@ -1,11 +1,31 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
-import org.jetbrains.kotlin.konan.target.Family
-
 plugins {
     id("multiplatform")
+}
+
+@ToolingProperty.Scope("Kotlin Build Settings")
+object KotlinSettings {
+    @ToolingProperty.Value(
+        value = "1.8.255",
+        title = "Kotlin Version",
+        description = "Version of the Kotlin Gradle Plugin / Kotlin Gradle Plugin used"
+    )
+    val kotlinVersion: String by annotation()
+
+    @ToolingProperty.Value(
+        value = "1.8",
+        title = "Kotlin Language Version"
+    )
+    val languageVersion: String by annotation()
+
+
+    @ToolingProperty.Values(
+        values = [
+            "com.squareup.okio:okio:3.2.0",
+            "com.russhwolf:multiplatform-settings-datastore:1.0.0-RC"
+        ],
+        title = "Dependencies"
+    )
+    val commonMainDependencies: List<String> by annotation()
 }
 
 
@@ -13,32 +33,25 @@ plugins {
  Pre-declare hierarchy and targets. Usually one convention plugin would declare the hiearchy, wheras
  another depending convention plugin would declare targets!
  */
-@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targets.hierarchy.custom {
-        val isNix: Boolean = isApple || isLinux
+    logger.quiet("kotlinVersion=$KotlinSettings.kotlinVersion")
+    logger.quiet("languageVersion=$KotlinSettings.languageVersion")
+    logger.quiet("commonMainDependencies=$KotlinSettings.commonMainDependencies")
 
-        if (isNative) {
-            group("native") {
-                if (isNix) {
-                    group("nix")
-                }
-            }
+    sourceSets.all {
+        languageSettings {
+            this.languageVersion = KotlinSettings.languageVersion
         }
+    }
 
-        if (isNix || isJvm) {
-            group("jvmAndNix") {
-                if (isNix) {
-                    group("nix")
-                }
-            }
+    val commonMain by sourceSets.getting
+    commonMain.dependencies {
+        KotlinSettings.commonMainDependencies.forEach { dependenyNotation ->
+            implementation(dependenyNotation)
         }
     }
 
     /* Declare my targets */
-    linuxX64()
-    macosX64()
-    macosArm64()
     iosX64()
     iosArm64()
     jvm()

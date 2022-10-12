@@ -4,27 +4,28 @@ plugins {
 
 @ToolingProperty.Scope("Kotlin Build Settings")
 object KotlinSettings {
-    @ToolingProperty.Value(
+    @ToolingProperty.String(
         value = "1.8.255",
         title = "Kotlin Version",
         description = "Version of the Kotlin Gradle Plugin / Kotlin Gradle Plugin used"
     )
     val kotlinVersion: String by annotation()
 
-    @ToolingProperty.Value(
+    @ToolingProperty.String(
         value = "1.8",
         title = "Kotlin Language Version"
     )
     val languageVersion: String by annotation()
 
 
-    @ToolingProperty.Values(
+    @ToolingProperty.List(
         values = [
             "com.squareup.okio:okio:3.2.0",
             "com.russhwolf:multiplatform-settings-datastore:1.0.0-RC"
         ],
         title = "Dependencies"
     )
+    @ToolingProperty.Semantics.Dependencies
     val commonMainDependencies: List<String> by annotation()
 }
 

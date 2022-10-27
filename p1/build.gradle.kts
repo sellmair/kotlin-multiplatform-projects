@@ -3,9 +3,16 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
-    id("multiplatform")
+    id("nix")
 }
 
 kotlin {
-    sourceSets
+    targetHierarchy.default {
+        common {
+            ios()
+        }
+    }
+    jvm()
+    linuxX64()
+    macosX64()
 }

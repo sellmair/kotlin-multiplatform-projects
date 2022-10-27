@@ -15,25 +15,23 @@ plugins {
  */
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targets.hierarchy.custom {
-        val isNix: Boolean = isApple || isLinux
-
-        if (isNative) {
-            group("native") {
-                if (isNix) {
-                    group("nix")
-                }
+    targetHierarchy.default {
+        group("native") {
+            group("nix") {
+                anyLinux()
+                anyMacos()
             }
         }
 
-        if (isNix || isJvm) {
+        common {
             group("jvmAndNix") {
-                if (isNix) {
-                    group("nix")
-                }
+                jvm()
+                anyLinux()
+                anyMacos()
             }
         }
     }
+
 
     /* Declare my targets */
     linuxX64()

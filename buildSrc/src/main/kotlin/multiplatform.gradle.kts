@@ -25,5 +25,4 @@ kotlin {
     macosArm64()
     iosX64()
     iosArm64()
-    jvm()
 }

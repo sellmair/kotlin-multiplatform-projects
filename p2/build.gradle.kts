@@ -6,3 +6,7 @@ plugins {
 android {
     compileSdkVersion(30)
 }
+
+dependencies {
+    implementation(project(":p1"))
+}

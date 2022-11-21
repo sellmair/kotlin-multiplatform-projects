@@ -1,3 +1,5 @@
 package producer
 
-expect fun foo(value: String, optionalParameter: Boolean = false)
+expect class Producer constructor() {
+    fun foo(value: String, optionalParameter: Boolean = false)
+}

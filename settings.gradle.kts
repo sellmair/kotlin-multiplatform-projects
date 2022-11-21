@@ -3,10 +3,11 @@ pluginManagement {
         mavenLocal()
         mavenCentral()
         google()
+        gradlePluginPortal()
     }
     plugins {
         //kotlin("multiplatform") version "1.8.255-SNAPSHOT"
-        kotlin("multiplatform") version "1.7.0"
+        kotlin("multiplatform") version "1.6.20"
     }
 }
 

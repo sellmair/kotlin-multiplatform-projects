@@ -1,3 +1,5 @@
 package consumer
 
-fun consumerCommonMain() = producer.foo("")
+import producer.Producer
+
+fun consumerCommonMain() = Producer().foo("")

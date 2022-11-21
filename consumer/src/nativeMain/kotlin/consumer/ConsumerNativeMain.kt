@@ -1,3 +1,5 @@
 package consumer
 
-fun consumerNativeMain() = producer.foo("")
+import producer.Producer
+
+fun consumerNativeMain() =  Producer().foo("")

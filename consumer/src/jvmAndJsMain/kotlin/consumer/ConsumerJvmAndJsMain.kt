@@ -1,3 +1,5 @@
 package consumer
 
-fun consumerJvmAndJsMain() = producer.foo("")
+import producer.Producer
+
+fun consumerJvmAndJsMain() =  Producer().foo("")

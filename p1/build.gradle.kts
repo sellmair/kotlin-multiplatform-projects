@@ -1,9 +1,21 @@
 import org.jetbrains.kotlin.gradle.android.androidTargetPrototype
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("multiplatform")
     `maven-publish`
+}
+
+group = "org.jetbrains.sample"
+version = "1.0.0"
+
+
+publishing {
+    repositories {
+        maven(buildDir.resolve("repo")) {
+            name = "build"
+        }
+    }
 }
 
 android {
@@ -19,6 +31,7 @@ android {
 
 kotlin {
     val android = androidTargetPrototype()
+    jvm()
     android.androidDsl.compileSdk = 23
     android.compilations.all {
         androidCompilationSpecificStuff = 23020
@@ -51,8 +64,6 @@ kotlin {
 }
 
 
-
-
 tasks.register("printMainCompilationClasspath") {
     val files = project.files({
         project.configurations.getByName(kotlin.targets.getByName("android").compilations.getByName("main").compileDependencyConfigurationName)
@@ -64,5 +75,11 @@ tasks.register("printMainCompilationClasspath") {
         files.files.forEach { file ->
             logger.quiet(file.path)
         }
+    }
+}
+
+tasks.register("printAllConfigurations") {
+    doLast {
+        logger.quiet(project.configurations.map { it.name }.joinToString("\n"))
     }
 }

@@ -7,8 +7,12 @@ android {
     compileSdkVersion(30)
 }
 
+repositories {
+    maven("/Users/sebastiansellmair/TestProjects/kotlin-multiplatform-projects/p1/build/repo")
+}
+
 dependencies {
-    implementation(project(":p1"))
+    implementation("org.jetbrains.sample:p1:1.0.0")
 }
 
 tasks.register("printAllConfigurations") {

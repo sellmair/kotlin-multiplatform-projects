@@ -12,12 +12,13 @@ repositories {
 
 kotlin {
     jvm()
-    js()
+    js().browser()
     linuxX64()
     linuxArm64()
 
     val commonMain by sourceSets.getting
     val nativeMain by sourceSets.creating
+    val secondCommonMain by sourceSets.creating
     val jvmAndJsMain by sourceSets.creating
     val jvmMain by sourceSets.getting
     val jsMain by sourceSets.getting
@@ -25,6 +26,10 @@ kotlin {
     val linuxArm64Main by sourceSets.getting
 
     commonMain.let {
+        secondCommonMain.dependsOn(it)
+    }
+
+    secondCommonMain.let {
         nativeMain.dependsOn(it)
         jvmAndJsMain.dependsOn(it)
     }

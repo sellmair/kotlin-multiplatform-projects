@@ -5,5 +5,6 @@ actual class Producer {
 }
 
 fun inProducerNativeMain() {
-   Producer().foo("") // <-  No value passed for parameter 'optionalParameter'
+    producerSecondCommonMain()
+    Producer().foo("") // <-  No value passed for parameter 'optionalParameter'
 }

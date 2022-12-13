@@ -1,0 +1,2 @@
+object ProducerACommonX
+object A

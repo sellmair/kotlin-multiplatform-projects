@@ -1,5 +1,5 @@
 object ConsumerACommon {
     init {
-        ProducerACommon
+        ProducerACommonX
     }
 }

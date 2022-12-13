@@ -1,0 +1,2 @@
+class LinuxX64Main {
+}

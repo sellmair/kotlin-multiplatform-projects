@@ -1,5 +1,5 @@
 pluginManagement {
-    val kotlinVersion = "1.6.255-SNAPSHOT"
+    val kotlinVersion = "1.8.255-SNAPSHOT"
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -9,13 +9,6 @@ pluginManagement {
     plugins {
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
-    }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id.startsWith("com.android")) {
-                useModule("com.android.tools.build:gradle:4.0.2")
-            }
-        }
     }
 }
 

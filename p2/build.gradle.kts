@@ -72,8 +72,8 @@ kotlin {
     }
 
     sourceSets.commonMain.get().dependencies {
-        implementation(project(":p1"))
-        //implementation("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
+        //implementation(project(":p1"))
+        implementation("kotlin-multiplatform-projects:p1:1.0.0-SNAPSHOT")
     }
 
     sourceSets.all {

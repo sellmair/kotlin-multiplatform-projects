@@ -4,12 +4,6 @@ plugins {
     kotlin("multiplatform")
 }
 
-tasks.named("prepareKotlinIdeaImport").configure {
-    dependsOn(gradle.includedBuilds.map { it.task(":producerA:prepareKotlinIdeaImport") })
-    dependsOn(gradle.includedBuilds.map { it.task(":producerB:prepareKotlinIdeaImport") })
-    dependsOn(gradle.includedBuilds.map { it.task(":producerC:prepareKotlinIdeaImport") })
-}
-
 kotlin {
     targetHierarchy.default()
     jvm()

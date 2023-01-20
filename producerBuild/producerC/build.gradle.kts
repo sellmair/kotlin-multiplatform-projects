@@ -13,6 +13,8 @@ kotlin {
     targetHierarchy.default()
     jvm()
     linuxX64()
+    iosX64()
+    iosArm64()
 
     sourceSets.commonMain.get().dependencies {
         api("com.squareup.okio:okio:3.3.0")

@@ -13,6 +13,8 @@ kotlin {
     targetHierarchy.default()
     jvm()
     linuxX64()
+    iosX64()
+    iosArm64()
 
     sourceSets.commonMain.get().dependencies {
         api("com.squareup.okio:okio:3.3.0")
@@ -20,5 +22,9 @@ kotlin {
         implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.2")
         implementation("com.arkivanov.mvikotlin:mvikotlin-main:3.0.2")
         implementation(project(":producerC"))
+    }
+
+    sourceSets.getByName("nativeMain").dependencies {
+        api("co.touchlab:sqliter-driver:1.2.1")
     }
 }

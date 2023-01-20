@@ -1,9 +1,10 @@
-import com.arkivanov.mvikotlin.core.store.Store
-import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
+
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.Deferred
 import okio.Path
 import okio.Path.Companion.toPath
 
 object ProducerACommon {
+    fun useCoroutines(): Deferred<Unit> = CompletableDeferred(Unit)
     fun useOkio(): Path = "".toPath()
-    fun useMviKotlin(): Store<Any, Any, Any> = TODO()
 }

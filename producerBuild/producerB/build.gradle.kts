@@ -15,8 +15,10 @@ kotlin {
     linuxX64()
 
     sourceSets.commonMain.get().dependencies {
-        api(project(":producerB"))
+        api("com.squareup.okio:okio:3.3.0")
+        api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.2")
         implementation("com.arkivanov.mvikotlin:mvikotlin-main:3.0.2")
+        implementation(project(":producerC"))
     }
 }

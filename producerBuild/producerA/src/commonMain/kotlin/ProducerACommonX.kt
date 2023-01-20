@@ -1,2 +1,0 @@
-object ProducerACommonX
-object A

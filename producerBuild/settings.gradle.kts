@@ -18,3 +18,5 @@ dependencyResolutionManagement {
 }
 
 include(":producerA")
+include(":producerB")
+include(":producerC")

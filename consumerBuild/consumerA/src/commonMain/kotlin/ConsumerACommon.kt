@@ -1,5 +1,6 @@
+import okio.Path
+
 object ConsumerACommon {
-    init {
-        ProducerACommonX
-    }
+    val useOkioFromCompositeBuildAsTransitiveDependency: Path = ProducerACommon.useOkio()
+    //val useMviKotlinShouldNotResolveAsImplementationDependency = ProducerACommon.useMviKotlin()
 }

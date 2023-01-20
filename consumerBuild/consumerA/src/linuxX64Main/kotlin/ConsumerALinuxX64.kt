@@ -1,6 +1,6 @@
 object ConsumerALinuxX64 {
     init {
-        ProducerACommonX
+        ProducerACommon
         ProducerANative
         ProducerALinuxX64
     }

@@ -8,7 +8,7 @@ pluginManagement {
         google()
     }
     plugins {
-        kotlin("multiplatform") version "1.8.255-SNAPSHOT"
+        kotlin("multiplatform") version "1.9.255-SNAPSHOT"
     }
 }
 

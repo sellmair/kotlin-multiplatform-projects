@@ -1,5 +1,7 @@
 @file:Suppress("OPT_IN_USAGE")
 
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     kotlin("multiplatform")
     `maven-publish`
@@ -14,4 +16,8 @@ kotlin {
     jvm()
     linuxX64()
     linuxArm64()
+
+    targets.withType<KotlinNativeTarget>().all {
+        compilations.getByName("main").cinterops.create("clib")
+    }
 }

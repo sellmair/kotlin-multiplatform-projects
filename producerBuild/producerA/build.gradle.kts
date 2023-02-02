@@ -18,6 +18,8 @@ kotlin {
     linuxArm64()
 
     targets.withType<KotlinNativeTarget>().all {
-        compilations.getByName("main").cinterops.create("clib")
+        compilations.getByName("main").cinterops.create("clib") {
+            header("src/clib.h")
+        }
     }
 }

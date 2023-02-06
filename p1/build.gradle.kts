@@ -1,20 +1,22 @@
+@file:Suppress("OPT_IN_USAGE")
+
 plugins {
     id("com.android.library")
-    kotlin("multiplatform")
+    id("multiplatform")
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 33
 }
 
 kotlin {
+    iosArm64()
+    iosX64()
+    macosArm64()
+    macosX64()
+    linuxArm64()
+    linuxX64()
+
     jvm()
     android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
 }

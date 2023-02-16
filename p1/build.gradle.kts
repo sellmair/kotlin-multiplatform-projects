@@ -1,20 +1,23 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdkVersion(30)
-}
-
 kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
+    iosArm64()
+    iosX64()
+    linuxX64()
+
+    targetHierarchy.default()
+
+    sourceSets.commonMain.get().dependencies {
+        api("co.touchlab:sqliter-driver:1.2.1")
+    }
+
+    targets.withType<KotlinNativeTarget>().all {
+        compilations.getByName("main").cinterops.create("dummy") {
+            header("src/dummy.h")
         }
     }
 }

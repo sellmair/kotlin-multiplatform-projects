@@ -22,9 +22,12 @@ kotlin {
         implementation("org.jetbrains.sample:producer:1.0.0-SNAPSHOT")
     }
 
+    /*
     targets.withType<KotlinNativeTarget>().all {
         compilations.getByName("main").cinterops.create("consumer-c-library") {
             header("src/consumer-c-library.h")
         }
     }
+
+     */
 }

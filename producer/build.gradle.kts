@@ -19,10 +19,14 @@ publishing {
 kotlin {
     linuxX64()
     linuxArm64()
+    macosArm64()
 
     targetHierarchy.custom {
         group("nativeCommon") {
             withNative()
+            group("linux") {
+                withLinux()
+            }
         }
     }
 

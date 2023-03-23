@@ -1,20 +1,33 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
+    `maven-publish`
 }
 
-android {
-    compileSdkVersion(30)
+group = "org.jetbrains.sample"
+version = "1.0.0"
+
+publishing {
+    repositories {
+        maven(rootProject.buildDir.resolve("repo"))
+    }
 }
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
+    linuxX64()
+    linuxArm64()
+    targetHierarchy.default()
+}
+
+dependencies {
+    constraints {
+        kotlin.sourceSets.all {
+            val apiConfiguration = configurations.getByName(apiConfigurationName)
+            apiConfiguration(project(":p2"))
         }
     }
 }

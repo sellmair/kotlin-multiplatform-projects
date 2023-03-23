@@ -6,16 +6,20 @@ pluginManagement {
         google()
     }
     plugins {
-        kotlin("multiplatform") version "1.9.255-SNAPSHOT"
-        kotlin("android") version "1.9.255-SNAPSHOT"
-        id("com.android.application") version "7.3.1"
-        id("com.android.library") version "7.3.1"
+        //val kotlinVersion = "1.8.20-RC"
+        val kotlinVersion = "1.9.255-SNAPSHOT"
+        //val kotlinVersion = "1.9.255-master-SNAPSHOT"
+        kotlin("multiplatform") version kotlinVersion
+        kotlin("android") version kotlinVersion
+        id("com.android.application") version "7.4.2"
+        id("com.android.library") version "7.4.2"
     }
 
 }
 
 dependencyResolutionManagement {
     repositories {
+        maven(rootProject.projectDir.resolve("build").resolve("repo"))
         mavenLocal()
         mavenCentral()
         google()
@@ -24,3 +28,4 @@ dependencyResolutionManagement {
 
 include(":p1")
 include(":p2")
+include(":consumer")

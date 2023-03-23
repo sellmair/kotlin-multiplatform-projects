@@ -1,8 +1,27 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
+    `maven-publish`
 }
 
-android {
-    compileSdkVersion(30)
+group = "org.jetbrains.sample"
+version = "1.0.0"
+
+publishing {
+    repositories {
+        maven(rootProject.buildDir.resolve("repo"))
+    }
+}
+
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
+kotlin {
+    jvm()
+    linuxX64()
+    linuxArm64()
+    targetHierarchy.default()
+
+    sourceSets.commonMain.get().dependencies {
+        api(project(":p1"))
+    }
 }

@@ -1,8 +1,11 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("jvm")
 }
 
-android {
-    compileSdkVersion(30)
+kotlin.sourceSets.all {
+    languageSettings.optIn("MyOptIn")
+}
+
+dependencies {
+    implementation(project(":p1"))
 }

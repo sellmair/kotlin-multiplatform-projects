@@ -1,20 +1,7 @@
 plugins {
-    id("com.android.library")
-    kotlin("multiplatform")
+    kotlin("jvm")
 }
 
-android {
-    compileSdkVersion(30)
-}
-
-kotlin {
-    jvm()
-    android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
+dependencies {
+    api("com.squareup.okio:okio:3.3.0")
 }

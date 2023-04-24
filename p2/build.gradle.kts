@@ -4,5 +4,6 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 33
+    namespace = "org.jetbrains.sample.p2"
 }

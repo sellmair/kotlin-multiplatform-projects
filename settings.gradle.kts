@@ -6,10 +6,13 @@ pluginManagement {
         google()
     }
     plugins {
-        kotlin("multiplatform") version "1.9.255-SNAPSHOT"
-        kotlin("android") version "1.9.255-SNAPSHOT"
-        id("com.android.application") version "7.3.1"
-        id("com.android.library") version "7.3.1"
+        val kotlinVersion = "1.9.255-SNAPSHOT"
+        kotlin("multiplatform") version kotlinVersion
+        kotlin("android") version kotlinVersion
+
+        val androidVersion = "7.4.0"
+        id("com.android.application") version androidVersion
+        id("com.android.library") version androidVersion
     }
 
 }

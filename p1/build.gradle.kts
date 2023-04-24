@@ -4,17 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 33
+    namespace = "org.jetbrains.sample.p1"
 }
 
 kotlin {
     jvm()
     android()
-    sourceSets {
-        named("androidAndroidTest") {
-            dependencies {
-                implementation(project(":p2"))
-            }
-        }
-    }
 }

@@ -1,9 +1,17 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
+    //id("com.android.library")
 }
 
+/*
 android {
     compileSdk = 33
-    namespace = "org.jetbrains.sample.p2"
+}
+
+ */
+
+kotlin {
+    iosX64()
+    iosArm64()
+   // androidTarget()
 }

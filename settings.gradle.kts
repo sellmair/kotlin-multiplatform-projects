@@ -8,6 +8,7 @@ pluginManagement {
     plugins {
         val kotlinVersion = "1.9.255-SNAPSHOT"
         kotlin("multiplatform") version kotlinVersion
+        kotlin("jvm") version kotlinVersion
         kotlin("android") version kotlinVersion
 
         val androidVersion = "7.4.0"
@@ -26,4 +27,4 @@ dependencyResolutionManagement {
 }
 
 include(":p1")
-include(":p2")
+//include(":p2")

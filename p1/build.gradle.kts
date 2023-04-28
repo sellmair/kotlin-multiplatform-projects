@@ -1,14 +1,9 @@
-plugins {
-    id("com.android.library")
-    kotlin("multiplatform")
-}
+@file:Suppress("OPT_IN_USAGE")
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p1"
+plugins {
+    kotlin("multiplatform")
 }
 
 kotlin {
     jvm()
-    android()
 }

@@ -1,3 +1,4 @@
-object CommonMain {
-    fun greet() = println("Hello from CommonMain")
+fun main() {
+    Jvm.invoke()
+    println("Executed: CommonMain")
 }

@@ -1,4 +1,4 @@
 fun main() {
-    CommonMain.greet()
-    Jvm.greet()
+    Jvm.invoke()
+    println("Executed: JvmMain")
 }

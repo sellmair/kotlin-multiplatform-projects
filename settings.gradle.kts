@@ -9,7 +9,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 
-    val kotlin_version: String by settings
+    val kotlin_version: String = "1.9.255-SNAPSHOT"
     val android_tools_version: String by settings
     plugins {
         id("org.jetbrains.kotlin.jvm") version kotlin_version

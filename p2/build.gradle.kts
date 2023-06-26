@@ -13,8 +13,6 @@ kotlin {
     macosX64()
     mingwX64("windowsX64")
 
-    targetHierarchy.default()
-
     val commonMain by sourceSets.getting
 
     commonMain.dependencies {

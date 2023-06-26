@@ -8,7 +8,7 @@ plugins {
 
 kotlin {
     jvm()
-    js().nodejs()
+    js(IR).nodejs()
     linuxX64()
     macosX64()
     mingwX64("windowsX64")

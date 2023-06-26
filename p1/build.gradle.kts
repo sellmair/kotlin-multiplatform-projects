@@ -1,14 +1,21 @@
-plugins {
-    id("com.android.library")
-    kotlin("multiplatform")
-}
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p1"
+plugins {
+    kotlin("multiplatform")
 }
 
 kotlin {
     jvm()
-    android()
+    js().nodejs()
+    linuxX64()
+    macosX64()
+    mingwX64("windowsX64")
+
+    targets.withType<KotlinNativeTarget>().forEach { target ->
+        target.compilations.all {
+            cinterops.create("withPosix") {
+                header(file("libs/withPosix.h"))
+            }
+        }
+    }
 }

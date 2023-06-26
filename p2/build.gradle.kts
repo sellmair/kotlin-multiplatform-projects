@@ -1,9 +1,36 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
+
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
 }
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p2"
+kotlin {
+    jvm()
+    js().nodejs()
+
+    linuxX64()
+    macosX64()
+    mingwX64("windowsX64")
+
+    targetHierarchy.default()
+
+    val commonMain by sourceSets.getting
+
+    commonMain.dependencies {
+        implementation(project(":p1"))
+        implementation(project(":p0"))
+    }
+
+    targets.withType<KotlinNativeTarget>().forEach { target ->
+        target.compilations.all {
+            cinterops.create("withPosix") {
+                header(file("libs/withPosix.h"))
+            }
+
+            cinterops.create("withPosixP2") {
+                header(file("libs/withPosixP2.h"))
+            }
+        }
+    }
 }

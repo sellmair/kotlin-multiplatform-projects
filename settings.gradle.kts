@@ -1,29 +1,53 @@
+
 pluginManagement {
+    apply(from = "gradle/cache-redirector.settings.gradle.kts")
+
     repositories {
         mavenLocal()
         mavenCentral()
+        google()
         gradlePluginPortal()
-        google()
     }
+
+    val kotlin_version: String by settings
+    val android_tools_version: String by settings
     plugins {
-        val kotlinVersion = "1.9.255-SNAPSHOT"
-        kotlin("multiplatform") version kotlinVersion
-        kotlin("android") version kotlinVersion
-
-        val androidVersion = "7.4.0"
-        id("com.android.application") version androidVersion
-        id("com.android.library") version androidVersion
+        id("org.jetbrains.kotlin.jvm") version kotlin_version
+        id("org.jetbrains.kotlin.kapt") version kotlin_version
+        id("org.jetbrains.kotlin.android") version kotlin_version
+        id("org.jetbrains.kotlin.js") version kotlin_version
+        id("org.jetbrains.kotlin.native.cocoapods") version kotlin_version
+        id("org.jetbrains.kotlin.multiplatform") version kotlin_version
+        id("org.jetbrains.kotlin.multiplatform.pm20") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.allopen") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.spring") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.jpa") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.noarg") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.lombok") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.sam.with.receiver") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.serialization") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.assignment") version kotlin_version
+        id("org.jetbrains.kotlin.gradle-subplugin-example") version kotlin_version
+        id("org.jetbrains.kotlin.plugin.atomicfu") version kotlin_version
     }
-
+    
+    resolutionStrategy {
+        eachPlugin {
+            when (requested.id.id) {
+                "com.android.application",
+                "com.android.library",
+                "com.android.test",
+                "com.android.dynamic-feature",
+                "com.android.asset-pack",
+                "com.android.asset-pack-bundle",
+                "com.android.lint",
+                "com.android.instantapp",
+                "com.android.feature" -> useModule("com.android.tools.build:gradle:$android_tools_version")
+            }
+        }
+    }
 }
 
-dependencyResolutionManagement {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        google()
-    }
-}
-
+include(":p0")
 include(":p1")
 include(":p2")

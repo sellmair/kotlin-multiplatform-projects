@@ -1,29 +1,9 @@
-pluginManagement {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        gradlePluginPortal()
-        google()
-    }
-    plugins {
-        val kotlinVersion = "1.9.255-SNAPSHOT"
-        kotlin("multiplatform") version kotlinVersion
-        kotlin("android") version kotlinVersion
-
-        val androidVersion = "7.4.0"
-        id("com.android.application") version androidVersion
-        id("com.android.library") version androidVersion
-    }
-
-}
+include("producer")
+include("consumer")
 
 dependencyResolutionManagement {
     repositories {
-        mavenLocal()
+        maven(rootDir.resolve("repository"))
         mavenCentral()
-        google()
     }
 }
-
-include(":p1")
-include(":p2")

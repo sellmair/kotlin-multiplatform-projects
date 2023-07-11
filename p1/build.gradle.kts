@@ -1,14 +1,29 @@
 plugins {
-    id("com.android.library")
-    kotlin("multiplatform")
+    `java-library`
+    `java-test-fixtures`
+    `maven-publish`
 }
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p1"
+group = "org.jetbrains.sample"
+version = "1.0.0"
+
+publishing {
+    publications {
+        create("myLibrary", MavenPublication::class.java) {
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        maven(rootDir.resolve("repo"))
+    }
 }
 
-kotlin {
-    jvm()
-    android()
+
+java {
+    withSourcesJar()
+    registerFeature("foo") {
+        usingSourceSet(sourceSets.create("foo"))
+        withSourcesJar()
+    }
 }

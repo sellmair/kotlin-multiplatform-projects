@@ -1,0 +1,1 @@
+fun p2Main() = Main()

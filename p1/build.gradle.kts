@@ -10,5 +10,11 @@ android {
 
 kotlin {
     jvm()
-    android()
+    androidTarget()
+
+
+    val root = sourceSets.create("root")
+    sourceSets.commonMain.configure {
+        dependsOn(root)
+    }
 }

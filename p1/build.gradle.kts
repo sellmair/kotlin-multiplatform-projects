@@ -12,7 +12,7 @@ kotlin {
     mingwX64("windowsX64")
 
     targets.withType<KotlinNativeTarget>().forEach { target ->
-        target.compilations.all {
+        target.compilations.getByName("main") {
             cinterops.create("withPosix") {
                 header(file("libs/withPosix.h"))
             }

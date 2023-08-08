@@ -1,14 +1,15 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
 }
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p1"
-}
 
 kotlin {
     jvm()
-    android()
+    iosX64()
+    iosArm64()
+
+    sourceSets.commonMain.dependencies {
+        implementation(kotlin("stdlib"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2-1.9.20-stdlib")
+    }
 }

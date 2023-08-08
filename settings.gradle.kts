@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        maven("https://repo.sellmair.io/")
         mavenLocal()
         mavenCentral()
         gradlePluginPortal()
@@ -19,6 +20,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        maven("https://repo.sellmair.io/")
         mavenLocal()
         mavenCentral()
         google()
@@ -26,4 +28,3 @@ dependencyResolutionManagement {
 }
 
 include(":p1")
-include(":p2")

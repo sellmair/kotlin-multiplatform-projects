@@ -8,6 +8,7 @@ pluginManagement {
     }
     plugins {
         val kotlinVersion = "1.9.255-SNAPSHOT"
+        //val kotlinVersion = "1.9.20-stdlib-01"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
 

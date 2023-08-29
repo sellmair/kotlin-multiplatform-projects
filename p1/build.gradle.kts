@@ -1,14 +1,24 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
-}
-
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p1"
 }
 
 kotlin {
     jvm()
-    android()
+    linuxX64()
+    linuxArm64()
+
+
+    /*
+     Create custom 'refines' edges.
+     The goal here is to have refines edges (dependsOn) listed in a way
+     that linuxMain will see the 'commonMain' edge first
+     */
+
+    sourceSets.nativeMain.get().dependsOn(sourceSets.commonMain.get())
+
+    sourceSets.linuxMain.get().dependsOn(sourceSets.commonMain.get())
+    sourceSets.linuxMain.get().dependsOn(sourceSets.nativeMain.get())
+
+    sourceSets.getByName("linuxX64Main").dependsOn(sourceSets.linuxMain.get())
+    sourceSets.getByName("linuxArm64Main").dependsOn(sourceSets.linuxMain.get())
 }

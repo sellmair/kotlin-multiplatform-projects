@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
+    kotlin("multiplatform")
 }
 
-android {
-    compileSdk = 33
-    namespace = "org.jetbrains.sample.p2"
+kotlin {
+    jvm()
+    linuxX64()
+    linuxArm64()
 }

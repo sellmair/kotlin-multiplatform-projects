@@ -6,7 +6,8 @@ pluginManagement {
         google()
     }
     plugins {
-        val kotlinVersion = "1.9.255-SNAPSHOT"
+        var kotlinVersion = "1.9.255-SNAPSHOT"
+        kotlinVersion = "1.9.20-Beta"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
 
@@ -26,4 +27,4 @@ dependencyResolutionManagement {
 }
 
 include(":p1")
-include(":p2")
+//include(":p2")

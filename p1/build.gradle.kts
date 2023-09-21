@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
@@ -9,6 +11,26 @@ android {
 }
 
 kotlin {
+    macosX64()
+    androidTarget()
     jvm()
-    android()
+
+    @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    applyDefaultHierarchyTemplate {
+        common {
+            group("jvmCommon") {
+                withJvm()
+                withAndroidTarget()
+            }
+        }
+    }
+
+    sourceSets.commonTest.dependencies {
+        implementation(kotlin("test-annotations-common"))
+        implementation(kotlin("test-common"))
+    }
+
+    sourceSets.getByName("jvmCommonMain").dependencies {
+        implementation(kotlin("test-junit"))
+    }
 }

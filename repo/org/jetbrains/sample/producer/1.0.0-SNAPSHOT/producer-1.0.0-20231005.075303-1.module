@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.sample",
+    "module": "producer",
+    "version": "1.0.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.255-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "producer-1.0.0-SNAPSHOT.jar",
+          "url": "producer-1.0.0-SNAPSHOT.jar",
+          "size": 1814,
+          "sha512": "16d356e8a97c3a698daf10e4c9c0598ac7b05226375ac37d58f17f3480a96927759c014cb9a9a0ff5a27c77d2ebda09deccf503c76e593dbceb0a630b52e9692",
+          "sha256": "a5f189c8ead8b8415fe5adaded8692cd38269aab5e5a5f43c7567557b967d729",
+          "sha1": "b93997d2112ed56b423d2648db6d9fc1694b750d",
+          "md5": "51a36212a956233ba45420d0e072323e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.255-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "producer-1.0.0-SNAPSHOT.jar",
+          "url": "producer-1.0.0-SNAPSHOT.jar",
+          "size": 1814,
+          "sha512": "16d356e8a97c3a698daf10e4c9c0598ac7b05226375ac37d58f17f3480a96927759c014cb9a9a0ff5a27c77d2ebda09deccf503c76e593dbceb0a630b52e9692",
+          "sha256": "a5f189c8ead8b8415fe5adaded8692cd38269aab5e5a5f43c7567557b967d729",
+          "sha1": "b93997d2112ed56b423d2648db6d9fc1694b750d",
+          "md5": "51a36212a956233ba45420d0e072323e"
+        }
+      ]
+    }
+  ]
+}

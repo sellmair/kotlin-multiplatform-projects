@@ -6,9 +6,10 @@ pluginManagement {
         google()
     }
     plugins {
-        val kotlinVersion = "1.9.255-SNAPSHOT"
+        val kotlinVersion = "2.0.255-SNAPSHOT"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
+        kotlin("jvm") version kotlinVersion
 
         val androidVersion = "8.0.2"
         id("com.android.application") version androidVersion
@@ -25,5 +26,5 @@ dependencyResolutionManagement {
     }
 }
 
-include(":p1")
-include(":p2")
+include(":consumer")
+include(":producer")

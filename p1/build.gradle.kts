@@ -4,11 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "org.jetbrains.sample.p1"
 }
 
 kotlin {
-    jvm()
-    android()
+    androidTarget()
+    iosX64()
+    iosSimulatorArm64()
+    iosArm64()
 }

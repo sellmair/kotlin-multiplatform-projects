@@ -1,29 +1,39 @@
+rootProject.name = "TestProject"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
-        mavenLocal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev") {
+            mavenContent {
+                includeGroupByRegex(".*compose.*")
+            }
+        }
+        google {
+            mavenContent {
+                includeGroupByRegex(".*android.*")
+                includeGroupByRegex(".*google.*")
+            }
+        }
         mavenCentral()
-        gradlePluginPortal()
-        google()
     }
-    plugins {
-        val kotlinVersion = "2.0.255-SNAPSHOT"
-        kotlin("multiplatform") version kotlinVersion
-        kotlin("android") version kotlinVersion
-
-        val androidVersion = "8.1.2"
-        id("com.android.application") version androidVersion
-        id("com.android.library") version androidVersion
-    }
-
 }
 
 dependencyResolutionManagement {
     repositories {
-        mavenLocal()
+        google {
+            mavenContent {
+                includeGroupByRegex(".*android.*")
+                includeGroupByRegex(".*google.*")
+            }
+        }
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev") {
+            mavenContent {
+                includeGroupByRegex(".*compose.*")
+            }
+        }
+
         mavenCentral()
-        google()
     }
 }
 
-include(":p1")
-include(":p2")
+include(":composeApp")

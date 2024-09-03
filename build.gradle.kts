@@ -1,8 +1,11 @@
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.compose")
 }
 
 kotlin {
     jvm()
-    linuxX64() // <- Any second target required to make 'commonMain' actually common.
+    sourceSets.commonMain.dependencies {
+        implementation("org.jetbrains.compose.foundation:foundation-desktop:1.6.11")
+    }
 }

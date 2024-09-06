@@ -5,7 +5,8 @@ plugins {
 
 kotlin {
     jvm()
+    //linuxX64()
     sourceSets.commonMain.dependencies {
-        implementation("org.jetbrains.compose.foundation:foundation-desktop:1.6.11")
+       implementation("org.jetbrains.compose.foundation:foundation-desktop:1.6.11")
     }
 }

@@ -1,11 +1,9 @@
-@file:Suppress("FunctionName", "unused")
-
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 
-
 @Composable
 fun App() {
-    val state by remember { mutableStateOf(42) }
+    var state by remember { mutableStateOf(0) }
 }

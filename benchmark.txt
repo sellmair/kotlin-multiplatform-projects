@@ -17,436 +17,856 @@
 > Task :jvmBenchmark
 Running 'main' benchmarks for 'jvm'
 
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.alternative1
+
+Warm-up 1: 5.111 ns/op
+Warm-up 2: 5.125 ns/op
+Warm-up 3: 5.051 ns/op
+Warm-up 4: 5.053 ns/op
+Warm-up 5: 5.054 ns/op
+Iteration 1: 5.053 ns/op
+Iteration 2: 5.055 ns/op
+Iteration 3: 5.072 ns/op
+Iteration 4: 5.082 ns/op
+Iteration 5: 5.059 ns/op
+Iteration 6: 5.054 ns/op
+Iteration 7: 5.055 ns/op
+Iteration 8: 5.067 ns/op
+Iteration 9: 5.054 ns/op
+Iteration 10: 5.054 ns/op
+
+  Success: 5.060 ±(99.9%) 0.015 ns/op [Average]
+  (min, avg, max) = (5.053, 5.060, 5.082), stdev = 0.010
+  CI (99.9%): [5.045, 5.075] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.stdlib
+
+Warm-up 1: 5.378 ns/op
+Warm-up 2: 5.199 ns/op
+Warm-up 3: 5.264 ns/op
+Warm-up 4: 5.261 ns/op
+Warm-up 5: 5.265 ns/op
+Iteration 1: 5.260 ns/op
+Iteration 2: 5.262 ns/op
+Iteration 3: 5.258 ns/op
+Iteration 4: 5.259 ns/op
+Iteration 5: 5.262 ns/op
+Iteration 6: 5.264 ns/op
+Iteration 7: 5.263 ns/op
+Iteration 8: 5.260 ns/op
+Iteration 9: 5.261 ns/op
+Iteration 10: 5.261 ns/op
+
+  Success: 5.261 ±(99.9%) 0.003 ns/op [Average]
+  (min, avg, max) = (5.258, 5.261, 5.264), stdev = 0.002
+  CI (99.9%): [5.258, 5.264] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=zero
+
+Warm-up 1: 1.866 ns/op
+Warm-up 2: 2.033 ns/op
+Warm-up 3: 2.139 ns/op
+Warm-up 4: 2.140 ns/op
+Warm-up 5: 2.142 ns/op
+Iteration 1: 2.140 ns/op
+Iteration 2: 2.142 ns/op
+Iteration 3: 2.144 ns/op
+Iteration 4: 2.139 ns/op
+Iteration 5: 2.140 ns/op
+Iteration 6: 2.139 ns/op
+Iteration 7: 2.608 ns/op
+Iteration 8: 2.139 ns/op
+Iteration 9: 2.144 ns/op
+Iteration 10: 2.139 ns/op
+
+  Success: 2.187 ±(99.9%) 0.224 ns/op [Average]
+  (min, avg, max) = (2.139, 2.187, 2.608), stdev = 0.148
+  CI (99.9%): [1.964, 2.411] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=-Infinity
+
+Warm-up 1: 1.833 ns/op
+Warm-up 2: 2.036 ns/op
+Warm-up 3: 2.140 ns/op
+Warm-up 4: 2.140 ns/op
+Warm-up 5: 2.139 ns/op
+Iteration 1: 2.606 ns/op
+Iteration 2: 2.140 ns/op
+Iteration 3: 2.141 ns/op
+Iteration 4: 2.139 ns/op
+Iteration 5: 2.139 ns/op
+Iteration 6: 2.605 ns/op
+Iteration 7: 2.138 ns/op
+Iteration 8: 2.141 ns/op
+Iteration 9: 2.139 ns/op
+Iteration 10: 2.148 ns/op
+
+  Success: 2.234 ±(99.9%) 0.296 ns/op [Average]
+  (min, avg, max) = (2.138, 2.234, 2.606), stdev = 0.196
+  CI (99.9%): [1.937, 2.530] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=+Infinity
+
+Warm-up 1: 1.800 ns/op
+Warm-up 2: 2.031 ns/op
+Warm-up 3: 2.140 ns/op
+Warm-up 4: 2.140 ns/op
+Warm-up 5: 2.140 ns/op
+Iteration 1: 2.140 ns/op
+Iteration 2: 2.140 ns/op
+Iteration 3: 2.604 ns/op
+Iteration 4: 2.139 ns/op
+Iteration 5: 2.140 ns/op
+Iteration 6: 2.139 ns/op
+Iteration 7: 2.142 ns/op
+Iteration 8: 2.139 ns/op
+Iteration 9: 2.139 ns/op
+Iteration 10: 2.139 ns/op
+
+  Success: 2.186 ±(99.9%) 0.222 ns/op [Average]
+  (min, avg, max) = (2.139, 2.186, 2.604), stdev = 0.147
+  CI (99.9%): [1.964, 2.408] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=NaN
+
+Warm-up 1: 1.831 ns/op
+Warm-up 2: 2.035 ns/op
+Warm-up 3: 2.141 ns/op
+Warm-up 4: 2.138 ns/op
+Warm-up 5: 2.140 ns/op
+Iteration 1: 2.139 ns/op
+Iteration 2: 2.139 ns/op
+Iteration 3: 2.159 ns/op
+Iteration 4: 2.139 ns/op
+Iteration 5: 2.147 ns/op
+Iteration 6: 2.139 ns/op
+Iteration 7: 2.138 ns/op
+Iteration 8: 2.140 ns/op
+Iteration 9: 2.143 ns/op
+Iteration 10: 2.140 ns/op
+
+  Success: 2.142 ±(99.9%) 0.010 ns/op [Average]
+  (min, avg, max) = (2.138, 2.142, 2.159), stdev = 0.007
+  CI (99.9%): [2.132, 2.152] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=zero
+
+Warm-up 1: 2.120 ns/op
+Warm-up 2: 2.879 ns/op
+Warm-up 3: 2.099 ns/op
+Warm-up 4: 2.101 ns/op
+Warm-up 5: 2.101 ns/op
+Iteration 1: 2.101 ns/op
+Iteration 2: 2.100 ns/op
+Iteration 3: 2.100 ns/op
+Iteration 4: 2.101 ns/op
+Iteration 5: 2.486 ns/op
+Iteration 6: 2.100 ns/op
+Iteration 7: 2.101 ns/op
+Iteration 8: 2.100 ns/op
+Iteration 9: 2.101 ns/op
+Iteration 10: 2.102 ns/op
+
+  Success: 2.139 ±(99.9%) 0.184 ns/op [Average]
+  (min, avg, max) = (2.100, 2.139, 2.486), stdev = 0.122
+  CI (99.9%): [1.955, 2.324] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=-Infinity
+
+Warm-up 1: 2.110 ns/op
+Warm-up 2: 2.871 ns/op
+Warm-up 3: 2.153 ns/op
+Warm-up 4: 2.141 ns/op
+Warm-up 5: 2.144 ns/op
+Iteration 1: 2.144 ns/op
+Iteration 2: 2.142 ns/op
+Iteration 3: 2.144 ns/op
+Iteration 4: 2.143 ns/op
+Iteration 5: 2.142 ns/op
+Iteration 6: 2.143 ns/op
+Iteration 7: 2.142 ns/op
+Iteration 8: 2.141 ns/op
+Iteration 9: 2.183 ns/op
+Iteration 10: 2.143 ns/op
+
+  Success: 2.147 ±(99.9%) 0.019 ns/op [Average]
+  (min, avg, max) = (2.141, 2.147, 2.183), stdev = 0.013
+  CI (99.9%): [2.127, 2.166] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=+Infinity
+
+Warm-up 1: 2.010 ns/op
+Warm-up 2: 2.870 ns/op
+Warm-up 3: 2.115 ns/op
+Warm-up 4: 2.112 ns/op
+Warm-up 5: 2.111 ns/op
+Iteration 1: 2.111 ns/op
+Iteration 2: 2.110 ns/op
+Iteration 3: 2.111 ns/op
+Iteration 4: 2.111 ns/op
+Iteration 5: 2.115 ns/op
+Iteration 6: 2.111 ns/op
+Iteration 7: 2.123 ns/op
+Iteration 8: 2.112 ns/op
+Iteration 9: 2.112 ns/op
+Iteration 10: 2.111 ns/op
+
+  Success: 2.113 ±(99.9%) 0.006 ns/op [Average]
+  (min, avg, max) = (2.110, 2.113, 2.123), stdev = 0.004
+  CI (99.9%): [2.107, 2.119] (assumes normal distribution)
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=NaN
+
+Warm-up 1: 2.121 ns/op
+Warm-up 2: 2.873 ns/op
+Warm-up 3: 2.101 ns/op
+Warm-up 4: 2.100 ns/op
+Warm-up 5: 2.101 ns/op
+Iteration 1: 2.102 ns/op
+Iteration 2: 2.100 ns/op
+Iteration 3: 2.102 ns/op
+Iteration 4: 2.100 ns/op
+Iteration 5: 2.101 ns/op
+Iteration 6: 2.101 ns/op
+Iteration 7: 2.100 ns/op
+Iteration 8: 2.102 ns/op
+Iteration 9: 2.495 ns/op
+Iteration 10: 2.101 ns/op
+
+  Success: 2.140 ±(99.9%) 0.188 ns/op [Average]
+  (min, avg, max) = (2.100, 2.140, 2.495), stdev = 0.125
+  CI (99.9%): [1.952, 2.329] (assumes normal distribution)
+
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.alternative1
 
 Warm-up 1: 5.114 ns/op
-Warm-up 2: 5.138 ns/op
-Warm-up 3: 5.060 ns/op
-Warm-up 4: 5.063 ns/op
-Warm-up 5: 5.060 ns/op
-Iteration 1: 5.059 ns/op
-Iteration 2: 5.057 ns/op
-Iteration 3: 5.153 ns/op
-Iteration 4: 5.069 ns/op
-Iteration 5: 5.113 ns/op
-Iteration 6: 5.276 ns/op
-Iteration 7: 5.098 ns/op
-Iteration 8: 5.061 ns/op
-Iteration 9: 5.063 ns/op
+Warm-up 2: 5.126 ns/op
+Warm-up 3: 5.054 ns/op
+Warm-up 4: 5.051 ns/op
+Warm-up 5: 5.052 ns/op
+Iteration 1: 5.081 ns/op
+Iteration 2: 5.058 ns/op
+Iteration 3: 5.053 ns/op
+Iteration 4: 5.054 ns/op
+Iteration 5: 5.056 ns/op
+Iteration 6: 5.059 ns/op
+Iteration 7: 5.051 ns/op
+Iteration 8: 5.053 ns/op
+Iteration 9: 5.053 ns/op
 Iteration 10: 5.061 ns/op
 
-  Success: 5.101 ±(99.9%) 0.104 ns/op [Average]
-  (min, avg, max) = (5.057, 5.101, 5.276), stdev = 0.069
-  CI (99.9%): [4.997, 5.205] (assumes normal distribution)
+  Success: 5.058 ±(99.9%) 0.013 ns/op [Average]
+  (min, avg, max) = (5.051, 5.058, 5.081), stdev = 0.009
+  CI (99.9%): [5.045, 5.071] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.stdlib
 
-Warm-up 1: 5.194 ns/op
-Warm-up 2: 5.227 ns/op
-Warm-up 3: 5.237 ns/op
-Warm-up 4: 5.254 ns/op
-Warm-up 5: 5.223 ns/op
-Iteration 1: 5.215 ns/op
-Iteration 2: 5.212 ns/op
-Iteration 3: 5.268 ns/op
-Iteration 4: 5.215 ns/op
-Iteration 5: 5.231 ns/op
-Iteration 6: 5.244 ns/op
-Iteration 7: 5.281 ns/op
-Iteration 8: 5.301 ns/op
-Iteration 9: 5.276 ns/op
-Iteration 10: 5.282 ns/op
+Warm-up 1: 5.362 ns/op
+Warm-up 2: 5.289 ns/op
+Warm-up 3: 5.200 ns/op
+Warm-up 4: 5.204 ns/op
+Warm-up 5: 5.204 ns/op
+Iteration 1: 5.202 ns/op
+Iteration 2: 5.204 ns/op
+Iteration 3: 5.202 ns/op
+Iteration 4: 5.203 ns/op
+Iteration 5: 5.255 ns/op
+Iteration 6: 5.230 ns/op
+Iteration 7: 5.202 ns/op
+Iteration 8: 5.211 ns/op
+Iteration 9: 5.201 ns/op
+Iteration 10: 5.203 ns/op
 
-  Success: 5.252 ±(99.9%) 0.050 ns/op [Average]
-  (min, avg, max) = (5.212, 5.252, 5.301), stdev = 0.033
-  CI (99.9%): [5.202, 5.303] (assumes normal distribution)
+  Success: 5.211 ±(99.9%) 0.027 ns/op [Average]
+  (min, avg, max) = (5.201, 5.211, 5.255), stdev = 0.018
+  CI (99.9%): [5.185, 5.238] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=zero
 
-Warm-up 1: 1.801 ns/op
-Warm-up 2: 2.038 ns/op
-Warm-up 3: 2.087 ns/op
-Warm-up 4: 2.073 ns/op
-Warm-up 5: 2.072 ns/op
-Iteration 1: 2.073 ns/op
-Iteration 2: 2.072 ns/op
-Iteration 3: 2.072 ns/op
-Iteration 4: 2.071 ns/op
-Iteration 5: 2.072 ns/op
-Iteration 6: 2.074 ns/op
-Iteration 7: 2.074 ns/op
-Iteration 8: 2.073 ns/op
-Iteration 9: 2.072 ns/op
-Iteration 10: 2.080 ns/op
+Warm-up 1: 1.800 ns/op
+Warm-up 2: 2.029 ns/op
+Warm-up 3: 2.071 ns/op
+Warm-up 4: 2.070 ns/op
+Warm-up 5: 2.071 ns/op
+Iteration 1: 2.070 ns/op
+Iteration 2: 2.070 ns/op
+Iteration 3: 2.114 ns/op
+Iteration 4: 2.133 ns/op
+Iteration 5: 2.129 ns/op
+Iteration 6: 2.132 ns/op
+Iteration 7: 2.146 ns/op
+Iteration 8: 2.123 ns/op
+Iteration 9: 2.070 ns/op
+Iteration 10: 2.070 ns/op
 
-  Success: 2.073 ±(99.9%) 0.004 ns/op [Average]
-  (min, avg, max) = (2.071, 2.073, 2.080), stdev = 0.003
-  CI (99.9%): [2.070, 2.077] (assumes normal distribution)
+  Success: 2.106 ±(99.9%) 0.048 ns/op [Average]
+  (min, avg, max) = (2.070, 2.106, 2.146), stdev = 0.032
+  CI (99.9%): [2.058, 2.154] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=-Infinity
 
-Warm-up 1: 1.807 ns/op
-Warm-up 2: 2.033 ns/op
-Warm-up 3: 2.074 ns/op
-Warm-up 4: 2.085 ns/op
-Warm-up 5: 2.114 ns/op
-Iteration 1: 2.132 ns/op
-Iteration 2: 2.134 ns/op
-Iteration 3: 2.132 ns/op
-Iteration 4: 2.133 ns/op
-Iteration 5: 2.129 ns/op
-Iteration 6: 2.073 ns/op
-Iteration 7: 2.072 ns/op
-Iteration 8: 2.073 ns/op
-Iteration 9: 2.073 ns/op
+Warm-up 1: 1.800 ns/op
+Warm-up 2: 2.031 ns/op
+Warm-up 3: 2.070 ns/op
+Warm-up 4: 2.072 ns/op
+Warm-up 5: 2.070 ns/op
+Iteration 1: 2.070 ns/op
+Iteration 2: 2.070 ns/op
+Iteration 3: 2.076 ns/op
+Iteration 4: 2.071 ns/op
+Iteration 5: 2.077 ns/op
+Iteration 6: 2.070 ns/op
+Iteration 7: 2.070 ns/op
+Iteration 8: 2.070 ns/op
+Iteration 9: 2.075 ns/op
 Iteration 10: 2.071 ns/op
 
-  Success: 2.102 ±(99.9%) 0.048 ns/op [Average]
-  (min, avg, max) = (2.071, 2.102, 2.134), stdev = 0.031
-  CI (99.9%): [2.055, 2.150] (assumes normal distribution)
+  Success: 2.072 ±(99.9%) 0.004 ns/op [Average]
+  (min, avg, max) = (2.070, 2.072, 2.077), stdev = 0.003
+  CI (99.9%): [2.068, 2.076] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=+Infinity
 
-Warm-up 1: 1.802 ns/op
-Warm-up 2: 2.032 ns/op
+Warm-up 1: 1.800 ns/op
+Warm-up 2: 2.029 ns/op
 Warm-up 3: 2.071 ns/op
-Warm-up 4: 2.072 ns/op
-Warm-up 5: 2.081 ns/op
-Iteration 1: 2.073 ns/op
-Iteration 2: 2.072 ns/op
-Iteration 3: 2.072 ns/op
-Iteration 4: 2.072 ns/op
-Iteration 5: 2.077 ns/op
-Iteration 6: 2.073 ns/op
-Iteration 7: 2.072 ns/op
-Iteration 8: 2.072 ns/op
-Iteration 9: 2.072 ns/op
-Iteration 10: 2.072 ns/op
+Warm-up 4: 2.071 ns/op
+Warm-up 5: 2.074 ns/op
+Iteration 1: 2.070 ns/op
+Iteration 2: 2.071 ns/op
+Iteration 3: 2.073 ns/op
+Iteration 4: 2.073 ns/op
+Iteration 5: 2.071 ns/op
+Iteration 6: 2.071 ns/op
+Iteration 7: 2.071 ns/op
+Iteration 8: 2.071 ns/op
+Iteration 9: 2.071 ns/op
+Iteration 10: 2.078 ns/op
 
-  Success: 2.073 ±(99.9%) 0.002 ns/op [Average]
-  (min, avg, max) = (2.072, 2.073, 2.077), stdev = 0.002
-  CI (99.9%): [2.070, 2.075] (assumes normal distribution)
+  Success: 2.072 ±(99.9%) 0.003 ns/op [Average]
+  (min, avg, max) = (2.070, 2.072, 2.078), stdev = 0.002
+  CI (99.9%): [2.069, 2.075] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=NaN
 
-Warm-up 1: 1.802 ns/op
-Warm-up 2: 2.032 ns/op
-Warm-up 3: 2.073 ns/op
-Warm-up 4: 2.071 ns/op
-Warm-up 5: 2.074 ns/op
-Iteration 1: 2.072 ns/op
-Iteration 2: 2.073 ns/op
-Iteration 3: 2.073 ns/op
-Iteration 4: 2.071 ns/op
-Iteration 5: 2.073 ns/op
-Iteration 6: 2.073 ns/op
-Iteration 7: 2.071 ns/op
-Iteration 8: 2.085 ns/op
-Iteration 9: 2.073 ns/op
-Iteration 10: 2.074 ns/op
+Warm-up 1: 1.818 ns/op
+Warm-up 2: 2.033 ns/op
+Warm-up 3: 2.070 ns/op
+Warm-up 4: 2.074 ns/op
+Warm-up 5: 2.070 ns/op
+Iteration 1: 2.099 ns/op
+Iteration 2: 2.094 ns/op
+Iteration 3: 2.091 ns/op
+Iteration 4: 2.104 ns/op
+Iteration 5: 2.069 ns/op
+Iteration 6: 2.076 ns/op
+Iteration 7: 2.070 ns/op
+Iteration 8: 2.070 ns/op
+Iteration 9: 2.072 ns/op
+Iteration 10: 2.070 ns/op
 
-  Success: 2.074 ±(99.9%) 0.006 ns/op [Average]
-  (min, avg, max) = (2.071, 2.074, 2.085), stdev = 0.004
-  CI (99.9%): [2.068, 2.080] (assumes normal distribution)
+  Success: 2.082 ±(99.9%) 0.021 ns/op [Average]
+  (min, avg, max) = (2.069, 2.082, 2.104), stdev = 0.014
+  CI (99.9%): [2.061, 2.102] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=zero
 
-Warm-up 1: 2.070 ns/op
+Warm-up 1: 2.068 ns/op
 Warm-up 2: 2.877 ns/op
-Warm-up 3: 2.109 ns/op
-Warm-up 4: 2.109 ns/op
-Warm-up 5: 2.109 ns/op
-Iteration 1: 2.111 ns/op
-Iteration 2: 2.109 ns/op
-Iteration 3: 2.110 ns/op
-Iteration 4: 2.109 ns/op
-Iteration 5: 2.110 ns/op
-Iteration 6: 2.109 ns/op
-Iteration 7: 2.110 ns/op
-Iteration 8: 2.109 ns/op
-Iteration 9: 2.109 ns/op
-Iteration 10: 2.110 ns/op
+Warm-up 3: 2.117 ns/op
+Warm-up 4: 2.106 ns/op
+Warm-up 5: 2.108 ns/op
+Iteration 1: 2.108 ns/op
+Iteration 2: 2.107 ns/op
+Iteration 3: 2.106 ns/op
+Iteration 4: 2.108 ns/op
+Iteration 5: 2.109 ns/op
+Iteration 6: 2.107 ns/op
+Iteration 7: 2.108 ns/op
+Iteration 8: 2.107 ns/op
+Iteration 9: 2.107 ns/op
+Iteration 10: 2.109 ns/op
 
-  Success: 2.109 ±(99.9%) 0.001 ns/op [Average]
-  (min, avg, max) = (2.109, 2.109, 2.111), stdev = 0.001
-  CI (99.9%): [2.108, 2.111] (assumes normal distribution)
+  Success: 2.108 ±(99.9%) 0.001 ns/op [Average]
+  (min, avg, max) = (2.106, 2.108, 2.109), stdev = 0.001
+  CI (99.9%): [2.106, 2.109] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=-Infinity
 
-Warm-up 1: 2.062 ns/op
+Warm-up 1: 2.061 ns/op
 Warm-up 2: 2.876 ns/op
-Warm-up 3: 2.233 ns/op
-Warm-up 4: 2.231 ns/op
-Warm-up 5: 2.233 ns/op
-Iteration 1: 2.232 ns/op
-Iteration 2: 2.232 ns/op
-Iteration 3: 2.234 ns/op
-Iteration 4: 2.234 ns/op
-Iteration 5: 2.230 ns/op
-Iteration 6: 2.234 ns/op
-Iteration 7: 2.231 ns/op
-Iteration 8: 2.232 ns/op
-Iteration 9: 2.236 ns/op
-Iteration 10: 2.230 ns/op
+Warm-up 3: 2.214 ns/op
+Warm-up 4: 2.241 ns/op
+Warm-up 5: 2.228 ns/op
+Iteration 1: 2.231 ns/op
+Iteration 2: 2.216 ns/op
+Iteration 3: 2.214 ns/op
+Iteration 4: 2.219 ns/op
+Iteration 5: 2.224 ns/op
+Iteration 6: 2.228 ns/op
+Iteration 7: 2.236 ns/op
+Iteration 8: 2.222 ns/op
+Iteration 9: 2.221 ns/op
+Iteration 10: 2.213 ns/op
 
-  Success: 2.233 ±(99.9%) 0.003 ns/op [Average]
-  (min, avg, max) = (2.230, 2.233, 2.236), stdev = 0.002
-  CI (99.9%): [2.230, 2.235] (assumes normal distribution)
+  Success: 2.222 ±(99.9%) 0.011 ns/op [Average]
+  (min, avg, max) = (2.213, 2.222, 2.236), stdev = 0.007
+  CI (99.9%): [2.211, 2.233] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=+Infinity
 
-Warm-up 1: 1.941 ns/op
-Warm-up 2: 2.872 ns/op
-Warm-up 3: 2.113 ns/op
-Warm-up 4: 2.113 ns/op
-Warm-up 5: 2.111 ns/op
-Iteration 1: 2.112 ns/op
-Iteration 2: 2.112 ns/op
-Iteration 3: 2.112 ns/op
-Iteration 4: 2.111 ns/op
-Iteration 5: 2.113 ns/op
+Warm-up 1: 1.938 ns/op
+Warm-up 2: 2.865 ns/op
+Warm-up 3: 2.111 ns/op
+Warm-up 4: 2.121 ns/op
+Warm-up 5: 2.114 ns/op
+Iteration 1: 2.111 ns/op
+Iteration 2: 2.124 ns/op
+Iteration 3: 2.109 ns/op
+Iteration 4: 2.112 ns/op
+Iteration 5: 2.110 ns/op
 Iteration 6: 2.112 ns/op
 Iteration 7: 2.111 ns/op
-Iteration 8: 2.112 ns/op
-Iteration 9: 2.115 ns/op
-Iteration 10: 2.115 ns/op
+Iteration 8: 2.110 ns/op
+Iteration 9: 2.112 ns/op
+Iteration 10: 2.113 ns/op
 
-  Success: 2.112 ±(99.9%) 0.002 ns/op [Average]
-  (min, avg, max) = (2.111, 2.112, 2.115), stdev = 0.001
-  CI (99.9%): [2.110, 2.114] (assumes normal distribution)
+  Success: 2.113 ±(99.9%) 0.007 ns/op [Average]
+  (min, avg, max) = (2.109, 2.113, 2.124), stdev = 0.004
+  CI (99.9%): [2.106, 2.119] (assumes normal distribution)
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=NaN
 
-Warm-up 1: 2.070 ns/op
-Warm-up 2: 2.876 ns/op
-Warm-up 3: 2.109 ns/op
-Warm-up 4: 2.117 ns/op
-Warm-up 5: 2.110 ns/op
-Iteration 1: 2.110 ns/op
-Iteration 2: 2.111 ns/op
-Iteration 3: 2.109 ns/op
-Iteration 4: 2.110 ns/op
-Iteration 5: 2.110 ns/op
-Iteration 6: 2.110 ns/op
-Iteration 7: 2.112 ns/op
-Iteration 8: 2.135 ns/op
-Iteration 9: 2.129 ns/op
-Iteration 10: 2.139 ns/op
+Warm-up 1: 2.065 ns/op
+Warm-up 2: 2.877 ns/op
+Warm-up 3: 2.108 ns/op
+Warm-up 4: 2.106 ns/op
+Warm-up 5: 2.109 ns/op
+Iteration 1: 2.107 ns/op
+Iteration 2: 2.108 ns/op
+Iteration 3: 2.136 ns/op
+Iteration 4: 2.109 ns/op
+Iteration 5: 2.106 ns/op
+Iteration 6: 2.106 ns/op
+Iteration 7: 2.111 ns/op
+Iteration 8: 2.106 ns/op
+Iteration 9: 2.107 ns/op
+Iteration 10: 2.118 ns/op
 
-  Success: 2.117 ±(99.9%) 0.018 ns/op [Average]
-  (min, avg, max) = (2.109, 2.117, 2.139), stdev = 0.012
-  CI (99.9%): [2.099, 2.135] (assumes normal distribution)
+  Success: 2.112 ±(99.9%) 0.014 ns/op [Average]
+  (min, avg, max) = (2.106, 2.112, 2.136), stdev = 0.009
+  CI (99.9%): [2.098, 2.125] (assumes normal distribution)
 
 
 jvm summary:
-Benchmark                                    (value)  Mode  Cnt  Score   Error  Units
-IsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  5.101 ± 0.104  ns/op
-IsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  5.252 ± 0.050  ns/op
-IsFiniteBenchmark.alternative1                  zero  avgt   10  2.073 ± 0.004  ns/op
-IsFiniteBenchmark.alternative1             -Infinity  avgt   10  2.102 ± 0.048  ns/op
-IsFiniteBenchmark.alternative1             +Infinity  avgt   10  2.073 ± 0.002  ns/op
-IsFiniteBenchmark.alternative1                   NaN  avgt   10  2.074 ± 0.006  ns/op
-IsFiniteBenchmark.stdlib                        zero  avgt   10  2.109 ± 0.001  ns/op
-IsFiniteBenchmark.stdlib                   -Infinity  avgt   10  2.233 ± 0.003  ns/op
-IsFiniteBenchmark.stdlib                   +Infinity  avgt   10  2.112 ± 0.002  ns/op
-IsFiniteBenchmark.stdlib                         NaN  avgt   10  2.117 ± 0.018  ns/op
+Benchmark                                          (value)  Mode  Cnt  Score   Error  Units
+DoubleIsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  5.060 ± 0.015  ns/op
+DoubleIsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  5.261 ± 0.003  ns/op
+DoubleIsFiniteBenchmark.alternative1                  zero  avgt   10  2.187 ± 0.224  ns/op
+DoubleIsFiniteBenchmark.alternative1             -Infinity  avgt   10  2.234 ± 0.296  ns/op
+DoubleIsFiniteBenchmark.alternative1             +Infinity  avgt   10  2.186 ± 0.222  ns/op
+DoubleIsFiniteBenchmark.alternative1                   NaN  avgt   10  2.142 ± 0.010  ns/op
+DoubleIsFiniteBenchmark.stdlib                        zero  avgt   10  2.139 ± 0.184  ns/op
+DoubleIsFiniteBenchmark.stdlib                   -Infinity  avgt   10  2.147 ± 0.019  ns/op
+DoubleIsFiniteBenchmark.stdlib                   +Infinity  avgt   10  2.113 ± 0.006  ns/op
+DoubleIsFiniteBenchmark.stdlib                         NaN  avgt   10  2.140 ± 0.188  ns/op
+IsFiniteAlternatingBenchmark.alternative1              N/A  avgt   10  5.058 ± 0.013  ns/op
+IsFiniteAlternatingBenchmark.stdlib                    N/A  avgt   10  5.211 ± 0.027  ns/op
+IsFiniteBenchmark.alternative1                        zero  avgt   10  2.106 ± 0.048  ns/op
+IsFiniteBenchmark.alternative1                   -Infinity  avgt   10  2.072 ± 0.004  ns/op
+IsFiniteBenchmark.alternative1                   +Infinity  avgt   10  2.072 ± 0.003  ns/op
+IsFiniteBenchmark.alternative1                         NaN  avgt   10  2.082 ± 0.021  ns/op
+IsFiniteBenchmark.stdlib                              zero  avgt   10  2.108 ± 0.001  ns/op
+IsFiniteBenchmark.stdlib                         -Infinity  avgt   10  2.222 ± 0.011  ns/op
+IsFiniteBenchmark.stdlib                         +Infinity  avgt   10  2.113 ± 0.007  ns/op
+IsFiniteBenchmark.stdlib                               NaN  avgt   10  2.112 ± 0.014  ns/op
 
 
 > Task :macosArm64Benchmark
 Running 'main' benchmarks for 'macosArm64'
 
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.alternative1
+Warm-up #0: 25.8144 ns/op
+Warm-up #1: 25.8380 ns/op
+Warm-up #2: 25.7965 ns/op
+Warm-up #3: 25.8031 ns/op
+Warm-up #4: 25.7930 ns/op
+Iteration #0: 5.37803 ns/op
+Iteration #1: 5.37319 ns/op
+Iteration #2: 5.39552 ns/op
+Iteration #3: 5.38146 ns/op
+Iteration #4: 5.38627 ns/op
+Iteration #5: 5.37645 ns/op
+Iteration #6: 5.37972 ns/op
+Iteration #7: 5.38336 ns/op
+Iteration #8: 5.37990 ns/op
+Iteration #9: 5.38529 ns/op
+  Success:   ~ 5.38192 ns/op ±0.072%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.stdlib
+Warm-up #0: 25.8037 ns/op
+Warm-up #1: 25.8051 ns/op
+Warm-up #2: 25.7986 ns/op
+Warm-up #3: 25.7913 ns/op
+Warm-up #4: 25.8144 ns/op
+Iteration #0: 5.51060 ns/op
+Iteration #1: 5.51552 ns/op
+Iteration #2: 5.51491 ns/op
+Iteration #3: 5.51078 ns/op
+Iteration #4: 5.52828 ns/op
+Iteration #5: 5.51024 ns/op
+Iteration #6: 5.51655 ns/op
+Iteration #7: 5.51432 ns/op
+Iteration #8: 5.52306 ns/op
+Iteration #9: 5.52658 ns/op
+  Success:   ~ 5.51708 ns/op ±0.074%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=zero
+Warm-up #0: 25.1732 ns/op
+Warm-up #1: 25.2088 ns/op
+Warm-up #2: 25.1541 ns/op
+Warm-up #3: 25.3974 ns/op
+Warm-up #4: 25.1424 ns/op
+Iteration #0: 3.87562 ns/op
+Iteration #1: 3.87877 ns/op
+Iteration #2: 3.88858 ns/op
+Iteration #3: 3.88008 ns/op
+Iteration #4: 3.88244 ns/op
+Iteration #5: 3.89301 ns/op
+Iteration #6: 3.87836 ns/op
+Iteration #7: 3.98234 ns/op
+Iteration #8: 3.93724 ns/op
+Iteration #9: 3.90876 ns/op
+  Success:   ~ 3.90052 ns/op ±0.55%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=-Infinity
+Warm-up #0: 25.1621 ns/op
+Warm-up #1: 25.1428 ns/op
+Warm-up #2: 25.1549 ns/op
+Warm-up #3: 25.1601 ns/op
+Warm-up #4: 25.1844 ns/op
+Iteration #0: 3.88170 ns/op
+Iteration #1: 3.87218 ns/op
+Iteration #2: 3.87250 ns/op
+Iteration #3: 3.87278 ns/op
+Iteration #4: 3.86421 ns/op
+Iteration #5: 3.87639 ns/op
+Iteration #6: 3.86667 ns/op
+Iteration #7: 3.86587 ns/op
+Iteration #8: 3.88046 ns/op
+Iteration #9: 3.87121 ns/op
+  Success:   ~ 3.87240 ns/op ±0.094%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=+Infinity
+Warm-up #0: 25.1523 ns/op
+Warm-up #1: 25.1721 ns/op
+Warm-up #2: 25.1542 ns/op
+Warm-up #3: 25.1975 ns/op
+Warm-up #4: 25.1515 ns/op
+Iteration #0: 3.90637 ns/op
+Iteration #1: 3.88509 ns/op
+Iteration #2: 3.88789 ns/op
+Iteration #3: 3.88129 ns/op
+Iteration #4: 3.89052 ns/op
+Iteration #5: 3.88880 ns/op
+Iteration #6: 3.88169 ns/op
+Iteration #7: 3.88572 ns/op
+Iteration #8: 3.89026 ns/op
+Iteration #9: 3.88357 ns/op
+  Success:   ~ 3.88812 ns/op ±0.11%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=NaN
+Warm-up #0: 25.1485 ns/op
+Warm-up #1: 25.1557 ns/op
+Warm-up #2: 25.2204 ns/op
+Warm-up #3: 25.1545 ns/op
+Warm-up #4: 25.1579 ns/op
+Iteration #0: 3.86052 ns/op
+Iteration #1: 3.86765 ns/op
+Iteration #2: 3.86324 ns/op
+Iteration #3: 3.86321 ns/op
+Iteration #4: 3.86428 ns/op
+Iteration #5: 3.86765 ns/op
+Iteration #6: 3.86242 ns/op
+Iteration #7: 3.85835 ns/op
+Iteration #8: 3.87022 ns/op
+Iteration #9: 3.86274 ns/op
+  Success:   ~ 3.86403 ns/op ±0.057%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=zero
+Warm-up #0: 25.1483 ns/op
+Warm-up #1: 25.1653 ns/op
+Warm-up #2: 25.1517 ns/op
+Warm-up #3: 25.1613 ns/op
+Warm-up #4: 25.1410 ns/op
+Iteration #0: 4.02833 ns/op
+Iteration #1: 4.03643 ns/op
+Iteration #2: 4.03111 ns/op
+Iteration #3: 4.02625 ns/op
+Iteration #4: 4.03711 ns/op
+Iteration #5: 4.03162 ns/op
+Iteration #6: 4.03106 ns/op
+Iteration #7: 4.02935 ns/op
+Iteration #8: 4.04246 ns/op
+Iteration #9: 4.04262 ns/op
+  Success:   ~ 4.03363 ns/op ±0.088%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=-Infinity
+Warm-up #0: 26.3959 ns/op
+Warm-up #1: 26.4365 ns/op
+Warm-up #2: 26.4399 ns/op
+Warm-up #3: 26.3976 ns/op
+Warm-up #4: 26.4106 ns/op
+Iteration #0: 4.02960 ns/op
+Iteration #1: 4.03909 ns/op
+Iteration #2: 4.03606 ns/op
+Iteration #3: 4.03849 ns/op
+Iteration #4: 4.03640 ns/op
+Iteration #5: 4.03693 ns/op
+Iteration #6: 4.03331 ns/op
+Iteration #7: 4.03204 ns/op
+Iteration #8: 4.03655 ns/op
+Iteration #9: 4.03035 ns/op
+  Success:   ~ 4.03488 ns/op ±0.051%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=+Infinity
+Warm-up #0: 25.1618 ns/op
+Warm-up #1: 25.1503 ns/op
+Warm-up #2: 25.2178 ns/op
+Warm-up #3: 25.1574 ns/op
+Warm-up #4: 25.1549 ns/op
+Iteration #0: 4.01011 ns/op
+Iteration #1: 4.01962 ns/op
+Iteration #2: 4.01232 ns/op
+Iteration #3: 4.00814 ns/op
+Iteration #4: 4.01537 ns/op
+Iteration #5: 4.00888 ns/op
+Iteration #6: 4.00823 ns/op
+Iteration #7: 4.01496 ns/op
+Iteration #8: 4.02054 ns/op
+Iteration #9: 4.00741 ns/op
+  Success:   ~ 4.01256 ns/op ±0.075%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=NaN
+Warm-up #0: 25.1436 ns/op
+Warm-up #1: 25.1647 ns/op
+Warm-up #2: 25.1634 ns/op
+Warm-up #3: 25.1458 ns/op
+Warm-up #4: 25.1435 ns/op
+Iteration #0: 4.02869 ns/op
+Iteration #1: 4.03555 ns/op
+Iteration #2: 4.02798 ns/op
+Iteration #3: 4.02693 ns/op
+Iteration #4: 4.03714 ns/op
+Iteration #5: 4.03169 ns/op
+Iteration #6: 4.02871 ns/op
+Iteration #7: 4.03672 ns/op
+Iteration #8: 4.02910 ns/op
+Iteration #9: 4.02715 ns/op
+  Success:   ~ 4.03097 ns/op ±0.062%
+
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.alternative1
-Warm-up #0: 26.7195 ns/op
-Warm-up #1: 26.1913 ns/op
-Warm-up #2: 26.1181 ns/op
-Warm-up #3: 26.0690 ns/op
-Warm-up #4: 25.8361 ns/op
-Iteration #0: 5.36834 ns/op
-Iteration #1: 5.37007 ns/op
-Iteration #2: 5.36337 ns/op
-Iteration #3: 5.36492 ns/op
-Iteration #4: 5.37282 ns/op
-Iteration #5: 5.37058 ns/op
-Iteration #6: 5.40025 ns/op
-Iteration #7: 5.36429 ns/op
-Iteration #8: 5.37976 ns/op
-Iteration #9: 5.40631 ns/op
-  Success:   ~ 5.37607 ns/op ±0.17%
+Warm-up #0: 25.7919 ns/op
+Warm-up #1: 25.7873 ns/op
+Warm-up #2: 25.7808 ns/op
+Warm-up #3: 25.7794 ns/op
+Warm-up #4: 25.7884 ns/op
+Iteration #0: 5.38671 ns/op
+Iteration #1: 5.38336 ns/op
+Iteration #2: 5.38657 ns/op
+Iteration #3: 5.38318 ns/op
+Iteration #4: 5.37664 ns/op
+Iteration #5: 5.38574 ns/op
+Iteration #6: 5.38373 ns/op
+Iteration #7: 5.38730 ns/op
+Iteration #8: 5.37809 ns/op
+Iteration #9: 5.37586 ns/op
+  Success:   ~ 5.38272 ns/op ±0.050%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.stdlib
-Warm-up #0: 25.8575 ns/op
-Warm-up #1: 25.8576 ns/op
-Warm-up #2: 26.0368 ns/op
-Warm-up #3: 26.0554 ns/op
-Warm-up #4: 25.8898 ns/op
-Iteration #0: 5.47233 ns/op
-Iteration #1: 5.46600 ns/op
-Iteration #2: 5.46769 ns/op
-Iteration #3: 5.45963 ns/op
-Iteration #4: 5.46812 ns/op
-Iteration #5: 5.46253 ns/op
-Iteration #6: 5.45187 ns/op
-Iteration #7: 5.49492 ns/op
-Iteration #8: 5.49824 ns/op
-Iteration #9: 5.46358 ns/op
-  Success:   ~ 5.47049 ns/op ±0.17%
+Warm-up #0: 25.9476 ns/op
+Warm-up #1: 25.7874 ns/op
+Warm-up #2: 25.8497 ns/op
+Warm-up #3: 25.8150 ns/op
+Warm-up #4: 25.8021 ns/op
+Iteration #0: 5.49640 ns/op
+Iteration #1: 5.49000 ns/op
+Iteration #2: 5.52540 ns/op
+Iteration #3: 5.53080 ns/op
+Iteration #4: 5.48995 ns/op
+Iteration #5: 5.49390 ns/op
+Iteration #6: 5.48658 ns/op
+Iteration #7: 5.50025 ns/op
+Iteration #8: 5.48504 ns/op
+Iteration #9: 5.49846 ns/op
+  Success:   ~ 5.49968 ns/op ±0.18%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=zero
-Warm-up #0: 25.3140 ns/op
-Warm-up #1: 25.6261 ns/op
-Warm-up #2: 25.4111 ns/op
-Warm-up #3: 25.3171 ns/op
-Warm-up #4: 25.2243 ns/op
-Iteration #0: 3.86311 ns/op
-Iteration #1: 3.86189 ns/op
-Iteration #2: 3.85753 ns/op
-Iteration #3: 3.85573 ns/op
-Iteration #4: 3.85719 ns/op
-Iteration #5: 3.85598 ns/op
-Iteration #6: 3.85774 ns/op
-Iteration #7: 3.85564 ns/op
-Iteration #8: 3.86430 ns/op
-Iteration #9: 3.85609 ns/op
-  Success:   ~ 3.85852 ns/op ±0.053%
+Warm-up #0: 25.1534 ns/op
+Warm-up #1: 25.2069 ns/op
+Warm-up #2: 25.1382 ns/op
+Warm-up #3: 25.2604 ns/op
+Warm-up #4: 25.1725 ns/op
+Iteration #0: 3.82845 ns/op
+Iteration #1: 3.82779 ns/op
+Iteration #2: 3.82516 ns/op
+Iteration #3: 3.82789 ns/op
+Iteration #4: 3.82962 ns/op
+Iteration #5: 3.82052 ns/op
+Iteration #6: 3.82243 ns/op
+Iteration #7: 3.82846 ns/op
+Iteration #8: 3.82052 ns/op
+Iteration #9: 3.82050 ns/op
+  Success:   ~ 3.82513 ns/op ±0.061%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=-Infinity
-Warm-up #0: 25.2930 ns/op
-Warm-up #1: 25.2531 ns/op
-Warm-up #2: 25.2881 ns/op
-Warm-up #3: 25.2760 ns/op
-Warm-up #4: 25.2853 ns/op
-Iteration #0: 3.84378 ns/op
-Iteration #1: 3.84773 ns/op
-Iteration #2: 3.84030 ns/op
-Iteration #3: 3.86715 ns/op
-Iteration #4: 3.84348 ns/op
-Iteration #5: 3.84472 ns/op
-Iteration #6: 3.85864 ns/op
-Iteration #7: 3.84516 ns/op
-Iteration #8: 3.85069 ns/op
-Iteration #9: 3.84804 ns/op
-  Success:   ~ 3.84897 ns/op ±0.13%
+Warm-up #0: 25.9450 ns/op
+Warm-up #1: 25.9618 ns/op
+Warm-up #2: 25.9404 ns/op
+Warm-up #3: 26.0841 ns/op
+Warm-up #4: 26.0158 ns/op
+Iteration #0: 3.82165 ns/op
+Iteration #1: 3.84941 ns/op
+Iteration #2: 3.83337 ns/op
+Iteration #3: 3.87573 ns/op
+Iteration #4: 3.82201 ns/op
+Iteration #5: 3.82625 ns/op
+Iteration #6: 3.81985 ns/op
+Iteration #7: 3.82371 ns/op
+Iteration #8: 3.82160 ns/op
+Iteration #9: 3.81895 ns/op
+  Success:   ~ 3.83125 ns/op ±0.29%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=+Infinity
-Warm-up #0: 25.2358 ns/op
-Warm-up #1: 25.1901 ns/op
-Warm-up #2: 25.1947 ns/op
-Warm-up #3: 25.2075 ns/op
-Warm-up #4: 25.2039 ns/op
-Iteration #0: 3.84252 ns/op
-Iteration #1: 3.84383 ns/op
-Iteration #2: 3.85882 ns/op
-Iteration #3: 3.89011 ns/op
-Iteration #4: 3.89616 ns/op
-Iteration #5: 3.88534 ns/op
-Iteration #6: 3.89186 ns/op
-Iteration #7: 3.85272 ns/op
-Iteration #8: 3.85357 ns/op
-Iteration #9: 3.91388 ns/op
-  Success:   ~ 3.87288 ns/op ±0.41%
+Warm-up #0: 25.3026 ns/op
+Warm-up #1: 25.1576 ns/op
+Warm-up #2: 25.2363 ns/op
+Warm-up #3: 25.1576 ns/op
+Warm-up #4: 25.1445 ns/op
+Iteration #0: 3.83533 ns/op
+Iteration #1: 3.85142 ns/op
+Iteration #2: 3.83565 ns/op
+Iteration #3: 3.83449 ns/op
+Iteration #4: 3.83644 ns/op
+Iteration #5: 3.84123 ns/op
+Iteration #6: 3.83926 ns/op
+Iteration #7: 3.83262 ns/op
+Iteration #8: 3.85184 ns/op
+Iteration #9: 3.84189 ns/op
+  Success:   ~ 3.84002 ns/op ±0.11%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=NaN
-Warm-up #0: 25.5980 ns/op
-Warm-up #1: 25.7219 ns/op
-Warm-up #2: 25.6107 ns/op
-Warm-up #3: 25.2592 ns/op
-Warm-up #4: 25.2617 ns/op
-Iteration #0: 3.92686 ns/op
-Iteration #1: 3.93791 ns/op
-Iteration #2: 3.93359 ns/op
-Iteration #3: 3.96221 ns/op
-Iteration #4: 3.92852 ns/op
-Iteration #5: 3.90670 ns/op
-Iteration #6: 3.94876 ns/op
-Iteration #7: 3.94045 ns/op
-Iteration #8: 3.94181 ns/op
-Iteration #9: 3.93909 ns/op
-  Success:   ~ 3.93659 ns/op ±0.23%
+Warm-up #0: 25.1822 ns/op
+Warm-up #1: 25.1684 ns/op
+Warm-up #2: 25.3017 ns/op
+Warm-up #3: 25.1930 ns/op
+Warm-up #4: 25.3102 ns/op
+Iteration #0: 3.83839 ns/op
+Iteration #1: 3.83786 ns/op
+Iteration #2: 3.84864 ns/op
+Iteration #3: 3.83500 ns/op
+Iteration #4: 3.84033 ns/op
+Iteration #5: 3.84920 ns/op
+Iteration #6: 3.84693 ns/op
+Iteration #7: 3.83700 ns/op
+Iteration #8: 3.84260 ns/op
+Iteration #9: 3.87412 ns/op
+  Success:   ~ 3.84501 ns/op ±0.18%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=zero
-Warm-up #0: 25.3772 ns/op
-Warm-up #1: 25.2215 ns/op
-Warm-up #2: 25.3701 ns/op
-Warm-up #3: 25.5577 ns/op
-Warm-up #4: 25.4013 ns/op
-Iteration #0: 4.09619 ns/op
-Iteration #1: 4.07361 ns/op
-Iteration #2: 4.05565 ns/op
-Iteration #3: 4.13985 ns/op
-Iteration #4: 4.12310 ns/op
-Iteration #5: 4.14921 ns/op
-Iteration #6: 4.23163 ns/op
-Iteration #7: 4.22966 ns/op
-Iteration #8: 4.17221 ns/op
-Iteration #9: 4.10865 ns/op
-  Success:   ~ 4.13798 ns/op ±0.90%
+Warm-up #0: 25.1914 ns/op
+Warm-up #1: 25.1603 ns/op
+Warm-up #2: 25.1449 ns/op
+Warm-up #3: 25.1501 ns/op
+Warm-up #4: 25.1395 ns/op
+Iteration #0: 3.97386 ns/op
+Iteration #1: 3.97302 ns/op
+Iteration #2: 4.12845 ns/op
+Iteration #3: 4.14906 ns/op
+Iteration #4: 3.97953 ns/op
+Iteration #5: 3.98469 ns/op
+Iteration #6: 3.97827 ns/op
+Iteration #7: 3.97302 ns/op
+Iteration #8: 3.98497 ns/op
+Iteration #9: 3.97891 ns/op
+  Success:   ~ 4.01038 ns/op ±1.1%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=-Infinity
-Warm-up #0: 25.4689 ns/op
-Warm-up #1: 26.0834 ns/op
-Warm-up #2: 25.5195 ns/op
-Warm-up #3: 25.1965 ns/op
-Warm-up #4: 25.2777 ns/op
-Iteration #0: 4.07402 ns/op
-Iteration #1: 4.07153 ns/op
-Iteration #2: 4.05558 ns/op
-Iteration #3: 4.05715 ns/op
-Iteration #4: 4.05129 ns/op
-Iteration #5: 4.04887 ns/op
-Iteration #6: 4.05652 ns/op
-Iteration #7: 4.05174 ns/op
-Iteration #8: 4.04437 ns/op
-Iteration #9: 4.05715 ns/op
-  Success:   ~ 4.05682 ns/op ±0.14%
+Warm-up #0: 25.1537 ns/op
+Warm-up #1: 25.1441 ns/op
+Warm-up #2: 25.2189 ns/op
+Warm-up #3: 25.1434 ns/op
+Warm-up #4: 25.1418 ns/op
+Iteration #0: 4.01744 ns/op
+Iteration #1: 4.01885 ns/op
+Iteration #2: 4.01969 ns/op
+Iteration #3: 4.01322 ns/op
+Iteration #4: 4.02556 ns/op
+Iteration #5: 4.02036 ns/op
+Iteration #6: 4.01482 ns/op
+Iteration #7: 4.01492 ns/op
+Iteration #8: 4.02594 ns/op
+Iteration #9: 4.01549 ns/op
+  Success:   ~ 4.01863 ns/op ±0.068%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=+Infinity
-Warm-up #0: 25.2981 ns/op
-Warm-up #1: 25.2068 ns/op
-Warm-up #2: 25.2037 ns/op
-Warm-up #3: 25.2118 ns/op
-Warm-up #4: 25.2022 ns/op
-Iteration #0: 4.05218 ns/op
-Iteration #1: 4.04654 ns/op
-Iteration #2: 4.04739 ns/op
-Iteration #3: 4.04744 ns/op
-Iteration #4: 4.04882 ns/op
-Iteration #5: 4.05182 ns/op
-Iteration #6: 4.04946 ns/op
-Iteration #7: 4.04346 ns/op
-Iteration #8: 4.05516 ns/op
-Iteration #9: 4.04664 ns/op
-  Success:   ~ 4.04889 ns/op ±0.052%
+Warm-up #0: 25.1491 ns/op
+Warm-up #1: 25.1437 ns/op
+Warm-up #2: 25.1528 ns/op
+Warm-up #3: 25.2042 ns/op
+Warm-up #4: 25.2421 ns/op
+Iteration #0: 4.00736 ns/op
+Iteration #1: 4.00853 ns/op
+Iteration #2: 4.01797 ns/op
+Iteration #3: 4.02746 ns/op
+Iteration #4: 4.15897 ns/op
+Iteration #5: 4.02748 ns/op
+Iteration #6: 4.02180 ns/op
+Iteration #7: 4.02479 ns/op
+Iteration #8: 4.03653 ns/op
+Iteration #9: 4.01061 ns/op
+  Success:   ~ 4.03415 ns/op ±0.69%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=NaN
-Warm-up #0: 25.2711 ns/op
-Warm-up #1: 25.3347 ns/op
-Warm-up #2: 25.3346 ns/op
-Warm-up #3: 25.2790 ns/op
-Warm-up #4: 25.6665 ns/op
-Iteration #0: 4.07846 ns/op
-Iteration #1: 4.08240 ns/op
-Iteration #2: 4.08645 ns/op
-Iteration #3: 4.08314 ns/op
-Iteration #4: 4.09739 ns/op
-Iteration #5: 4.10508 ns/op
-Iteration #6: 4.11912 ns/op
-Iteration #7: 4.09474 ns/op
-Iteration #8: 4.08223 ns/op
-Iteration #9: 4.09895 ns/op
-  Success:   ~ 4.09280 ns/op ±0.19%
+Warm-up #0: 25.1647 ns/op
+Warm-up #1: 25.1292 ns/op
+Warm-up #2: 25.1191 ns/op
+Warm-up #3: 25.1185 ns/op
+Warm-up #4: 25.1361 ns/op
+Iteration #0: 3.98871 ns/op
+Iteration #1: 3.99017 ns/op
+Iteration #2: 3.99715 ns/op
+Iteration #3: 3.99310 ns/op
+Iteration #4: 3.99284 ns/op
+Iteration #5: 3.99340 ns/op
+Iteration #6: 3.99210 ns/op
+Iteration #7: 3.99905 ns/op
+Iteration #8: 3.99476 ns/op
+Iteration #9: 3.99099 ns/op
+  Success:   ~ 3.99323 ns/op ±0.049%
 
 macosArm64 summary:
-Benchmark                                    (value)  Mode  Cnt  Score   Error  Units
-IsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  5.376 ± 0.009  ns/op
-IsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  5.470 ± 0.009  ns/op
-IsFiniteBenchmark.alternative1                  zero  avgt   10  3.859 ± 0.002  ns/op
-IsFiniteBenchmark.alternative1             -Infinity  avgt   10  3.849 ± 0.005  ns/op
-IsFiniteBenchmark.alternative1             +Infinity  avgt   10  3.873 ± 0.016  ns/op
-IsFiniteBenchmark.alternative1                   NaN  avgt   10  3.937 ± 0.009  ns/op
-IsFiniteBenchmark.stdlib                        zero  avgt   10  4.138 ± 0.037  ns/op
-IsFiniteBenchmark.stdlib                   -Infinity  avgt   10  4.057 ± 0.006  ns/op
-IsFiniteBenchmark.stdlib                   +Infinity  avgt   10  4.049 ± 0.002  ns/op
-IsFiniteBenchmark.stdlib                         NaN  avgt   10  4.093 ± 0.008  ns/op
+Benchmark                                          (value)  Mode  Cnt  Score   Error  Units
+DoubleIsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  5.382 ± 0.004  ns/op
+DoubleIsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  5.517 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.alternative1                  zero  avgt   10  3.901 ± 0.021  ns/op
+DoubleIsFiniteBenchmark.alternative1             -Infinity  avgt   10  3.872 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.alternative1             +Infinity  avgt   10  3.888 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.alternative1                   NaN  avgt   10  3.864 ± 0.002  ns/op
+DoubleIsFiniteBenchmark.stdlib                        zero  avgt   10  4.034 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.stdlib                   -Infinity  avgt   10  4.035 ± 0.002  ns/op
+DoubleIsFiniteBenchmark.stdlib                   +Infinity  avgt   10  4.013 ± 0.003  ns/op
+DoubleIsFiniteBenchmark.stdlib                         NaN  avgt   10  4.031 ± 0.002  ns/op
+IsFiniteAlternatingBenchmark.alternative1              N/A  avgt   10  5.383 ± 0.003  ns/op
+IsFiniteAlternatingBenchmark.stdlib                    N/A  avgt   10  5.500 ± 0.010  ns/op
+IsFiniteBenchmark.alternative1                        zero  avgt   10  3.825 ± 0.002  ns/op
+IsFiniteBenchmark.alternative1                   -Infinity  avgt   10  3.831 ± 0.011  ns/op
+IsFiniteBenchmark.alternative1                   +Infinity  avgt   10  3.840 ± 0.004  ns/op
+IsFiniteBenchmark.alternative1                         NaN  avgt   10  3.845 ± 0.007  ns/op
+IsFiniteBenchmark.stdlib                              zero  avgt   10  4.010 ± 0.042  ns/op
+IsFiniteBenchmark.stdlib                         -Infinity  avgt   10  4.019 ± 0.003  ns/op
+IsFiniteBenchmark.stdlib                         +Infinity  avgt   10  4.034 ± 0.028  ns/op
+IsFiniteBenchmark.stdlib                               NaN  avgt   10  3.993 ± 0.002  ns/op
 
 
 > Task :compileKotlinWasmJs UP-TO-DATE
@@ -476,212 +896,412 @@ IsFiniteBenchmark.stdlib                         NaN  avgt   10  4.093 ± 0.008 
 > Task :wasmJsBenchmark
 Running 'main' benchmarks for 'wasmJs'
 
-… org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=zero
-Warm-up #0: 12.3261 ns/op
-Warm-up #1: 2.80650 ns/op
-Warm-up #2: 2.84038 ns/op
-Warm-up #3: 2.81978 ns/op
-Warm-up #4: 2.80872 ns/op
-Iteration #0: 2.82655 ns/op
-Iteration #1: 2.82416 ns/op
-Iteration #2: 2.80586 ns/op
-Iteration #3: 2.82662 ns/op
-Iteration #4: 2.81215 ns/op
-Iteration #5: 2.83716 ns/op
-Iteration #6: 2.82425 ns/op
-Iteration #7: 2.80677 ns/op
-Iteration #8: 2.80845 ns/op
-Iteration #9: 2.82596 ns/op
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=zero
+Warm-up #0: 12.3475 ns/op
+Warm-up #1: 2.82260 ns/op
+Warm-up #2: 2.79774 ns/op
+Warm-up #3: 2.80211 ns/op
+Warm-up #4: 2.79280 ns/op
+Iteration #0: 2.80436 ns/op
+Iteration #1: 2.79330 ns/op
+Iteration #2: 2.79641 ns/op
+Iteration #3: 2.79665 ns/op
+Iteration #4: 2.79449 ns/op
+Iteration #5: 2.81549 ns/op
+Iteration #6: 2.79456 ns/op
+Iteration #7: 2.81433 ns/op
+Iteration #8: 2.80224 ns/op
+Iteration #9: 2.79996 ns/op
 Consumed blackhole value: 16003
-  Success:   ~ 2.81979 ns/op ±0.23%
+  Success:   ~ 2.80118 ns/op ±0.18%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=-Infinity
+Warm-up #0: 2.80950 ns/op
+Warm-up #1: 2.80274 ns/op
+Warm-up #2: 2.79592 ns/op
+Warm-up #3: 2.81329 ns/op
+Warm-up #4: 2.81593 ns/op
+Iteration #0: 2.79959 ns/op
+Iteration #1: 2.79798 ns/op
+Iteration #2: 2.80865 ns/op
+Iteration #3: 2.79566 ns/op
+Iteration #4: 2.79547 ns/op
+Iteration #5: 2.81286 ns/op
+Iteration #6: 2.80739 ns/op
+Iteration #7: 2.79933 ns/op
+Iteration #8: 2.82247 ns/op
+Iteration #9: 2.82602 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 2.80654 ns/op ±0.24%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=+Infinity
+Warm-up #0: 2.79551 ns/op
+Warm-up #1: 2.80237 ns/op
+Warm-up #2: 2.80735 ns/op
+Warm-up #3: 2.81362 ns/op
+Warm-up #4: 2.80128 ns/op
+Iteration #0: 2.79733 ns/op
+Iteration #1: 2.79560 ns/op
+Iteration #2: 2.80909 ns/op
+Iteration #3: 2.79617 ns/op
+Iteration #4: 2.79486 ns/op
+Iteration #5: 2.79847 ns/op
+Iteration #6: 2.80457 ns/op
+Iteration #7: 2.79636 ns/op
+Iteration #8: 2.80890 ns/op
+Iteration #9: 2.80430 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 2.80056 ns/op ±0.12%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.alternative1 | value=NaN
+Warm-up #0: 2.80658 ns/op
+Warm-up #1: 2.79849 ns/op
+Warm-up #2: 2.79997 ns/op
+Warm-up #3: 2.80625 ns/op
+Warm-up #4: 2.81489 ns/op
+Iteration #0: 2.79969 ns/op
+Iteration #1: 2.79817 ns/op
+Iteration #2: 2.80508 ns/op
+Iteration #3: 2.80597 ns/op
+Iteration #4: 2.79706 ns/op
+Iteration #5: 2.80686 ns/op
+Iteration #6: 2.79850 ns/op
+Iteration #7: 2.79817 ns/op
+Iteration #8: 2.80963 ns/op
+Iteration #9: 2.80147 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 2.80206 ns/op ±0.099%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=zero
+Warm-up #0: 7.05696 ns/op
+Warm-up #1: 7.05180 ns/op
+Warm-up #2: 7.06170 ns/op
+Warm-up #3: 7.06878 ns/op
+Warm-up #4: 7.05932 ns/op
+Iteration #0: 7.03981 ns/op
+Iteration #1: 7.04807 ns/op
+Iteration #2: 7.04799 ns/op
+Iteration #3: 7.05089 ns/op
+Iteration #4: 7.04545 ns/op
+Iteration #5: 7.05423 ns/op
+Iteration #6: 7.06391 ns/op
+Iteration #7: 7.05133 ns/op
+Iteration #8: 7.04298 ns/op
+Iteration #9: 7.04860 ns/op
+Consumed blackhole value: 16003
+  Success:   ~ 7.04933 ns/op ±0.058%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=-Infinity
+Warm-up #0: 6.54552 ns/op
+Warm-up #1: 6.51965 ns/op
+Warm-up #2: 6.50760 ns/op
+Warm-up #3: 6.50618 ns/op
+Warm-up #4: 6.51401 ns/op
+Iteration #0: 6.49760 ns/op
+Iteration #1: 6.49634 ns/op
+Iteration #2: 6.49931 ns/op
+Iteration #3: 6.52476 ns/op
+Iteration #4: 6.51894 ns/op
+Iteration #5: 6.52490 ns/op
+Iteration #6: 6.53274 ns/op
+Iteration #7: 6.49469 ns/op
+Iteration #8: 6.51563 ns/op
+Iteration #9: 6.49535 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 6.51003 ns/op ±0.14%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=+Infinity
+Warm-up #0: 6.16991 ns/op
+Warm-up #1: 6.17750 ns/op
+Warm-up #2: 6.18422 ns/op
+Warm-up #3: 6.16947 ns/op
+Warm-up #4: 6.16912 ns/op
+Iteration #0: 6.17912 ns/op
+Iteration #1: 6.19280 ns/op
+Iteration #2: 6.19616 ns/op
+Iteration #3: 6.17944 ns/op
+Iteration #4: 6.18071 ns/op
+Iteration #5: 6.18228 ns/op
+Iteration #6: 6.19060 ns/op
+Iteration #7: 6.18096 ns/op
+Iteration #8: 6.17983 ns/op
+Iteration #9: 6.17956 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 6.18415 ns/op ±0.065%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteBenchmark.stdlib | value=NaN
+Warm-up #0: 6.47726 ns/op
+Warm-up #1: 6.46713 ns/op
+Warm-up #2: 6.46358 ns/op
+Warm-up #3: 6.47514 ns/op
+Warm-up #4: 6.47824 ns/op
+Iteration #0: 6.49038 ns/op
+Iteration #1: 6.49090 ns/op
+Iteration #2: 6.48700 ns/op
+Iteration #3: 6.47937 ns/op
+Iteration #4: 6.49012 ns/op
+Iteration #5: 6.48129 ns/op
+Iteration #6: 6.48261 ns/op
+Iteration #7: 6.48118 ns/op
+Iteration #8: 6.49606 ns/op
+Iteration #9: 6.48725 ns/op
+Consumed blackhole value: 16081
+  Success:   ~ 6.48662 ns/op ±0.051%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.alternative1
+Warm-up #0: 6.84833 ns/op
+Warm-up #1: 6.84061 ns/op
+Warm-up #2: 6.81456 ns/op
+Warm-up #3: 6.84462 ns/op
+Warm-up #4: 6.82297 ns/op
+Iteration #0: 6.79192 ns/op
+Iteration #1: 6.79850 ns/op
+Iteration #2: 6.81665 ns/op
+Iteration #3: 6.83524 ns/op
+Iteration #4: 6.79939 ns/op
+Iteration #5: 6.78616 ns/op
+Iteration #6: 6.78358 ns/op
+Iteration #7: 6.79429 ns/op
+Iteration #8: 6.79624 ns/op
+Iteration #9: 6.78716 ns/op
+Consumed blackhole value: 16045
+  Success:   ~ 6.79891 ns/op ±0.14%
+
+… org.jetbrains.kotlin.benchmark.DoubleIsFiniteAlternatingBenchmark.stdlib
+Warm-up #0: 8.44258 ns/op
+Warm-up #1: 8.58560 ns/op
+Warm-up #2: 8.44330 ns/op
+Warm-up #3: 8.43964 ns/op
+Warm-up #4: 8.44229 ns/op
+Iteration #0: 8.47333 ns/op
+Iteration #1: 8.48700 ns/op
+Iteration #2: 8.45087 ns/op
+Iteration #3: 8.46340 ns/op
+Iteration #4: 8.47749 ns/op
+Iteration #5: 8.43972 ns/op
+Iteration #6: 8.44004 ns/op
+Iteration #7: 8.45382 ns/op
+Iteration #8: 8.46690 ns/op
+Iteration #9: 8.45301 ns/op
+Consumed blackhole value: 16057
+  Success:   ~ 8.46056 ns/op ±0.12%
+
+… org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=zero
+Warm-up #0: 6.47104 ns/op
+Warm-up #1: 6.48939 ns/op
+Warm-up #2: 6.48440 ns/op
+Warm-up #3: 6.48189 ns/op
+Warm-up #4: 6.46343 ns/op
+Iteration #0: 6.44085 ns/op
+Iteration #1: 6.45791 ns/op
+Iteration #2: 6.45104 ns/op
+Iteration #3: 6.43987 ns/op
+Iteration #4: 6.43995 ns/op
+Iteration #5: 6.44895 ns/op
+Iteration #6: 6.44426 ns/op
+Iteration #7: 6.44147 ns/op
+Iteration #8: 6.43581 ns/op
+Iteration #9: 6.44540 ns/op
+Consumed blackhole value: 16003
+  Success:   ~ 6.44455 ns/op ±0.063%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=-Infinity
-Warm-up #0: 2.81256 ns/op
-Warm-up #1: 2.81263 ns/op
-Warm-up #2: 2.80625 ns/op
-Warm-up #3: 2.80539 ns/op
-Warm-up #4: 2.80951 ns/op
-Iteration #0: 2.80991 ns/op
-Iteration #1: 2.81644 ns/op
-Iteration #2: 2.81117 ns/op
-Iteration #3: 2.83430 ns/op
-Iteration #4: 2.85166 ns/op
-Iteration #5: 2.82796 ns/op
-Iteration #6: 2.85134 ns/op
-Iteration #7: 2.82589 ns/op
-Iteration #8: 2.83442 ns/op
-Iteration #9: 2.82044 ns/op
+Warm-up #0: 6.21415 ns/op
+Warm-up #1: 6.22607 ns/op
+Warm-up #2: 6.24400 ns/op
+Warm-up #3: 6.25729 ns/op
+Warm-up #4: 6.22271 ns/op
+Iteration #0: 6.20028 ns/op
+Iteration #1: 6.20349 ns/op
+Iteration #2: 6.17509 ns/op
+Iteration #3: 6.16112 ns/op
+Iteration #4: 6.18524 ns/op
+Iteration #5: 6.19726 ns/op
+Iteration #6: 6.20457 ns/op
+Iteration #7: 6.21575 ns/op
+Iteration #8: 6.20133 ns/op
+Iteration #9: 6.26107 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 2.82835 ns/op ±0.33%
+  Success:   ~ 6.20052 ns/op ±0.27%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=+Infinity
-Warm-up #0: 2.80562 ns/op
-Warm-up #1: 2.80575 ns/op
-Warm-up #2: 2.80653 ns/op
-Warm-up #3: 2.80751 ns/op
-Warm-up #4: 2.80441 ns/op
-Iteration #0: 2.81202 ns/op
-Iteration #1: 2.80843 ns/op
-Iteration #2: 2.80779 ns/op
-Iteration #3: 2.81067 ns/op
-Iteration #4: 2.80723 ns/op
-Iteration #5: 2.81417 ns/op
-Iteration #6: 2.81516 ns/op
-Iteration #7: 2.80617 ns/op
-Iteration #8: 2.80872 ns/op
-Iteration #9: 2.81197 ns/op
+Warm-up #0: 6.03591 ns/op
+Warm-up #1: 6.02535 ns/op
+Warm-up #2: 6.04252 ns/op
+Warm-up #3: 6.03228 ns/op
+Warm-up #4: 6.02677 ns/op
+Iteration #0: 6.00806 ns/op
+Iteration #1: 6.01765 ns/op
+Iteration #2: 6.02197 ns/op
+Iteration #3: 6.00868 ns/op
+Iteration #4: 6.02784 ns/op
+Iteration #5: 6.01037 ns/op
+Iteration #6: 6.01781 ns/op
+Iteration #7: 6.01251 ns/op
+Iteration #8: 6.01258 ns/op
+Iteration #9: 6.00474 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 2.81023 ns/op ±0.067%
+  Success:   ~ 6.01422 ns/op ±0.073%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.alternative1 | value=NaN
-Warm-up #0: 2.80939 ns/op
-Warm-up #1: 2.81605 ns/op
-Warm-up #2: 2.80808 ns/op
-Warm-up #3: 2.80812 ns/op
-Warm-up #4: 2.81879 ns/op
-Iteration #0: 2.80452 ns/op
-Iteration #1: 2.80087 ns/op
-Iteration #2: 2.80032 ns/op
-Iteration #3: 2.80411 ns/op
-Iteration #4: 2.80004 ns/op
-Iteration #5: 2.80016 ns/op
-Iteration #6: 2.80177 ns/op
-Iteration #7: 2.79959 ns/op
-Iteration #8: 2.79939 ns/op
-Iteration #9: 2.79966 ns/op
+Warm-up #0: 6.02040 ns/op
+Warm-up #1: 6.03629 ns/op
+Warm-up #2: 6.02316 ns/op
+Warm-up #3: 6.03899 ns/op
+Warm-up #4: 6.03091 ns/op
+Iteration #0: 6.01294 ns/op
+Iteration #1: 6.01481 ns/op
+Iteration #2: 6.00731 ns/op
+Iteration #3: 5.99824 ns/op
+Iteration #4: 6.00274 ns/op
+Iteration #5: 6.00727 ns/op
+Iteration #6: 6.00069 ns/op
+Iteration #7: 5.99614 ns/op
+Iteration #8: 6.00079 ns/op
+Iteration #9: 6.05735 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 2.80104 ns/op ±0.041%
+  Success:   ~ 6.00983 ns/op ±0.18%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=zero
-Warm-up #0: 7.39056 ns/op
-Warm-up #1: 7.45298 ns/op
-Warm-up #2: 7.51221 ns/op
-Warm-up #3: 7.46871 ns/op
-Warm-up #4: 7.54641 ns/op
-Iteration #0: 7.38779 ns/op
-Iteration #1: 7.44180 ns/op
-Iteration #2: 7.38164 ns/op
-Iteration #3: 7.42129 ns/op
-Iteration #4: 7.38552 ns/op
-Iteration #5: 7.40427 ns/op
-Iteration #6: 7.35915 ns/op
-Iteration #7: 7.55724 ns/op
-Iteration #8: 7.69483 ns/op
-Iteration #9: 7.58238 ns/op
+Warm-up #0: 7.07597 ns/op
+Warm-up #1: 7.05746 ns/op
+Warm-up #2: 7.05525 ns/op
+Warm-up #3: 7.06166 ns/op
+Warm-up #4: 7.07438 ns/op
+Iteration #0: 7.06475 ns/op
+Iteration #1: 7.05017 ns/op
+Iteration #2: 7.03897 ns/op
+Iteration #3: 7.05413 ns/op
+Iteration #4: 7.05064 ns/op
+Iteration #5: 7.05307 ns/op
+Iteration #6: 7.10115 ns/op
+Iteration #7: 7.12551 ns/op
+Iteration #8: 7.05255 ns/op
+Iteration #9: 7.06335 ns/op
 Consumed blackhole value: 16003
-  Success:   ~ 7.46159 ns/op ±0.92%
+  Success:   ~ 7.06543 ns/op ±0.24%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=-Infinity
-Warm-up #0: 6.80196 ns/op
-Warm-up #1: 6.80676 ns/op
-Warm-up #2: 6.90093 ns/op
-Warm-up #3: 6.84662 ns/op
-Warm-up #4: 6.82886 ns/op
-Iteration #0: 6.83055 ns/op
-Iteration #1: 6.92082 ns/op
-Iteration #2: 6.86629 ns/op
-Iteration #3: 6.84529 ns/op
-Iteration #4: 6.85840 ns/op
-Iteration #5: 6.91845 ns/op
-Iteration #6: 6.90831 ns/op
-Iteration #7: 6.90407 ns/op
-Iteration #8: 6.89294 ns/op
-Iteration #9: 6.86148 ns/op
+Warm-up #0: 6.50004 ns/op
+Warm-up #1: 6.51152 ns/op
+Warm-up #2: 6.50562 ns/op
+Warm-up #3: 6.51448 ns/op
+Warm-up #4: 6.49830 ns/op
+Iteration #0: 6.50094 ns/op
+Iteration #1: 6.49591 ns/op
+Iteration #2: 6.48780 ns/op
+Iteration #3: 6.49322 ns/op
+Iteration #4: 6.49677 ns/op
+Iteration #5: 6.50490 ns/op
+Iteration #6: 6.49835 ns/op
+Iteration #7: 6.49967 ns/op
+Iteration #8: 6.48533 ns/op
+Iteration #9: 6.49864 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 6.88066 ns/op ±0.29%
+  Success:   ~ 6.49615 ns/op ±0.057%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=+Infinity
-Warm-up #0: 6.57030 ns/op
-Warm-up #1: 6.62565 ns/op
-Warm-up #2: 6.63384 ns/op
-Warm-up #3: 6.60236 ns/op
-Warm-up #4: 6.56062 ns/op
-Iteration #0: 6.51891 ns/op
-Iteration #1: 6.57250 ns/op
-Iteration #2: 6.49783 ns/op
-Iteration #3: 6.49250 ns/op
-Iteration #4: 6.49017 ns/op
-Iteration #5: 6.55588 ns/op
-Iteration #6: 6.49842 ns/op
-Iteration #7: 6.48726 ns/op
-Iteration #8: 6.49577 ns/op
-Iteration #9: 6.50948 ns/op
+Warm-up #0: 6.18288 ns/op
+Warm-up #1: 6.19859 ns/op
+Warm-up #2: 6.20250 ns/op
+Warm-up #3: 6.18842 ns/op
+Warm-up #4: 6.17772 ns/op
+Iteration #0: 6.19177 ns/op
+Iteration #1: 6.23788 ns/op
+Iteration #2: 6.19245 ns/op
+Iteration #3: 6.22261 ns/op
+Iteration #4: 6.18683 ns/op
+Iteration #5: 6.18677 ns/op
+Iteration #6: 6.19386 ns/op
+Iteration #7: 6.19025 ns/op
+Iteration #8: 6.19597 ns/op
+Iteration #9: 6.18356 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 6.51187 ns/op ±0.28%
+  Success:   ~ 6.19820 ns/op ±0.18%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteBenchmark.stdlib | value=NaN
-Warm-up #0: 6.82352 ns/op
-Warm-up #1: 6.77981 ns/op
-Warm-up #2: 6.77440 ns/op
-Warm-up #3: 6.77991 ns/op
-Warm-up #4: 6.82247 ns/op
-Iteration #0: 6.80683 ns/op
-Iteration #1: 6.79601 ns/op
-Iteration #2: 6.79959 ns/op
-Iteration #3: 6.83794 ns/op
-Iteration #4: 6.79120 ns/op
-Iteration #5: 6.79164 ns/op
-Iteration #6: 6.82732 ns/op
-Iteration #7: 6.78537 ns/op
-Iteration #8: 6.80876 ns/op
-Iteration #9: 6.78757 ns/op
+Warm-up #0: 6.47300 ns/op
+Warm-up #1: 6.50468 ns/op
+Warm-up #2: 6.48742 ns/op
+Warm-up #3: 6.48034 ns/op
+Warm-up #4: 6.47452 ns/op
+Iteration #0: 6.49426 ns/op
+Iteration #1: 6.50767 ns/op
+Iteration #2: 6.49035 ns/op
+Iteration #3: 6.49527 ns/op
+Iteration #4: 6.48856 ns/op
+Iteration #5: 6.50719 ns/op
+Iteration #6: 6.49908 ns/op
+Iteration #7: 6.48485 ns/op
+Iteration #8: 6.48027 ns/op
+Iteration #9: 6.49263 ns/op
 Consumed blackhole value: 16081
-  Success:   ~ 6.80322 ns/op ±0.16%
+  Success:   ~ 6.49401 ns/op ±0.084%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.alternative1
-Warm-up #0: 6.94966 ns/op
-Warm-up #1: 6.94681 ns/op
-Warm-up #2: 6.94861 ns/op
-Warm-up #3: 6.93910 ns/op
-Warm-up #4: 6.94594 ns/op
-Iteration #0: 6.95004 ns/op
-Iteration #1: 6.96789 ns/op
-Iteration #2: 6.94387 ns/op
-Iteration #3: 6.94859 ns/op
-Iteration #4: 6.95182 ns/op
-Iteration #5: 6.98720 ns/op
-Iteration #6: 7.02110 ns/op
-Iteration #7: 6.98166 ns/op
-Iteration #8: 7.00548 ns/op
-Iteration #9: 7.01956 ns/op
-Consumed blackhole value: 16051
-  Success:   ~ 6.97772 ns/op ±0.27%
+Warm-up #0: 7.95449 ns/op
+Warm-up #1: 7.97125 ns/op
+Warm-up #2: 7.95866 ns/op
+Warm-up #3: 7.93285 ns/op
+Warm-up #4: 7.97192 ns/op
+Iteration #0: 7.96478 ns/op
+Iteration #1: 7.97200 ns/op
+Iteration #2: 7.97624 ns/op
+Iteration #3: 7.97188 ns/op
+Iteration #4: 7.97608 ns/op
+Iteration #5: 7.98646 ns/op
+Iteration #6: 7.94505 ns/op
+Iteration #7: 7.97366 ns/op
+Iteration #8: 7.96696 ns/op
+Iteration #9: 7.96082 ns/op
+Consumed blackhole value: 16057
+  Success:   ~ 7.96939 ns/op ±0.086%
 
 … org.jetbrains.kotlin.benchmark.IsFiniteAlternatingBenchmark.stdlib
-Warm-up #0: 8.84726 ns/op
-Warm-up #1: 8.84264 ns/op
-Warm-up #2: 8.79884 ns/op
-Warm-up #3: 8.82098 ns/op
-Warm-up #4: 8.77086 ns/op
-Iteration #0: 8.80000 ns/op
-Iteration #1: 8.77583 ns/op
-Iteration #2: 8.82631 ns/op
-Iteration #3: 8.82326 ns/op
-Iteration #4: 8.85587 ns/op
-Iteration #5: 8.83165 ns/op
-Iteration #6: 8.78171 ns/op
-Iteration #7: 8.77222 ns/op
-Iteration #8: 8.78236 ns/op
-Iteration #9: 8.75036 ns/op
-Consumed blackhole value: 16057
-  Success:   ~ 8.79996 ns/op ±0.23%
+Warm-up #0: 8.44981 ns/op
+Warm-up #1: 8.44826 ns/op
+Warm-up #2: 8.43314 ns/op
+Warm-up #3: 8.42528 ns/op
+Warm-up #4: 8.44421 ns/op
+Iteration #0: 8.44304 ns/op
+Iteration #1: 8.44111 ns/op
+Iteration #2: 8.44686 ns/op
+Iteration #3: 8.47224 ns/op
+Iteration #4: 8.53124 ns/op
+Iteration #5: 8.45431 ns/op
+Iteration #6: 8.44918 ns/op
+Iteration #7: 8.45193 ns/op
+Iteration #8: 8.44872 ns/op
+Iteration #9: 8.45759 ns/op
+Consumed blackhole value: 16051
+  Success:   ~ 8.45962 ns/op ±0.20%
 
 wasmJs summary:
-Benchmark                                    (value)  Mode  Cnt  Score   Error  Units
-IsFiniteBenchmark.alternative1                  zero  avgt   10  2.820 ± 0.007  ns/op
-IsFiniteBenchmark.alternative1             -Infinity  avgt   10  2.828 ± 0.009  ns/op
-IsFiniteBenchmark.alternative1             +Infinity  avgt   10  2.810 ± 0.002  ns/op
-IsFiniteBenchmark.alternative1                   NaN  avgt   10  2.801 ± 0.001  ns/op
-IsFiniteBenchmark.stdlib                        zero  avgt   10  7.462 ± 0.069  ns/op
-IsFiniteBenchmark.stdlib                   -Infinity  avgt   10  6.881 ± 0.020  ns/op
-IsFiniteBenchmark.stdlib                   +Infinity  avgt   10  6.512 ± 0.018  ns/op
-IsFiniteBenchmark.stdlib                         NaN  avgt   10  6.803 ± 0.011  ns/op
-IsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  6.978 ± 0.019  ns/op
-IsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  8.800 ± 0.020  ns/op
+Benchmark                                          (value)  Mode  Cnt  Score   Error  Units
+DoubleIsFiniteBenchmark.alternative1                  zero  avgt   10  2.801 ± 0.005  ns/op
+DoubleIsFiniteBenchmark.alternative1             -Infinity  avgt   10  2.807 ± 0.007  ns/op
+DoubleIsFiniteBenchmark.alternative1             +Infinity  avgt   10  2.801 ± 0.003  ns/op
+DoubleIsFiniteBenchmark.alternative1                   NaN  avgt   10  2.802 ± 0.003  ns/op
+DoubleIsFiniteBenchmark.stdlib                        zero  avgt   10  7.049 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.stdlib                   -Infinity  avgt   10  6.510 ± 0.009  ns/op
+DoubleIsFiniteBenchmark.stdlib                   +Infinity  avgt   10  6.184 ± 0.004  ns/op
+DoubleIsFiniteBenchmark.stdlib                         NaN  avgt   10  6.487 ± 0.003  ns/op
+DoubleIsFiniteAlternatingBenchmark.alternative1        N/A  avgt   10  6.799 ± 0.010  ns/op
+DoubleIsFiniteAlternatingBenchmark.stdlib              N/A  avgt   10  8.461 ± 0.010  ns/op
+IsFiniteBenchmark.alternative1                        zero  avgt   10  6.445 ± 0.004  ns/op
+IsFiniteBenchmark.alternative1                   -Infinity  avgt   10  6.201 ± 0.016  ns/op
+IsFiniteBenchmark.alternative1                   +Infinity  avgt   10  6.014 ± 0.004  ns/op
+IsFiniteBenchmark.alternative1                         NaN  avgt   10  6.010 ± 0.011  ns/op
+IsFiniteBenchmark.stdlib                              zero  avgt   10  7.065 ± 0.017  ns/op
+IsFiniteBenchmark.stdlib                         -Infinity  avgt   10  6.496 ± 0.004  ns/op
+IsFiniteBenchmark.stdlib                         +Infinity  avgt   10  6.198 ± 0.011  ns/op
+IsFiniteBenchmark.stdlib                               NaN  avgt   10  6.494 ± 0.005  ns/op
+IsFiniteAlternatingBenchmark.alternative1              N/A  avgt   10  7.969 ± 0.007  ns/op
+IsFiniteAlternatingBenchmark.stdlib                    N/A  avgt   10  8.460 ± 0.017  ns/op
 
 
 > Task :benchmark
-Kotlin build report is written to file:///Users/sebastiansellmair/TestProjects/kotlin-multiplatform-projects/build/reports/kotlin-build/kotlin-multiplatform-projects-build-2024-09-06-10-30-34-0.txt
+Kotlin build report is written to file:///Users/sebastiansellmair/TestProjects/kotlin-multiplatform-projects/build/reports/kotlin-build/kotlin-multiplatform-projects-build-2024-09-06-11-02-55-0.txt
 
-BUILD SUCCESSFUL in 4m 13s
+BUILD SUCCESSFUL in 8m 31s
 30 actionable tasks: 4 executed, 26 up-to-date

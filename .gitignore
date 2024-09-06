@@ -1,5 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gradle
+.kotlin
+kotlin-js-store
 **/build/
 !src/**/build/
 gradle-app.setting

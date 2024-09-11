@@ -1,24 +1,24 @@
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.kotlinx.benchmark")
+    id("com.android.library")
 }
 
 kotlin {
     jvm()
-    macosArm64()
-    wasmJs {
-        nodejs()
-    }
-
-    sourceSets.commonMain.dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.11")
+    androidTarget()
+    iosX64()
+    iosSimulatorArm64()
+    iosArm64()
+    sourceSets {
+        getByName("commonTest") {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
     }
 }
 
-benchmark {
-    targets {
-        register("jvm")
-        register("macosArm64")
-        register("wasmJs")
-    }
+android {
+    compileSdk = 34
+    namespace = "org.jetbrains.sample"
 }

@@ -5,7 +5,7 @@ pluginManagement {
     }
 
     plugins {
-        val kotlinVersion = "2.0.20-RC2"
+        val kotlinVersion = "2.0.20"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
 

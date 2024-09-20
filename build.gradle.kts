@@ -11,7 +11,7 @@ kotlin {
     }
 
     sourceSets.commonMain.dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.11")
+        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.5.0-SNAPSHOT")
     }
 }
 

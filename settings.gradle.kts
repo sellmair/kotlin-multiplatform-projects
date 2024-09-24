@@ -8,6 +8,7 @@ pluginManagement {
         val kotlinVersion = "2.0.20"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
+        kotlin("jvm") version kotlinVersion
 
         val androidVersion = "8.5.1"
         id("com.android.application") version androidVersion
@@ -17,8 +18,9 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        mavenLocal()
         mavenCentral()
         google()
     }
 }
+
+include(":foo")

@@ -1,18 +1,15 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        google()
+        gradlePluginPortal()
     }
 
     plugins {
         val kotlinVersion = "2.0.20"
         kotlin("multiplatform") version kotlinVersion
-        kotlin("android") version kotlinVersion
         kotlin("jvm") version kotlinVersion
+        id("org.jetbrains.kotlinx.benchmark") version "0.4.12"
 
-        val androidVersion = "8.5.1"
-        id("com.android.application") version androidVersion
-        id("com.android.library") version androidVersion
     }
 }
 
@@ -23,4 +20,3 @@ dependencyResolutionManagement {
     }
 }
 
-include(":foo")

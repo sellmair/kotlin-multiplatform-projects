@@ -5,6 +5,7 @@ plugins {
 
 kotlin {
     jvm()
+    jvmToolchain(21)
     macosArm64()
     wasmJs {
         nodejs()

@@ -31,8 +31,8 @@ open class MyBenchmark {
 
     @BenchmarkMode(Mode.SingleShotTime)
     @OutputTimeUnit(BenchmarkTimeUnit.NANOSECONDS)
-    @Warmup(iterations = 20, time = 500, timeUnit = BenchmarkTimeUnit.MILLISECONDS)
-    @Measurement(iterations = 20, time = 1, timeUnit = BenchmarkTimeUnit.SECONDS)
+    @Warmup(iterations = 1_000, time = 500, timeUnit = BenchmarkTimeUnit.MILLISECONDS)
+    @Measurement(iterations = 1_000, time = 1, timeUnit = BenchmarkTimeUnit.SECONDS)
     @Benchmark
     fun createCoroutineCold() {
         ::suspendFoo.createCoroutine(emptyContinuation)

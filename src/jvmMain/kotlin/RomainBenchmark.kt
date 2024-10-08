@@ -9,15 +9,16 @@ open class FloatState {
 
     @Setup
     fun setup() {
+        println(System.getProperty("java.version"))
+        println(System.getProperty("java.home"))
         for (i in data.indices) {
             data[i] = Float.fromBits(0x7f000000 + i)
         }
     }
 }
 
-@Fork(value = 3)
-@Warmup(iterations = 2)
-@Measurement(iterations = 2)
+@Warmup(iterations = 5, timeUnit = BenchmarkTimeUnit.SECONDS)
+@Measurement(iterations = 10, time = 1, timeUnit = BenchmarkTimeUnit.SECONDS)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(BenchmarkTimeUnit.MILLISECONDS)
 open class KotlinBenchmark {

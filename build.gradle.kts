@@ -5,14 +5,14 @@ plugins {
 
 kotlin {
     jvm()
-    jvmToolchain(21)
+    jvmToolchain(8)
     macosArm64()
     wasmJs {
         nodejs()
     }
 
     sourceSets.commonMain.dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.11")
+        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.12")
     }
 }
 

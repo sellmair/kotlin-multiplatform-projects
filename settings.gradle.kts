@@ -17,8 +17,10 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        mavenLocal()
         mavenCentral()
         google()
     }
 }
+
+include(":app")
+include(":lib")

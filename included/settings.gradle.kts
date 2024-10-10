@@ -23,4 +23,5 @@ dependencyResolutionManagement {
     }
 }
 
-includeBuild("included")
+include(":app")
+

@@ -5,11 +5,11 @@ pluginManagement {
     }
 
     plugins {
-        val kotlinVersion = "2.0.20"
+        val kotlinVersion = "2.1.21"
         kotlin("multiplatform") version kotlinVersion
         kotlin("android") version kotlinVersion
 
-        val androidVersion = "8.5.1"
+        val androidVersion = "8.7.3"
         id("com.android.application") version androidVersion
         id("com.android.library") version androidVersion
     }

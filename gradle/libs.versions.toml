@@ -1,5 +1,6 @@
 [versions]
 kotlin = "2.5.255-SNAPSHOT"
+#kotlin = "2.4.0"
 coroutines = "1.11.0"
 
 [libraries]

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     id("maven-publish")
@@ -18,7 +20,16 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kotlinx.coroutines.core)
+            api(libs.kotlinx.coroutines.core)
+        }
+    }
+
+    targets.withType<KotlinNativeTarget>().configureEach {
+        compilations.getByName("main") {
+            cinterops.create("foo") {
+                definitionFile.set(project.file("src/foo.def"))
+                includeDirs(project.file("src"))
+            }
         }
     }
 }
@@ -42,3 +53,4 @@ tasks.matching { it.name == "commonizeNativeDistribution" }.configureEach {
         }
     }
 }
+

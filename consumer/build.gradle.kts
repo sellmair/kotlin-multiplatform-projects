@@ -9,7 +9,6 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven("https://packages.jetbrains.team/maven/p/kt/dev")
-
 }
 
 kotlin {
@@ -24,8 +23,8 @@ kotlin {
     iosArm64()
 
     dependencies {
-        //implementation("local.test.kgp:sample:1.0.0")
-        implementation(project(":sample"))
+        implementation("local.test.kgp:sample:1.0.0")
+        //implementation(project(":sample"))
     }
 }
 

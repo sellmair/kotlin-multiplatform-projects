@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.library)
     id("maven-publish")
 }
 
@@ -13,6 +14,11 @@ group = rootProject.group
 version = rootProject.version
 
 val whichMacosAttribute = Attribute.of("whichMacos", String::class.java)
+
+android {
+    compileSdk = 32
+    namespace = "sample"
+}
 
 kotlin {
     jvm()
@@ -27,6 +33,9 @@ kotlin {
     iosSimulatorArm64()
     linuxX64()
     macosArm64()
+    androidTarget() {
+        publishLibraryVariants("release")
+    }
 
     dependencies {
         api(libs.kotlinx.coroutines.core)

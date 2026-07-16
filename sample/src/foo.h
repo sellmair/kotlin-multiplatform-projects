@@ -1,1 +1,3 @@
-int x();
+int x() {
+   return 42;
+}

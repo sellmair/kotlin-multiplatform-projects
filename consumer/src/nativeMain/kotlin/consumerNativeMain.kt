@@ -3,9 +3,18 @@ import kotlinx.cinterop.ExperimentalForeignApi
 
 fun nativeMainConsumer() {
     sample.nativeMain()
+    useCInterop()
 }
 
+@OptIn(ExperimentalForeignApi::class)
 fun useCInterop() {
-    @OptIn(ExperimentalForeignApi::class)
     x()
 }
+@OptIn(ExperimentalForeignApi::class)
+fun main() {
+    println(x())
+    println("We called x()!!")
+}
+
+
+

@@ -1,3 +1,7 @@
+@file:OptIn(ExperimentalWasmDsl::class, ExperimentalKotlinGradlePluginApi::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -8,21 +12,26 @@ plugins {
 group = rootProject.group
 version = rootProject.version
 
+val whichMacosAttribute = Attribute.of("whichMacos", String::class.java)
+
 kotlin {
     jvm()
     js {
         browser()
         nodejs()
     }
+    wasmJs()
+    wasmWasi()
+
     iosArm64()
     iosSimulatorArm64()
     linuxX64()
+    macosArm64()
 
-    sourceSets {
-        commonMain.dependencies {
-            api(libs.kotlinx.coroutines.core)
-        }
+    dependencies {
+        api(libs.kotlinx.coroutines.core)
     }
+
 
     targets.withType<KotlinNativeTarget>().configureEach {
         compilations.getByName("main") {
@@ -54,3 +63,10 @@ tasks.matching { it.name == "commonizeNativeDistribution" }.configureEach {
     }
 }
 
+kotlin {
+    metadata {
+        this.compilations.all {
+            println("Created: $name")
+        }
+    }
+}

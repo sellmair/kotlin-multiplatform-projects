@@ -2,6 +2,10 @@ package sample
 
 import foo.x
 import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.coroutines.CloseableCoroutineDispatcher
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 fun nativeMain() {
     @OptIn(ExperimentalForeignApi::class)

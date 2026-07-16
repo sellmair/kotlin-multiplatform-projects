@@ -23,7 +23,8 @@ dependencyResolutionManagement {
 }
 
 include(":sample")
-include(":consumer")
+/*include(":consumer")
 include(":consumer-kotlin-jvm")
-include(":consumer-java")
-include(":consumer-android-old")
+include(":consumer-java")*/
+include(":consumer-android")
+include(":consumer-kmp-android")

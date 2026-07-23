@@ -1,10 +1,11 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 
     plugins {
-        val kotlinVersion = "2.4.10"
+        val kotlinVersion = "2.5.255-SNAPSHOT"
         kotlin("multiplatform") version kotlinVersion
         kotlin("jvm") version kotlinVersion
     }
